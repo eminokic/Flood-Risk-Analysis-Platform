@@ -11,3 +11,7 @@ git remote add upstream https://github.com/ignite-sci-project/ignite-sci-project
 ### Checking out a Branch
 
 git checkout -b given-branch-name                                        
+
+### React Essentials 
+
+Download the Node.js package manager (lts version 14.17.3)
