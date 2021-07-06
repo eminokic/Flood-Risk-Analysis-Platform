@@ -19,3 +19,7 @@ Download the Node.js package manager (lts version 14.17.3).
 Load project into visual studio code.
 
 npm install packages if the npm package manager does not appear, and run npm start once ready.
+
+## Setting Up Project (backend)
+
+Download the Django framework.
