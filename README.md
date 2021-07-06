@@ -12,6 +12,10 @@ git remote add upstream https://github.com/ignite-sci-project/ignite-sci-project
 
 git checkout -b given-branch-name                                        
 
-### React Essentials 
+## Setting Up Project (Frontend)
 
-Download the Node.js package manager (lts version 14.17.3)
+Download the Node.js package manager (lts version 14.17.3).
+
+Load project into visual studio code.
+
+npm install packages if the npm package manager does not appear, and run npm start once ready.
