@@ -23,3 +23,6 @@ npm install packages if the npm package manager does not appear, and run npm sta
 ## Setting Up Project (backend)
 
 Download the Django framework.
+
+python manage.py migrate 
+python manage.py runserver
