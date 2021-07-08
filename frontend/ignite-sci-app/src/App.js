@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { 
   GoogleMap,
   useLoadScript,
@@ -6,6 +6,15 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 import { formatRelative } from "date-fns";
+
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxPopover,
+  ComboboxList,
+  ComboboxOption,
+} from "@reach/combobox";
+
 import "@reach/combobox/styles.css";
 import './App.css';
 
@@ -36,7 +45,7 @@ const center = {
 export default function App() {
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: ProcessingInstruction.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
 
   /**
