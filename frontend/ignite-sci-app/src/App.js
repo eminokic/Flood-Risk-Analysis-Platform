@@ -22,7 +22,16 @@ import './App.css';
 const mapContainerStyle = {
   width: "100vw",
   height: "100vh",
-}
+};
+
+/**
+ * The center variable centers the map to the view assigned.
+ * The center of the map shall be Los Angeles, California with the corresponding latitude and longitude.
+ */
+const center = {
+  lat: 34.052235,
+  long: -118.243683, 
+};
 
 export default function App() {
 
@@ -45,6 +54,11 @@ export default function App() {
   }
 
   return <div>
-    <GoogleMap mapContainerStyle={mapContainerStyle}></GoogleMap>
+    <GoogleMap 
+    mapContainerStyle={mapContainerStyle} 
+    zoom={8} 
+    center={center}
+    >
+    </GoogleMap>
     </div>
 }
