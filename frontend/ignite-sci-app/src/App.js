@@ -9,12 +9,23 @@ import { formatRelative } from "date-fns";
 import "@reach/combobox/styles.css";
 import './App.css';
 
+/** 
+ * You can implement the places api key as follows to avoid redundant rerendering.
+ * const libraries = ["places"];
+ */
+
+/**
+ * Map Container Variable
+ * Description: This variable sets the width and height for the UI component of react Google maps.
+ * vh and vw are relative formatting for view height and view width.
+ */
+const mapContainerStyle = {
+  width: "100vw",
+  height: "100vh",
+}
+
 export default function App() {
 
-   /** 
-     * You can implement the places api key as follows to avoid redundant rerendering.
-     * const libraries = ["places"];
-     */
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: ProcessingInstruction.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
@@ -33,5 +44,7 @@ export default function App() {
     return "Rendering Map...";
   }
 
-  return <div>I'm the map, i'm the map!</div>
+  return <div>
+    <GoogleMap mapContainerStyle={mapContainerStyle}></GoogleMap>
+    </div>
 }
