@@ -1,6 +1,6 @@
 FROM node:14.17.3
 
-WORKDIR /frontend
+WORKDIR /code
 
 ENV PORT 80
 
@@ -8,6 +8,6 @@ COPY package.json /code/package.json
 
 RUN npm install
 
-COPY . /code
+COPY . /frontend
 
-CMD [ "node", "ignite-sci-app/src/App.js"]
+CMD [ "node", "src/App.js"]
