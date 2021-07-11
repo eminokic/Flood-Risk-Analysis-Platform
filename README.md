@@ -23,3 +23,6 @@ npm install packages if the npm package manager does not appear, and run npm sta
 ## Setting Up Project (backend)
 
 Download the Django framework.
+
+## Docker
+The software will be containerized via Docker for better VM utilization on GCP.
