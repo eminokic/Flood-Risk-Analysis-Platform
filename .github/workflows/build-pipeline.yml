@@ -27,7 +27,4 @@ jobs:
 
       # Install Node Package Manager and start
       - name: Install Node JS Dependency
-        run: |
-          npm install,
-          npm start,
-          npm stop.
+        run: npm install
