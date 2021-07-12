@@ -24,5 +24,8 @@ npm install packages if the npm package manager does not appear, and run npm sta
 
 Download the Django framework.
 
+python manage.py migrate 
+python manage.py runserver
+
 ## Docker
 The software will be containerized via Docker for better VM utilization on GCP.

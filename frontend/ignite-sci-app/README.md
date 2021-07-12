@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## API Key Guidelines
+
+Currently have api key under env.local however, if repository ever went public then we would need to make the environment variables secure and private.
+
 ## Available Scripts
 
 In the project directory, you can run:
