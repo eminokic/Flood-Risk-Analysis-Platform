@@ -6,15 +6,6 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 import { formatRelative } from "date-fns";
-
-import {
-  Combobox,
-  ComboboxInput,
-  ComboboxPopover,
-  ComboboxList,
-  ComboboxOption,
-} from "@reach/combobox";
-
 import "@reach/combobox/styles.css";
 import './App.css';
 
@@ -37,16 +28,23 @@ const mapContainerStyle = {
  * The center variable centers the map to the view assigned.
  * The center of the map shall be Los Angeles, California with the corresponding latitude and longitude.
  */
+const options = {
+  disableDefaultUI: true,
+  zoomControl: true,
+};
 const center = {
-  lat: 34.052235,
-  long: -118.243683, 
+  lat: 34.0522,
+  lng: -118.2436, 
 };
 
 export default function App() {
-
+  
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
+
+
+  const mapRef = React.useRef();
 
   /**
    * The loadError function is a flag for the case that the map does not render properly. 
