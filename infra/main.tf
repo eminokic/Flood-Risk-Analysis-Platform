@@ -9,8 +9,8 @@ terraform {
 provider "google" {
   credentials = file("ignite-logistics-522db0b05356.json")
 
-  project = "ignite-logistics"
-  region  = "us-central1"
+  project = var.project
+  region  = var.region
   zone    = "us-central1-c"
 }
 
@@ -18,16 +18,16 @@ resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
 }
 
-# resource "google_storage_bucket" "flask-storage" {
-#   default_event_based_hold    = false
-#   force_destroy               = false
-#   location                    = var.region
-#   name                        = "flask-storage-bucket-demo"
-#   requester_pays              = false
-#   storage_class               = "STANDARD"
-#   uniform_bucket_level_access = true
-#   project                     = var.project
-# }
+resource "google_storage_bucket" "django-storage" {
+  default_event_based_hold    = false
+  force_destroy               = false
+  location                    = var.region
+  name                        = "django-storage-bucket"
+  requester_pays              = false
+  storage_class               = "STANDARD"
+  uniform_bucket_level_access = true
+  project                     = var.project
+}
 
 # module "vpc" {
 #   source                                 = "terraform-google-modules/network/google"
@@ -98,3 +98,13 @@ resource "google_compute_network" "vpc_network" {
 #     ]
 #   }
 # }
+
+variable "region" {
+    type = string
+    default = "us-central1"
+}
+
+variable "project"{
+    type = string
+    default = "ignite-logistics"
+}
