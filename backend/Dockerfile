@@ -14,4 +14,4 @@ EXPOSE 8000
 COPY . /backend/
 RUN pip3 --no-cache-dir install -r requirements.txt
 
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "project-config.wsgi"]
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "main.wsgi"]
