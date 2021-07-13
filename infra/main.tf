@@ -8,21 +8,20 @@ terraform {
 
 provider "google" {
   credentials = file("ignite-logistics-522db0b05356.json")
-
   project = var.project
-  region  = var.region
+  region  = "us-central1"
   zone    = "us-central1-c"
 }
 
-resource "google_compute_network" "vpc_network" {
-  name = "terraform-network"
-}
+# resource "google_compute_network" "vpc_network" {
+#   name = "terraform-network"
+# }
 
 resource "google_storage_bucket" "django-storage" {
   default_event_based_hold    = false
   force_destroy               = false
   location                    = var.region
-  name                        = "django-storage-bucket"
+  name                        = "ignite-logistics-storage-bucket"
   requester_pays              = false
   storage_class               = "STANDARD"
   uniform_bucket_level_access = true
@@ -42,33 +41,33 @@ module "vpc" {
 }
 
 
-module "cloud-nat" {
-  source = "terraform-google-modules/cloud-nat/google"
+# module "cloud-nat" {
+#   source = "terraform-google-modules/cloud-nat/google"
 
-  name       = var.nat_name
-  project_id = var.network_project
-  region     = var.region
-  router     = module.cloud_router.router.name
+#   name       = "nat-name-1"
+#   project_id = var.project
+#   region     = var.region
+#   router     = module.cloud_router.router.name
 
-  depends_on = [module.vpc, module.cloud_router]
-}
+#   depends_on = [module.vpc, module.cloud_router]
+# }
 
 
-module "cloud_router" {
-  source = "terraform-google-modules/cloud-router/google"
+# module "cloud_router" {
+#   source = "terraform-google-modules/cloud-router/google"
 
-  name    = var.router_name
-  project = var.network_project
-  region  = var.region
-  network = var.network_name
+#   name    = "router-name-1"
+#   project = var.project
+#   region  = var.region
+#   network = var.network_name
 
-  bgp = {
-    asn               = 65010
-    advertised_groups = ["ALL_SUBNETS"]
-  }
+#   bgp = {
+#     asn               = 65010
+#     advertised_groups = ["ALL_SUBNETS"]
+#   }
 
-  depends_on = [module.vpc]
-}
+#   depends_on = [module.vpc]
+# }
 
 
 #variables 
