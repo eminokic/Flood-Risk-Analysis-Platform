@@ -115,3 +115,51 @@ variable "network_name"{
     type = string
     default = "network-name-1"
 }
+
+# module "gke" {
+#   source = "terraform-google-modules/kubernetes-engine/google//modules/beta-private-cluster-update-variant"
+
+#   project_id = var.gke_project
+#   name       = var.cluster_name
+
+#   # Network specs
+#   regional           = var.regional
+#   zones              = var.zones
+#   network            = var.network
+#   network_project_id = var.network_project
+#   subnetwork         = var.subnetwork
+#   ip_range_pods      = var.secondary_pods
+#   ip_range_services  = var.secondary_services
+
+#   # General cluster config
+#   http_load_balancing        = true
+#   horizontal_pod_autoscaling = true
+#   create_service_account     = false
+#   remove_default_node_pool   = true
+
+#   # Private cluster config
+#   enable_private_nodes   = true
+#   master_ipv4_cidr_block = var.master_ipv4_cidr_block
+#   network_policy         = var.network_policy
+
+#   # Cluster add ons
+#   istio            = var.istio
+#   cloudrun         = var.cloudrun
+#   dns_cache        = var.dns_cache
+#   config_connector = var.config_connector
+#   kalm_config      = var.kalm_config
+#   # resource_usage_export_dataset_id = var.dataset_id
+
+#   release_channel   = var.release_channel
+#   datapath_provider = var.datapath_provider
+
+#   # Node pools config
+#   node_pools              = var.node_pools
+#   node_pools_oauth_scopes = var.node_pools_oauth_scopes
+#   node_pools_labels       = var.node_pools_labels
+#   node_pools_metadata     = var.node_pools_metadata
+#   node_pools_taints       = var.node_pools_taints
+#   node_pools_tags         = var.node_pools_tags
+
+# }
+
