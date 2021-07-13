@@ -7,7 +7,7 @@ terraform {
 }
 
 provider "google" {
-  credentials = file("ignite-logistics-522db0b05356.json")
+#   credentials = file("ignite-logistics-522db0b05356.json")
   project = var.project
   region  = "us-central1"
   zone    = "us-central1-c"
@@ -27,7 +27,6 @@ resource "google_storage_bucket" "django-storage" {
   uniform_bucket_level_access = true
   project                     = var.project
 }
-
 
 module "vpc" {
   source                                 = "terraform-google-modules/network/google"
