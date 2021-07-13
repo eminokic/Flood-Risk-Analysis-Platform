@@ -29,75 +29,79 @@ resource "google_storage_bucket" "django-storage" {
   project                     = var.project
 }
 
-# module "vpc" {
-#   source                                 = "terraform-google-modules/network/google"
-#   project_id                             = var.network_project
-#   network_name                           = var.network_name
-#   routing_mode                           = var.routing_mode
-#   shared_vpc_host                        = var.shared_vpc_host
-#   delete_default_internet_gateway_routes = var.delete_default_internet_gateway_routes
-#   subnets                                = var.subnets
-#   secondary_ranges                       = var.secondary_ranges
-# }
 
-# module "cloud-nat" {
-#   source = "terraform-google-modules/cloud-nat/google"
-
-#   name       = var.nat_name
-#   project_id = var.network_project
-#   region     = var.region
-#   router     = module.cloud_router.router.name
-
-#   depends_on = [module.vpc, module.cloud_router]
-# }
+module "vpc" {
+  source                                 = "terraform-google-modules/network/google"
+  project_id                             = var.project
+  network_name                           = var.network_name
+  routing_mode                           = "GLOBAL"
+  shared_vpc_host                        = false
+  delete_default_internet_gateway_routes = false
+  subnets                                = var.subnets
+  secondary_ranges                       = var.secondary_ranges
+}
 
 
-# module "cloud_router" {
-#   source = "terraform-google-modules/cloud-router/google"
+module "cloud-nat" {
+  source = "terraform-google-modules/cloud-nat/google"
 
-#   name    = var.router_name
-#   project = var.network_project
-#   region  = var.region
-#   network = var.network_name
+  name       = var.nat_name
+  project_id = var.network_project
+  region     = var.region
+  router     = module.cloud_router.router.name
 
-#   bgp = {
-#     asn               = 65010
-#     advertised_groups = ["ALL_SUBNETS"]
-#   }
-
-#   depends_on = [module.vpc]
-# }
+  depends_on = [module.vpc, module.cloud_router]
+}
 
 
-# variable "subnets" {
-#   type        = list(map(string))
-#   description = "The list of subnets being created"
-#   default = [
-#     {
-#       subnet_name           = "gke-subnet"
-#       subnet_ip             = "10.10.48.0/20"
-#       subnet_region         = "us-central1"
-#       subnet_private_access = "true"
-#     },
-#   ]
-# }
+module "cloud_router" {
+  source = "terraform-google-modules/cloud-router/google"
 
-# variable "secondary_ranges" {
-#   type        = map(list(object({ range_name = string, ip_cidr_range = string })))
-#   description = "Secondary ranges that will be used in some of the subnets"
-#   default = {
-#     gke-subnet = [
-#       {
-#         range_name    = "gke-pods-secondary"
-#         ip_cidr_range = "240.0.0.0/12"
-#       },
-#       {
-#         range_name    = "gke-services-secondary"
-#         ip_cidr_range = "240.16.0.0/20"
-#       }
-#     ]
-#   }
-# }
+  name    = var.router_name
+  project = var.network_project
+  region  = var.region
+  network = var.network_name
+
+  bgp = {
+    asn               = 65010
+    advertised_groups = ["ALL_SUBNETS"]
+  }
+
+  depends_on = [module.vpc]
+}
+
+
+#variables 
+
+variable "subnets" {
+  type        = list(map(string))
+  description = "The list of subnets being created"
+  default = [
+    {
+      subnet_name           = "gke-subnet"
+      subnet_ip             = "10.10.48.0/20"
+      subnet_region         = "us-central1"
+      subnet_private_access = "true"
+    },
+  ]
+}
+
+variable "secondary_ranges" {
+  type        = map(list(object({ range_name = string, ip_cidr_range = string })))
+  description = "Secondary ranges that will be used in some of the subnets"
+  default = {
+    gke-subnet = [
+      {
+        range_name    = "gke-pods-secondary"
+        ip_cidr_range = "240.0.0.0/12"
+      },
+      {
+        range_name    = "gke-services-secondary"
+        ip_cidr_range = "240.16.0.0/20"
+      }
+    ]
+  }
+}
 
 variable "region" {
     type = string
@@ -107,4 +111,9 @@ variable "region" {
 variable "project"{
     type = string
     default = "ignite-logistics"
+}
+
+variable "network_name"{
+    type = string
+    default = "network-name-1"
 }
