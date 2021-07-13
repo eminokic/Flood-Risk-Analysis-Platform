@@ -1,10 +1,3 @@
-terraform {
-  required_providers {
-    google = {
-      source = "hashicorp/google"
-    }
-  }
-}
 
 provider "google" {
 #   credentials = file("ignite-logistics-522db0b05356.json")
@@ -40,33 +33,33 @@ module "vpc" {
 }
 
 
-# module "cloud-nat" {
-#   source = "terraform-google-modules/cloud-nat/google"
+module "cloud-nat" {
+  source = "terraform-google-modules/cloud-nat/google"
 
-#   name       = "nat-name-1"
-#   project_id = var.project
-#   region     = var.region
-#   router     = module.cloud_router.router.name
+  name       = "nat-name-1"
+  project_id = var.project
+  region     = var.region
+  router     = module.cloud_router.router.name
 
-#   depends_on = [module.vpc, module.cloud_router]
-# }
+  depends_on = [module.vpc, module.cloud_router]
+}
 
 
-# module "cloud_router" {
-#   source = "terraform-google-modules/cloud-router/google"
+module "cloud_router" {
+  source = "terraform-google-modules/cloud-router/google"
 
-#   name    = "router-name-1"
-#   project = var.project
-#   region  = var.region
-#   network = var.network_name
+  name    = "router-name-1"
+  project = var.project
+  region  = var.region
+  network = var.network_name
 
-#   bgp = {
-#     asn               = 65010
-#     advertised_groups = ["ALL_SUBNETS"]
-#   }
+  bgp = {
+    asn               = 65010
+    advertised_groups = ["ALL_SUBNETS"]
+  }
 
-#   depends_on = [module.vpc]
-# }
+  depends_on = [module.vpc]
+}
 
 
 #variables 
