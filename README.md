@@ -31,3 +31,5 @@ python manage.py runserver
 
 The software will be containerized via Docker for better VM utilization on GCP.
 The frontend as well as the backend projects will be containerized as their own projects.
+
+## Terraform
