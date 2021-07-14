@@ -62,98 +62,51 @@ module "cloud_router" {
   depends_on = [module.vpc]
 }
 
+module "gke" {
+  source = "terraform-google-modules/kubernetes-engine/google//modules/beta-private-cluster-update-variant"
 
-#variables 
+  project_id = var.gke_project
+  name       = var.cluster_name
 
-variable "subnets" {
-  type        = list(map(string))
-  description = "The list of subnets being created"
-  default = [
-    {
-      subnet_name           = "gke-subnet"
-      subnet_ip             = "10.10.48.0/20"
-      subnet_region         = "us-central1"
-      subnet_private_access = "true"
-    },
-  ]
+  # Network specs
+  regional           = var.regional
+  zones              = var.zones
+  network            = var.network
+  network_project_id = var.network_project
+  subnetwork         = var.subnetwork
+  ip_range_pods      = var.secondary_pods
+  ip_range_services  = var.secondary_services
+
+  # General cluster config
+  http_load_balancing        = true
+  horizontal_pod_autoscaling = true
+  create_service_account     = false
+  remove_default_node_pool   = true
+
+  # Private cluster config
+  enable_private_nodes   = true
+  master_ipv4_cidr_block = var.master_ipv4_cidr_block
+  network_policy         = var.network_policy
+
+  # Cluster add ons
+  istio            = var.istio
+  cloudrun         = var.cloudrun
+  dns_cache        = var.dns_cache
+  config_connector = var.config_connector
+  kalm_config      = var.kalm_config
+  # resource_usage_export_dataset_id = var.dataset_id
+
+  release_channel   = var.release_channel
+  datapath_provider = var.datapath_provider
+
+  # Node pools config
+  node_pools              = var.node_pools
+  node_pools_oauth_scopes = var.node_pools_oauth_scopes
+  node_pools_labels       = var.node_pools_labels
+  node_pools_metadata     = var.node_pools_metadata
+  node_pools_taints       = var.node_pools_taints
+  node_pools_tags         = var.node_pools_tags
+
+  depends_on = [module.vpc, module.cloud_router]
 }
-
-variable "secondary_ranges" {
-  type        = map(list(object({ range_name = string, ip_cidr_range = string })))
-  description = "Secondary ranges that will be used in some of the subnets"
-  default = {
-    gke-subnet = [
-      {
-        range_name    = "gke-pods-secondary"
-        ip_cidr_range = "240.0.0.0/12"
-      },
-      {
-        range_name    = "gke-services-secondary"
-        ip_cidr_range = "240.16.0.0/20"
-      }
-    ]
-  }
-}
-
-variable "region" {
-    type = string
-    default = "us-central1"
-}
-
-variable "project"{
-    type = string
-    default = "ignite-logistics"
-}
-
-variable "network_name"{
-    type = string
-    default = "network-name-1"
-}
-
-# module "gke" {
-#   source = "terraform-google-modules/kubernetes-engine/google//modules/beta-private-cluster-update-variant"
-
-#   project_id = var.gke_project
-#   name       = var.cluster_name
-
-#   # Network specs
-#   regional           = var.regional
-#   zones              = var.zones
-#   network            = var.network
-#   network_project_id = var.network_project
-#   subnetwork         = var.subnetwork
-#   ip_range_pods      = var.secondary_pods
-#   ip_range_services  = var.secondary_services
-
-#   # General cluster config
-#   http_load_balancing        = true
-#   horizontal_pod_autoscaling = true
-#   create_service_account     = false
-#   remove_default_node_pool   = true
-
-#   # Private cluster config
-#   enable_private_nodes   = true
-#   master_ipv4_cidr_block = var.master_ipv4_cidr_block
-#   network_policy         = var.network_policy
-
-#   # Cluster add ons
-#   istio            = var.istio
-#   cloudrun         = var.cloudrun
-#   dns_cache        = var.dns_cache
-#   config_connector = var.config_connector
-#   kalm_config      = var.kalm_config
-#   # resource_usage_export_dataset_id = var.dataset_id
-
-#   release_channel   = var.release_channel
-#   datapath_provider = var.datapath_provider
-
-#   # Node pools config
-#   node_pools              = var.node_pools
-#   node_pools_oauth_scopes = var.node_pools_oauth_scopes
-#   node_pools_labels       = var.node_pools_labels
-#   node_pools_metadata     = var.node_pools_metadata
-#   node_pools_taints       = var.node_pools_taints
-#   node_pools_tags         = var.node_pools_tags
-
-# }
 
