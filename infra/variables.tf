@@ -16,11 +16,6 @@ variable "secondary_ranges" {
   }
 }
 
-variable "region" {
-    type = string
-    default = "us-central1"
-}
-
 variable "project"{
     type = string
     default = "ignite-logistics"
@@ -32,22 +27,25 @@ variable "network_name"{
 }
 
 variable "gke_project" {
-  description = "GCP GKE Project name"
+  description = "GKE-project-1"
   type        = string
+  default = "gke-project-1"
 }
 
 variable "network_project" {
-  description = "GCP Network Project name"
+  description = "network-project-1"
   type        = string
+  default = "network-project-1"
 }
 
 variable "cluster_name" {
-  description = "GKE Cluster name"
+  description = "cluster-1"
   type        = string
+  default = "cluster-1"
 }
 
 variable "release_channel" {
-  description = "GKE Release Channel"
+  description = "release-1"
   type        = string
   default     = "RAPID"
 }
@@ -121,11 +119,10 @@ variable "subnets" {
 }
 
 
-
-variable "subnet_users" {
-  type        = map(list(string))
-  description = "The list of users for all subnets"
-}
+# variable "subnet_users" {
+#   type        = map(list(string))
+#   description = "The list of users for all subnets"
+# }
 
 variable "secondary_pods" {
   description = "Pods Secondary Name"
@@ -210,6 +207,24 @@ variable "datapath_provider" {
 variable "node_pools" {
   description = "Node pool declaration"
   type        = list(map(string))
+  default = [
+    {
+      name               = "default-node-pool"
+      machine_type       = "e2-small"
+      node_locations     = "us-central1-b"
+      min_count          = 1
+      max_count          = 2
+      local_ssd_count    = 0
+      disk_size_gb       = 10
+      disk_type          = "pd-standard"
+      image_type         = "COS"
+      auto_repair        = true
+      auto_upgrade       = true
+      service_account    = "iac-terraform@ignite-logistics.iam.gserviceaccount.com"
+      preemptible        = true
+      initial_node_count = 1
+    },
+  ]
 }
 
 variable "node_pools_oauth_scopes" {
