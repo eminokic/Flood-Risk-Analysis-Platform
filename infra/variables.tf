@@ -1,4 +1,4 @@
-#variable "gke_project" {
+# variable "gke_project" {
 #   description = "GCP GKE Project name"
 #   type        = string
 # }
@@ -45,17 +45,17 @@
 #   description = "GKE Cluster Zones"
 #   type        = list(any)
 #   default     = ["us-central1-a"]
-#   #   default     = ["us-central1-a", "us-central1-b"]
+#     default     = ["us-central1-a", "us-central1-b"]
 # }
 
-# # data "terraform_remote_state" "vpc" {
-# #   backend = "gcs"
+# data "terraform_remote_state" "vpc" {
+#   backend = "gcs"
 
-# #   config = {
-# #     bucket  = "network-tf-state"
-# #     prefix  = "network"
-# #   }
-# # }
+#   config = {
+#     bucket  = "network-tf-state"
+#     prefix  = "network"
+#   }
+# }
 
 
 
