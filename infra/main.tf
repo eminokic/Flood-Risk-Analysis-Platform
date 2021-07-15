@@ -107,6 +107,6 @@ module "gke" {
   node_pools_taints       = var.node_pools_taints
   node_pools_tags         = var.node_pools_tags
 
-  depends_on = [module.vpc, module.cloud_router]
+  depends_on = [module.vpc]
 }
 
