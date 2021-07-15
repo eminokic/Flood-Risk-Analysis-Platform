@@ -37,7 +37,6 @@ Then push it to your branch!
 
 git push origin --set-upstream branch-name
 
-
 ## Branch, Push, and Pull Request
 
 Upon pushing your first commit to that branch, go on the github website. Then upon loading the github website, go to your forked repo and it'll show you an icon to open a pull request. Open the pull request, name it what feature you would like, and add a good description for those who'd like to work on it with you. Each commit will act as an update to this pull request as well keeping a record of what we need to do and what's been done.
