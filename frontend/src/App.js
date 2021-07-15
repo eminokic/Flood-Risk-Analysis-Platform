@@ -72,9 +72,7 @@ export default function App() {
     >
 
 
-    /**
-     Maps restaurant location data from json to map markers
-    */
+     {/* Maps restaurant location data from json to map markers */}
     {locationdata.results.map(restaurant => (
       <Marker 
       key={restaurant.reference} 
@@ -87,17 +85,18 @@ export default function App() {
       />
     ))}
 
-    // conditonal for if restaurant is selected
-    
+    {/* conditonal for if restaurant is selected */}
     {selectedRest && (
       <InfoWindow
       position = {{lat : (selectedRest.geometry.location.lat + .02), lng : selectedRest.geometry.location.lng}}  
+      
+      // ensure that selected restaurant is reset
       onCloseClick = {() => {
         setSelectedRest(null);
       }}
       >
       
-        <div>IOB LOCATION</div>
+        <div>IOB Location : {selectedRest.vicinity}</div>
 
       </InfoWindow>
     )}
