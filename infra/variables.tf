@@ -202,7 +202,7 @@ variable "node_pools" {
       machine_type       = "e2-small"
       node_locations     = "us-central1-b"
       min_count          = 1
-      max_count          = 2
+      max_count          = 4
       local_ssd_count    = 0
       disk_size_gb       = 10
       disk_type          = "pd-standard"
