@@ -71,7 +71,7 @@ module "gke" {
   # Network specs
   regional           = var.regional
   zones              = var.zones
-  network            = var.network
+  network            = var.network_name
   network_project_id = var.project
   subnetwork         = var.subnetwork
   ip_range_pods      = var.secondary_pods
