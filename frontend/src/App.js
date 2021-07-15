@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { 
   GoogleMap,
   useLoadScript,
@@ -9,10 +9,12 @@ import { formatRelative } from "date-fns";
 import "@reach/combobox/styles.css";
 import './App.css';
 
+import * as locationdata from "./LocationData.json"
+
 /** 
  * You can implement the places api key as follows to avoid redundant rerendering.
  * const libraries = ["places"];
- */
+ */ 
 
 /**
  * Map Container Variable
@@ -56,9 +58,9 @@ export default function App() {
   /**
    * The isLoaded function checks to see if the map has been rendered each time and properly flags the case if not.
    */
-  if(!isLoaded) {
-    return "Rendering Map...";
-  }
+  if(!isLoaded) {return "Rendering Map...";}
+
+  //const [selectedRest, setSelectedRest] = useState(null);
 
   return <div>
     <GoogleMap 
@@ -66,6 +68,24 @@ export default function App() {
     zoom={8} 
     center={center}
     >
+
+
+    /**
+     Maps restaurant location data from json to map markers
+    */
+    {locationdata.results.map(restaurant => (
+      <Marker 
+      key={restaurant.reference} 
+      position = {{lat : restaurant.geometry.location.lat, lng : restaurant.geometry.location.lng}}  
+      
+      /** 
+      onClick = {() => {
+        setSelectedRest(restaurant); 
+      }}
+      */
+      />
+    ))}
+
     </GoogleMap>
     </div>
 }
