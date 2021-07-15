@@ -27,18 +27,6 @@ variable "network_name"{
     default = "network-name-1"
 }
 
-variable "gke_project" {
-  description = "GKE-project-1"
-  type        = string
-  default = "gke-project-1"
-}
-
-variable "network_project" {
-  description = "network-project-1"
-  type        = string
-  default = "network-project-1"
-}
-
 variable "cluster_name" {
   description = "cluster-1"
   type        = string
