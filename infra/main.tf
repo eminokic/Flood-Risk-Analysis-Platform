@@ -65,6 +65,7 @@ module "cloud_router" {
 module "gke" {
   source = "terraform-google-modules/kubernetes-engine/google//modules/beta-private-cluster-update-variant"
 
+
   project_id = var.project
   name       = var.cluster_name
 
@@ -108,5 +109,6 @@ module "gke" {
   node_pools_tags         = var.node_pools_tags
 
   depends_on = [module.vpc]
+
 }
 
