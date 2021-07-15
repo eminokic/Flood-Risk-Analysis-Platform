@@ -65,14 +65,15 @@ module "cloud_router" {
 module "gke" {
   source = "terraform-google-modules/kubernetes-engine/google//modules/beta-private-cluster-update-variant"
 
-  project_id = var.gke_project
+
+  project_id = var.project
   name       = var.cluster_name
 
   # Network specs
   regional           = var.regional
   zones              = var.zones
-  network            = var.network
-  network_project_id = var.network_project
+  network            = var.network_name
+  network_project_id = var.project
   subnetwork         = var.subnetwork
   ip_range_pods      = var.secondary_pods
   ip_range_services  = var.secondary_services
@@ -107,6 +108,7 @@ module "gke" {
   node_pools_taints       = var.node_pools_taints
   node_pools_tags         = var.node_pools_tags
 
-  depends_on = [module.vpc, module.cloud_router]
+  depends_on = [module.vpc]
+
 }
 
