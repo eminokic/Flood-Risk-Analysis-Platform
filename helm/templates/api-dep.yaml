@@ -1,0 +1,111 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.k8s.namespace }}-api-dep
+  namespace: {{ .Values.k8s.namespace }}
+  labels:
+    app: {{ .Values.k8s.namespace }}-api-dep
+spec:
+  replicas: {{ .Values.k8s.api.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.k8s.namespace }}-api-dep
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.k8s.namespace }}-api-dep
+    spec:
+
+      restartPolicy: Always
+      containers:
+      - name: django
+        image: gcr.io/{{ .Values.google.project }}/{{ .Values.k8s.namespace }}-django:{{ .Values.django.tag }}
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: {{ .Values.k8s.api.memory.request }}
+            cpu: {{ .Values.k8s.api.cpu.request }}
+          limits:
+            memory: {{ .Values.k8s.api.memory.limit }}
+            cpu: {{ .Values.k8s.api.cpu.limit }}
+
+        livenessProbe:
+          httpGet:
+            path: /api/
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+
+        readinessProbe:
+          httpGet:
+            path: /api/
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+
+        env:
+        - name: SA_DIR
+          value: /config/service-account.json
+
+        - name: DJANGO_KEY
+          value: "{{ .Values.django.key }}"
+        - name: DJANGO_EMAIL
+          value: {{ .Values.django.email }}
+        - name: DJANGO_EMAIL_PASSWORD
+          value: {{ .Values.django.password }}
+
+        - name: GKE_PROJECT
+          value: {{ .Values.google.project }}
+        - name: DOMAIN
+          value: {{ .Values.google.domain }}
+        - name: OAUTH_ID
+          value: {{ .Values.google.oauth_id }}
+        - name: OAUTH_SECRET
+          value: {{ .Values.google.oauth_secret }}
+        - name: STATIC_BUCKET
+          value: {{ .Values.google.static_bucket }}
+        - name: LIFECYCLE
+          value: {{ .Values.k8s.namespace }}
+        - name: DB_CONN
+          value: {{ .Values.db.conn }}
+
+        {{ if eq .Values.db.conn "proxy" }}
+        - name: DB_NAME
+          value: {{ .Values.db.name }}
+        - name: DB_USER
+          value: {{ .Values.db.user }}
+        - name: DB_PASSWORD
+          value: {{ .Values.db.password }}
+        {{ end }}
+
+        ports:
+        - containerPort: 8000
+          name: django-port
+        volumeMounts:
+        - name: config
+          mountPath: "/config"
+          readOnly: true
+
+      {{ if eq .Values.db.conn "proxy" }}
+      - name: proxy
+        image: {{ .Values.db.cloudsqlproxy }}
+        imagePullPolicy: Always
+        command:
+        - /cloud_sql_proxy
+        - -instances={{ .Values.db.project }}:{{ .Values.google.region }}:{{ .Values.db.instance }}=tcp:127.0.0.1:5432
+        - -credential_file=/config/service-account.json
+        securityContext:
+          runAsNonRoot: true
+        volumeMounts:
+        - name: config
+          mountPath: "/config"
+          readOnly: true
+      {{ end }}
+      
+      volumes:
+      - name: config
+        secret:
+          secretName: creds
+
