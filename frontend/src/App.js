@@ -41,6 +41,8 @@ const center = {
 
 export default function App() {
   
+  const [selectedRest, setSelectedRest] = useState(null);
+
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
@@ -60,7 +62,7 @@ export default function App() {
    */
   if(!isLoaded) {return "Rendering Map...";}
 
-  //const [selectedRest, setSelectedRest] = useState(null);
+
 
   return <div>
     <GoogleMap 
@@ -77,14 +79,28 @@ export default function App() {
       <Marker 
       key={restaurant.reference} 
       position = {{lat : restaurant.geometry.location.lat, lng : restaurant.geometry.location.lng}}  
-      
-      /** 
+       
       onClick = {() => {
         setSelectedRest(restaurant); 
       }}
-      */
+      
       />
     ))}
+
+    // conditonal for if restaurant is selected
+    
+    {selectedRest && (
+      <InfoWindow
+      position = {{lat : (selectedRest.geometry.location.lat + .02), lng : selectedRest.geometry.location.lng}}  
+      onCloseClick = {() => {
+        setSelectedRest(null);
+      }}
+      >
+      
+        <div>IOB LOCATION</div>
+
+      </InfoWindow>
+    )}
 
     </GoogleMap>
     </div>
