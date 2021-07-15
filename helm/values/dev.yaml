@@ -1,0 +1,14 @@
+k8s:
+  namespace: dev
+
+db:
+  conn: local
+  name: dev-db
+  user: dev-user
+
+  project: ignite-logistics-db-prod
+  instance: ignite-logistics-instance-prod
+
+google:
+  domain: dev.ignite-logistics.com
+  static_bucket: ignite-logistics-static-prod

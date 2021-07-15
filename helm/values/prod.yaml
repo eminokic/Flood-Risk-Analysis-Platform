@@ -1,0 +1,14 @@
+k8s:
+  namespace: prod
+
+db:
+  conn: local
+  name: prod-db
+  user: prod-user
+
+  project: ignite-logistics-db-prod
+  instance: ignite-logistics-instance-prod
+
+google:
+  domain: ignite-logistics.com
+  static_bucket: ignite-logistics-static-prod
