@@ -35,7 +35,7 @@ const options = {
   zoomControl: true,
 };
 const center = {
-  lat: 34.0522,
+  lat: 34.002,
   lng: -118.2436, 
 };
 
@@ -67,7 +67,7 @@ export default function App() {
   return <div>
     <GoogleMap 
     mapContainerStyle={mapContainerStyle} 
-    zoom={10} 
+    zoom={10.2} 
     center={center}
     >
 
@@ -96,7 +96,11 @@ export default function App() {
       }}
       >
       
-        <div>IOB Location : {selectedRest.vicinity}</div>
+        <div>
+          IOB Location : {selectedRest.vicinity}
+          <br></br>
+          Risk Rating : {(Math.random() * 100).toFixed(2)}%
+        </div>
 
       </InfoWindow>
     )}
