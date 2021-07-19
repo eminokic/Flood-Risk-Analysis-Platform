@@ -65,13 +65,11 @@ export default function App() {
 
 
   return <div>
-    
     <GoogleMap 
     mapContainerStyle={mapContainerStyle} 
     zoom={10} 
     center={center}
     >
-
 
      {/* Maps restaurant location data from json to map markers */}
     {locationdata.results.map(restaurant => (
