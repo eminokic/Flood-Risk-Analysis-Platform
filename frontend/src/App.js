@@ -22,8 +22,8 @@ import * as locationdata from "./LocationData.json"
  * vh and vw are relative formatting for view height and view width.
  */
 const mapContainerStyle = {
-  width: "100vw",
-  height: "100vh",
+  width: "50vw",
+  height: "50vh",
 };
 
 /**
