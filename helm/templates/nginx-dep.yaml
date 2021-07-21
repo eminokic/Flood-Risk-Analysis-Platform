@@ -23,7 +23,8 @@ spec:
         app: {{ .Values.k8s.namespace }}-nginx-dep
     spec:
       containers:
-      - image: gcr.io/{{ .Values.google.project }}/{{ .Values.k8s.namespace }}-nginx:{{ .Values.nginx.tag }}
+      gcr.io/<YOUR_PROJECT_ID>/<YOUR_CONTAINER_IN_GCR>
+      - image: gcr.io/{{ ignite-logistics }}/{{ react }}-nginx:{{ .Values.nginx.tag }}
         imagePullPolicy: Always
         name: nginx
         resources:
