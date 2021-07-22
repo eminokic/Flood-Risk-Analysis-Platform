@@ -22,8 +22,8 @@ import * as locationdata from "./LocationData.json"
  * vh and vw are relative formatting for view height and view width.
  */
 const mapContainerStyle = {
-  width: "50vw",
-  height: "50vh",
+  width: "25vw",
+  height: "100vh",
 };
 
 /**
@@ -67,10 +67,9 @@ export default function App() {
   return <div>
     <GoogleMap 
     mapContainerStyle={mapContainerStyle} 
-    zoom={10.2} 
+    zoom={10} 
     center={center}
     >
-
 
      {/* Maps restaurant location data from json to map markers */}
     {locationdata.results.map(restaurant => (
