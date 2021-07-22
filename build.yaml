@@ -1,5 +1,5 @@
 steps:
-  - name: "gcr.io/kaniko-project/executor:latest"
+  - name: "gcr.io/ignite-logistics/executor:latest"
     id: Build-Django
     args:
       - --destination=gcr.io/$PROJECT_ID/${_APP_ENV}-django:$COMMIT_SHA
@@ -8,7 +8,7 @@ steps:
       - --cache=true
       - --cache-ttl=240h
 
-  - name: "gcr.io/kaniko-project/executor:latest"
+  - name: "gcr.io/ignite-logistics/executor:latest"
     id: Build-Nginx
     args:
       - --destination=gcr.io/$PROJECT_ID/${_APP_ENV}-nginx:$COMMIT_SHA
