@@ -19,7 +19,7 @@ if [[ $2 != "dev" && $2 != "stage" && $2 != "prod" ]]; then
 fi
 
 CHART_DIR=./helm
-SECRETS_DIR=./secrets/$INFRA_LIFECYCLE
+SECRETS_DIR=./secrets/
 VALUES_FILE="$CHART_DIR/values/$2.yaml"
 CHART_NAME="ignite-logistics-$2"
 
