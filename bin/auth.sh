@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+ZONE="us-central1-a"
+CLUSTER="cluster-1"
 
 source ./bin/check_env.sh
 

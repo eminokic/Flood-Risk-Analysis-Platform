@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+GKE_PROJECT="ignite-logistics"
+LIFECYCLE="dev"
+
 if [[ ! $GKE_PROJECT ]]; then
     echo "Must set GKE_PROJECT in bash env"
     exit 1
