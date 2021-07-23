@@ -1,44 +1,37 @@
 steps:
-  - name: "gcr.io/ignite-logistics/executor:latest"
+  - name: "gcr.io/kaniko-project/executor:latest"
     id: Build-Django
     args:
       - --destination=gcr.io/$PROJECT_ID/${_APP_ENV}-django:$COMMIT_SHA
       - --destination=gcr.io/$PROJECT_ID/${_APP_ENV}-django:latest
-      - --context=./django
+      - --context=./backend
       - --cache=true
       - --cache-ttl=240h
 
-  - name: "gcr.io/ignite-logistics/executor:latest"
+  - name: "gcr.io/kaniko-project/executor:latest"
     id: Build-Nginx
     args:
       - --destination=gcr.io/$PROJECT_ID/${_APP_ENV}-nginx:$COMMIT_SHA
       - --destination=gcr.io/$PROJECT_ID/${_APP_ENV}-nginx:latest
-      - --context=./nginx
+      - --context=./frontend
       - --cache=true
       - --cache-ttl=240h
 
-  # Authenticate with GKE cluster and get secrets from Secret Manager
   - name: "gcr.io/cloud-builders/gcloud-slim"
     id: Gcloud
     entrypoint: "bash"
     args:
       - "-c"
       - |
-        gcloud container clusters get-credentials ${_CLUSTER} --zone=${_ZONE} &&
-        gcloud secrets versions access "latest" --secret ${_APP_ENV}-sql-password --format='get(payload.data)' | tr '_-' '/+' | base64 -d > sql-password.txt &&
-        gcloud secrets versions access "latest" --secret gke-worker --format='get(payload.data)' | tr '_-' '/+' | base64 -d > service-account.txt &&
-        gcloud secrets versions access "latest" --secret django-key --format='get(payload.data)' | tr '_-' '/+' | base64 -d > django-key.txt &&
-        gcloud secrets versions access "latest" --secret email-password --format='get(payload.data)' | tr '_-' '/+' | base64 -d > email-password.txt &&
-        gcloud secrets versions access "latest" --secret oauth-id --format='get(payload.data)' | tr '_-' '/+' | base64 -d > oauth-id.txt &&
-        gcloud secrets versions access "latest" --secret oauth-secret --format='get(payload.data)' | tr '_-' '/+' | base64 -d > oauth-secret.txt
-  # Apply update to Helm chart
+        gcloud container clusters get-credentials cluster-1 --zone=us-central1-a
+
   - name: "gcr.io/$PROJECT_ID/helm"
     id: Helm-Upgrade
     entrypoint: "bash"
     args:
       - "-c"
       - |
-        helm upgrade ignite-logistics-${_APP_ENV} ./helm -f ./helm/values/${_ENV}/${_APP_ENV}.yaml --namespace ${_APP_ENV} --set django.tag=$COMMIT_SHA --set nginx.tag=$COMMIT_SHA --set google.project=$PROJECT_ID --set-file google.oauth_id=oauth-id.txt --set-file google.oauth_secret=oauth-secret.txt --set-file django.key=django-key.txt --set-file django.password=email-password.txt --set-file db.password=sql-password.txt --set-file google.sa=service-account.txt
+        helm upgrade ${_CLUSTER} ./helm -f ./helm/values/${_APP_ENV}.yaml --namespace ${_APP_ENV} --set django.tag=${COMMIT_SHA} --set nginx.tag=${COMMIT_SHA} --set google.project=$PROJECT_ID
     env:
       - "CLOUDSDK_COMPUTE_ZONE=${_ZONE}"
       - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER}"
