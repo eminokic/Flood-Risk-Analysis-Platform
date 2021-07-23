@@ -2,7 +2,7 @@ k8s:
   namespace: dev
 
 db:
-  conn: local
+  conn: proxy
   name: dev-db
   user: dev-user
 
