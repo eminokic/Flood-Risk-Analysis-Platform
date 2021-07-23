@@ -10,5 +10,5 @@ db:
   instance: ignite-logistics-instance-dev
 
 google:
-  domain: dev.ignite-logistics.com
+  domain: dev.logistics.igniteme.dev
   static_bucket: ignite-logistics-static-dev
