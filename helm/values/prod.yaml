@@ -2,7 +2,7 @@ k8s:
   namespace: prod
 
 db:
-  conn: proxy
+  conn: local
   name: prod-db
   user: prod-user
 

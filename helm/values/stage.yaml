@@ -2,7 +2,7 @@ k8s:
   namespace: stage
 
 db:
-  conn: proxy
+  conn: local
   name: stage-db
   user: stage-user
 
