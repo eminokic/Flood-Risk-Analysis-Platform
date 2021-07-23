@@ -31,7 +31,7 @@ steps:
     args:
       - "-c"
       - |
-        helm upgrade ${_CLUSTER} ./helm -f ./helm/values/${_APP_ENV}.yaml --namespace ${_APP_ENV} --set django.tag=${COMMIT_SHA} --set nginx.tag=${COMMIT_SHA} --set google.project=$PROJECT_ID
+        helm upgrade ignite-logistics-${_LIFECYCLE} ./helm -f ./helm/values/${_LIFECYCLE}.yaml --namespace ${_LIFECYCLE} --set django.tag=${COMMIT_SHA} --set nginx.tag=${COMMIT_SHA} --set google.project=$PROJECT_ID
     env:
-      - "CLOUDSDK_COMPUTE_ZONE=${_ZONE}"
-      - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER}"
+      - "CLOUDSDK_COMPUTE_ZONE=us-central1-a"
+      - "CLOUDSDK_CONTAINER_CLUSTER=cluster-1"
