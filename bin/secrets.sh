@@ -15,7 +15,7 @@ fi
 
 
 if [[ $1 == "delete" ]]; then
-    echo "Are you sure you want to delete all $INFRA_LIFECYCLE secrets?"
+    echo "Are you sure you want to delete all secrets?"
     read answer
     
     if [[ $answer != "yes" ]] && [[ $answer != "y" ]]; then
@@ -23,37 +23,37 @@ if [[ $1 == "delete" ]]; then
     fi
 fi
 
-SECRETS_DIR="./secrets/$INFRA_LIFECYCLE"
+SECRETS_DIR="./secrets/"
 
 if [[ ! -d $SECRETS_DIR ]]; then
     mkdir -p $SECRETS_DIR/
     
     touch $SECRETS_DIR/django-key.txt
-    echo "$LIFECYCLE-fake-django-key" > $SECRETS_DIR/django-key.txt
+    echo "fake-django-key" > $SECRETS_DIR/django-key.txt
     
     touch $SECRETS_DIR/email-password.txt
-    echo "$LIFECYCLE-fake-email-password" > $SECRETS_DIR/email-password.txt
+    echo "fake-email-password" > $SECRETS_DIR/email-password.txt
     
     touch $SECRETS_DIR/dev-sql-password.txt
-    echo "$LIFECYCLE-fake-dev-sql-password" > $SECRETS_DIR/dev-sql-password.txt
+    echo "fake-dev-sql-password" > $SECRETS_DIR/dev-sql-password.txt
     
     touch $SECRETS_DIR/stage-sql-password.txt
-    echo "$LIFECYCLE-fake-stage-sql-password" > $SECRETS_DIR/stage-sql-password.txt
+    echo "fake-stage-sql-password" > $SECRETS_DIR/stage-sql-password.txt
     
     touch $SECRETS_DIR/prod-sql-password.txt
-    echo "$LIFECYCLE-fake-prod-sql-password" > $SECRETS_DIR/prod-sql-password.txt
+    echo "fake-prod-sql-password" > $SECRETS_DIR/prod-sql-password.txt
     
     touch $SECRETS_DIR/master-sql-password.txt
-    echo "$LIFECYCLE-fake-master-sql-password" > $SECRETS_DIR/master-sql-password.txt
+    echo "fake-master-sql-password" > $SECRETS_DIR/master-sql-password.txt
     
     touch $SECRETS_DIR/gke-worker.json
-    echo "$LIFECYCLE-fake-gke-worker" > $SECRETS_DIR/gke-worker.json
+    echo "fake-gke-worker" > $SECRETS_DIR/gke-worker.json
     
     touch $SECRETS_DIR/oauth-id.txt
-    echo "$LIFECYCLE-fake-oauth-id" > $SECRETS_DIR/oauth-id.txt
+    echo "fake-oauth-id" > $SECRETS_DIR/oauth-id.txt
     
     touch $SECRETS_DIR/oauth-secret.txt
-    echo "$LIFECYCLE-fake-oauth-secret" > $SECRETS_DIR/oauth-secret.txt
+    echo "fake-oauth-secret" > $SECRETS_DIR/oauth-secret.txt
 fi
 
 for FILE in `ls $SECRETS_DIR`; do

@@ -20,7 +20,7 @@ fi
 
 CHART_DIR=./helm
 SECRETS_DIR=./secrets/$INFRA_LIFECYCLE
-VALUES_FILE="$CHART_DIR/values/$INFRA_LIFECYCLE/$2.yaml"
+VALUES_FILE="$CHART_DIR/values/$2.yaml"
 CHART_NAME="ignite-logistics-$2"
 
 if [[ $1 == "install" ]]; then
