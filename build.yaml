@@ -1,5 +1,5 @@
 steps:
-  - name: "gcr.io/ignite-logistics/executor:latest"
+  - name: "gcr.io/kaniko-project/executor:latest"
     id: Build-Django
     args:
       - --destination=gcr.io/$PROJECT_ID/${_APP_ENV}-django:$COMMIT_SHA
@@ -8,7 +8,7 @@ steps:
       - --cache=true
       - --cache-ttl=240h
 
-  - name: "gcr.io/ignite-logistics/executor:latest"
+  - name: "gcr.io/kaniko-project/executor:latest"
     id: Build-Nginx
     args:
       - --destination=gcr.io/$PROJECT_ID/${_APP_ENV}-nginx:$COMMIT_SHA
@@ -31,6 +31,7 @@ steps:
         gcloud secrets versions access "latest" --secret email-password --format='get(payload.data)' | tr '_-' '/+' | base64 -d > email-password.txt &&
         gcloud secrets versions access "latest" --secret oauth-id --format='get(payload.data)' | tr '_-' '/+' | base64 -d > oauth-id.txt &&
         gcloud secrets versions access "latest" --secret oauth-secret --format='get(payload.data)' | tr '_-' '/+' | base64 -d > oauth-secret.txt
+
   # Apply update to Helm chart
   - name: "gcr.io/$PROJECT_ID/helm"
     id: Helm-Upgrade
@@ -38,7 +39,7 @@ steps:
     args:
       - "-c"
       - |
-        helm upgrade ignite-logistics-${_APP_ENV} ./helm -f ./helm/values/${_ENV}/${_APP_ENV}.yaml --namespace ${_APP_ENV} --set django.tag=$COMMIT_SHA --set nginx.tag=$COMMIT_SHA --set google.project=$PROJECT_ID --set-file google.oauth_id=oauth-id.txt --set-file google.oauth_secret=oauth-secret.txt --set-file django.key=django-key.txt --set-file django.password=email-password.txt --set-file db.password=sql-password.txt --set-file google.sa=service-account.txt
+        helm upgrade walkerignite-${_APP_ENV} ./helm -f ./helm/values/${_ENV}/${_APP_ENV}.yaml --namespace ${_APP_ENV} --set django.tag=$COMMIT_SHA --set nginx.tag=$COMMIT_SHA --set google.project=$PROJECT_ID --set-file google.oauth_id=oauth-id.txt --set-file google.oauth_secret=oauth-secret.txt --set-file django.key=django-key.txt --set-file django.password=email-password.txt --set-file db.password=sql-password.txt --set-file google.sa=service-account.txt
     env:
       - "CLOUDSDK_COMPUTE_ZONE=${_ZONE}"
       - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER}"
