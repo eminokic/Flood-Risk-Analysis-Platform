@@ -12,8 +12,8 @@ if [[ $1 != "create" && $1 != "delete" && $1 != "reset" ]]; then
 fi
 
 BUILD_CONFIG="build.yaml"
-REPO="walkerignite-app"
-REPO_OWNER="MavenWave-DevOps"
+REPO="ignite-sci-project"
+REPO_OWNER="eminokic"
 
 create_triggers () {
     
