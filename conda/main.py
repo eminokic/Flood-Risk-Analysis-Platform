@@ -1,3 +1,3 @@
 import flask
 
-print("It worked!")
+print("Hello mini conda environment!")
