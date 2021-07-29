@@ -7,7 +7,7 @@ RUN conda env create -f environment.yml
 
 RUN conda activate myenv
 RUN echo "Make sure flask is installed:"
-# RUN python -c "import flask"
+RUN python -c "import flask"
 
 COPY main.py .
 ENTRYPOINT ["python", "main.py"]
