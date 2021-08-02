@@ -9,7 +9,7 @@ import { formatRelative } from "date-fns";
 import "@reach/combobox/styles.css";
 import '../css/App.css';
 
-import * as locationdata from "../LocationData.json"
+import * as locationdata from "../data/LocationData.json"
 
 /** 
  * You can implement the places api key as follows to avoid redundant rerendering.
