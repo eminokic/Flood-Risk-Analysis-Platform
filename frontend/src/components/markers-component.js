@@ -1,7 +1,7 @@
 import React from "react";
 import "@reach/combobox/styles.css";
 
-  export default class Vinny extends React.Component {
+  export default class Markers extends React.Component {
     render() {
         return <div
         style={{
