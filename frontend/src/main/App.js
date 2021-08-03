@@ -5,11 +5,17 @@ import {
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
-import { formatRelative } from "date-fns";
-import "@reach/combobox/styles.css";
-import './App.css';
 
-import * as locationdata from "./LocationData.json"
+import "@reach/combobox/styles.css";
+import '../css/App.css';
+
+import * as locationdata from "../data/LocationData.json"
+
+import Okic from "../components/okic-component.js"
+import Amar from "../components/amar-component.js"
+import Vinny from "../components/vinny-component.js"
+import Derek from "../components/derek-component.js"
+import Michael from "../components/michael-component.js"
 
 /** 
  * You can implement the places api key as follows to avoid redundant rerendering.
@@ -22,7 +28,7 @@ import * as locationdata from "./LocationData.json"
  * vh and vw are relative formatting for view height and view width.
  */
 const mapContainerStyle = {
-  width: "50vw",
+  width: "100vw",
   height: "50vh",
 };
 
@@ -106,5 +112,11 @@ export default function App() {
     )}
 
     </GoogleMap>
+
+    <Okic></Okic>
+    <Vinny></Vinny>
+    <Derek></Derek>
+    <Amar></Amar>
+    <Michael></Michael>
     </div>
 }
