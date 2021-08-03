@@ -1,35 +1,18 @@
 import React from "react";
 import {GoogleMap} from "@react-google-maps/api";
 import "@reach/combobox/styles.css";
+import Polygon from 'react-polygon'
 
+export default class Okic extends React.Component {
+  polygonCenter (point) {
+    return (
+      <circle cx={point[0]} cy={point[1]} r={5} />
+    )
+  }
 
- const mapContainerStyle = {
-    width: "25vw",
-    height: "25vh",
-    flexDirection: "row",
-  };
-  
-  const options = {
-    disableDefaultUI: true,
-    zoomControl: true,
-  };
-
-  const center = {
-    lat: 34.002,
-    lng: -118.2436, 
-  };
-
-
-  export default class Okic extends React.Component {
-    render() {
-        return <div>
-        <GoogleMap 
-        mapContainerStyle={mapContainerStyle} 
-        zoom={10.2} 
-        center={center}
-        >
-        </GoogleMap>
-        </div>
-    }
-  
+  render () {
+    return (
+      <Polygon renderPoint={this.polygonCenter} />
+    )
+  }
 }
