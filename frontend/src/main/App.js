@@ -11,7 +11,7 @@ import '../css/App.css';
 
 import * as locationdata from "../data/LocationData.json"
 
-import Map from '../javascript/map.js'
+import Map from '../components/map.js'
 
 /** 
  * You can implement the places api key as follows to avoid redundant rerendering.
