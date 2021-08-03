@@ -4,8 +4,9 @@ import "@reach/combobox/styles.css";
 
 
  const mapContainerStyle = {
-    width: "50vw",
-    height: "50vh",
+    width: "25vw",
+    height: "25vh",
+    flexDirection: "row",
   };
   
   const options = {
