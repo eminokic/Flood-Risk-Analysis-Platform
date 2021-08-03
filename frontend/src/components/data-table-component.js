@@ -4,6 +4,7 @@ import "@reach/combobox/styles.css";
 import { useTable } from "react-table";
 import mock_data from "./mock_data.json"
 import { columns } from "./columns"
+import "./table.css"
 
 export const DataTable = () => {
 
@@ -24,16 +25,35 @@ export const DataTable = () => {
   } = tableInstance
 
   return (
-    <table>
+    <table {...getTableProps()}>
       <thead>
-        <tr>
-          <th></th>
-        </tr>
+        {
+          headerGroups.map((headerGroup) => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {
+                headerGroup.headers.map(column => (
+                  <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                ))
+              }
+            </tr>
+          ))
+        }
       </thead>
-      <tbody>
-        <tr>
-          <td></td>
-        </tr>
+      <tbody {...getTableBodyProps()}>
+        {
+          rows.map(rows => {
+            prepareRow(row)
+            return (
+              <tr {...row.getRowProps()}>
+                {
+                  row.cells.map((cell) => {
+                    return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                  })
+                }
+              </tr>
+            )
+          })
+        }
       </tbody>
     </table>
   )

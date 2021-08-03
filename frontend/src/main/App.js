@@ -15,7 +15,7 @@ import Okic from "../components/okic-component.js"
 import Vinny from "../components/vinny-component.js"
 import Derek from "../components/derek-component.js"
 import Michael from "../components/michael-component.js"
-import DataTable from "../components/data-table-component";
+import {DataTable} from "../components/data-table-component";
 
 /** 
  * You can implement the places api key as follows to avoid redundant rerendering.
