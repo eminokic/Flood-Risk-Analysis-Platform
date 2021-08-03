@@ -3,7 +3,7 @@ import React, { useMemo } from "react";
 import "@reach/combobox/styles.css";
 import { useTable } from "react-table";
 import mock_data from "./mock_data.json"
-import { columns } from "./columns"
+import { COLUMNS } from "./columns"
 import "./table.css"
 
 export const DataTable = () => {
@@ -41,7 +41,7 @@ export const DataTable = () => {
       </thead>
       <tbody {...getTableBodyProps()}>
         {
-          rows.map(rows => {
+          rows.map((row) => {
             prepareRow(row)
             return (
               <tr {...row.getRowProps()}>
