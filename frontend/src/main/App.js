@@ -12,10 +12,10 @@ import '../css/App.css';
 import * as locationdata from "../data/LocationData.json"
 
 import Okic from "../components/okic-component.js"
-import Amar from "../components/amar-component.js"
 import Vinny from "../components/vinny-component.js"
 import Derek from "../components/derek-component.js"
 import Michael from "../components/michael-component.js"
+import DataTable from "../components/data-table-component";
 
 /** 
  * You can implement the places api key as follows to avoid redundant rerendering.
@@ -116,7 +116,7 @@ export default function App() {
     <Okic></Okic>
     <Vinny></Vinny>
     <Derek></Derek>
-    <Amar></Amar>
+    <DataTable></DataTable>
     <Michael></Michael>
     </div>
 }
