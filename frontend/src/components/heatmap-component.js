@@ -1,43 +1,22 @@
 import React from "react";
 import "@reach/combobox/styles.css";
-import Polygon from 'react-polygon'
+import { 
+  Polyline,
+} from "@react-google-maps/api";
+
+const hundredYearCoordinates = [
+  { lat: 34.772, lng: -118.214 },
+  { lat: 34.891, lng: -118.321 },
+  { lat: 34.942, lng: -118.431 },
+  { lat: 35.267, lng: -119.027 },
+  { lat: 120.5, lng: -119.250   },
+];
 
 export default class Heatmap extends React.Component {
-  polygonCenter (point) {
-    return (
-      <circle cx={point[0]} cy={point[1]} r={5} />
-    )
-  }
 
   render () {
     return (
-      <Polygon renderPoint={this.polygonCenter} />
+      <Polyline path={hundredYearCoordinates}></Polyline>
     )
   }
-}
-
-// This example creates a simple polygon representing the Bermuda Triangle.
-function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 5,
-    center: { lat: 24.886, lng: -70.268 },
-    mapTypeId: "terrain",
-  });
-  // Define the LatLng coordinates for the polygon's path.
-  const triangleCoords = [
-    { lat: 25.774, lng: -80.19 },
-    { lat: 18.466, lng: -66.118 },
-    { lat: 32.321, lng: -64.757 },
-    { lat: 25.774, lng: -80.19 },
-  ];
-  // Construct the polygon.
-  const bermudaTriangle = new google.maps.Polygon({
-    paths: triangleCoords,
-    strokeColor: "#FF0000",
-    strokeOpacity: 0.8,
-    strokeWeight: 2,
-    fillColor: "#FF0000",
-    fillOpacity: 0.35,
-  });
-  bermudaTriangle.setMap(map);
 }

@@ -11,16 +11,11 @@ import '../css/App.css';
 
 import * as locationdata from "../data/LocationData.json"
 
-import Okic from "../components/okic-component.js"
+import Heatmap from "../components/heatmap-component.js"
 import Amar from "../components/amar-component.js"
 import Vinny from "../components/vinny-component.js"
 import Derek from "../components/derek-component.js"
 import Michael from "../components/michael-component.js"
-
-/** 
- * You can implement the places api key as follows to avoid redundant rerendering.
- * const libraries = ["places"];
- */ 
 
 /**
  * Map Container Variable
@@ -68,14 +63,14 @@ export default function App() {
    */
   if(!isLoaded) {return "Rendering Map...";}
 
-
-
   return <div>
     <GoogleMap 
     mapContainerStyle={mapContainerStyle} 
     zoom={10.2} 
     center={center}
     >
+
+      <Heatmap></Heatmap>
 
 
      {/* Maps restaurant location data from json to map markers */}
@@ -113,7 +108,8 @@ export default function App() {
 
     </GoogleMap>
 
-    <Okic></Okic>
+    <Heatmap></Heatmap>
+    
     <Vinny></Vinny>
     <Derek></Derek>
     <Amar></Amar>
