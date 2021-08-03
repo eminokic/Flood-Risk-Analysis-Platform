@@ -20,7 +20,7 @@ import "@reach/combobox/styles.css";
   };
 
 
-  export default class Map extends React.Component {
+  export default class Okic extends React.Component {
     render() {
         return <div>
         <GoogleMap 
