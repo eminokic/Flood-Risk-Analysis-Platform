@@ -1,17 +1,40 @@
 //Amar table UI
-import React from "react";
+import React, { useMemo } from "react";
 import "@reach/combobox/styles.css";
+import { useTable } from "react-table";
+import mock_data from "./mock_data.json"
+import { columns } from "./columns"
 
-  export default class DataTable extends React.Component {
-    render() {
-        return <div
-        style={{
-            backgroundColor: 'green',
-            width: '25vw',
-            height: '25vh',
-            border: '1px solid rgba(1, 1, 1, 1)',
-          }}>
-        </div>
-    }
-  
+export const DataTable = () => {
+
+  const columns = useMemo(() => COLUMNS, []) //memoize so it doesnt have to 
+  const data = useMemo(() => mock_data, []) //recalculate every time
+
+  const tableInstance = useTable({
+    columns,
+    data
+  })
+
+  const {
+    getTableProps, 
+    getTableBodyProps, 
+    headerGroups, 
+    rows, 
+    prepareRow
+  } = tableInstance
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  )
 }
