@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+.top {
+  background-color: #ececec;
+  width: 25vh;
+  float: left;
+}
+
+.Logo {
+  width: 25vh;
+}
+
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after{
+  clear: both;
+}
+.group{
+  zoom: 1;
+}

@@ -15,7 +15,7 @@ table {
   }
   
   table td, table th {
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     padding: 8px;
   }
   
@@ -27,7 +27,7 @@ table {
     font-weight: bold;
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: center;
+    text-align: left;
     background-color: #262262;
     color: white;
   }

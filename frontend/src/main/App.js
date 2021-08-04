@@ -16,6 +16,7 @@ import Vinny from "../components/vinny-component.js"
 import Derek from "../components/derek-component.js"
 import Michael from "../components/michael-component.js"
 import {DataTable} from "../components/data-table-component";
+import logo from '../components/images/Salient-Insure.jpg';
 
 /** 
  * You can implement the places api key as follows to avoid redundant rerendering.
@@ -71,6 +72,14 @@ export default function App() {
 
 
   return <div>
+    <div class = "group">
+    <div id = "top" class = "top">
+      <img src = {logo} class = "Logo"/>
+    </div>
+    <div>
+      <h1>Menu</h1>
+    </div>
+    </div>
     <GoogleMap 
     mapContainerStyle={mapContainerStyle} 
     zoom={10.2} 
