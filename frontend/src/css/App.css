@@ -1,3 +1,15 @@
+@font-face {
+  font-family: myFont;
+  src: url(../components/fonts/PROXIMANOVA-REGULAR.OTF);
+}
+@font-face {
+  font-family: myFont;
+  src: url(../components/fonts/PROXIMANOVA-EXTRABLD.OTF);
+  font-weight: bold;
+}
+
+
+
 .App {
   text-align: center;
 }
@@ -39,10 +51,18 @@
 
 .top {
   background-color: #ececec;
+  font: myFont;
   width: 25vh;
   float: left;
 }
-
+.head{
+  background-color: #ececec;
+}
+.title{
+  font: myFont;
+  color: #262262;
+  text-align: center;
+}
 .Logo {
   width: 25vh;
 }

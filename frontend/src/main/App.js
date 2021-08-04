@@ -72,12 +72,12 @@ export default function App() {
 
 
   return <div>
-    <div class = "group">
+    <div id = "head" class = "head group">
     <div id = "top" class = "top">
       <img src = {logo} class = "Logo"/>
     </div>
-    <div>
-      <h1>Menu</h1>
+    <div id= "title" class ="title">
+      <h1>Flood Risk Analysis</h1>
     </div>
     </div>
     <GoogleMap 
@@ -121,11 +121,11 @@ export default function App() {
     )}
 
     </GoogleMap>
-
+    
+    <DataTable></DataTable>
     <Okic></Okic>
     <Vinny></Vinny>
     <Derek></Derek>
-    <DataTable></DataTable>
     <Michael></Michael>
     </div>
 }
