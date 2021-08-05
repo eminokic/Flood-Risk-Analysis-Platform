@@ -23,8 +23,8 @@ import icon from "./images/icon.png";
  * vh and vw are relative formatting for view height and view width.
  */
  const mapContainerStyle = {
-  width: "100vw",
-  height: "50vh",
+  width: "100%",
+  height: "80vh",
 };
 
 /**

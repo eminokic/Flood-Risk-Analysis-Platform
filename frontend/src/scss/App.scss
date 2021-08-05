@@ -171,6 +171,57 @@ $aboutmeHeight: 100vh;
   }
   //end of first section
 
+  //map and analytics section
+  .display{
+    width: 60%;
+    height: $displayHeight;
+    background-color: $grayColor;
+    float:left;
+    text-align: center;
+    h1{
+      font-size: 300%;
+      text-decoration: underline;
+      color: $whiteColor;
+      margin-top: 30px;
+    }
+    h2{
+      font-size: 250%;
+      text-decoration: underline;
+      color: $whiteColor;
+      margin-top: 30px;
+    }
+  }
+  .content{
+    width: 26%;
+    height: $displayHeight;
+    background-color: $grayColor;
+    float:left;
+    text-align: center;
+    color: $whiteColor;
+    h1{
+      font-size: 200%;
+      margin-top: 30px;
+    }
+    .skills{
+      margin-top: 100px;
+    }
+    p{
+      font-size: 100%;
+      margin: 30px 10px 0px 10px;
+    }
+    h2{
+      font-size: 100%;
+      margin-top: 30px;
+      a{
+        text-decoration: none;
+        color: $grayColor;
+        border-radius: 15px;
+        background-color: $yellowColor;
+        padding: 10px 20px;
+      }
+    }
+  }
+  // end of software and hardware
 
   .group:before,
   .group:after {
