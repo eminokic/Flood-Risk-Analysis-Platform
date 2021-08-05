@@ -12,7 +12,6 @@ import '../css/App.css';
 import * as locationdata from "../data/LocationData.json"
 
 import Okic from "../components/okic-component.js"
-import Amar from "../components/amar-component.js"
 import Markers from "../components/markers-component.js"
 import Derek from "../components/derek-component.js"
 import Michael from "../components/michael-component.js"
@@ -74,7 +73,6 @@ export default function App() {
 
   return <div>
 
-    <Markers></Markers>
     <div id = "head" class = "head group">
     <div id = "top" class = "top">
       <img src = {logo} class = "Logo"/>
@@ -84,7 +82,7 @@ export default function App() {
     </div>
     </div>
     
-    
+    <Markers></Markers>
     <DataTable></DataTable>
     <Okic></Okic>
     <Derek></Derek>
