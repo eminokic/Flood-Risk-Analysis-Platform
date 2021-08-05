@@ -36,8 +36,8 @@ import Heatmap from "./heatmap-component.js";
   zoomControl: true,
 };
 const center = {
-  lat: 34.100,
-  lng: -118.2436, 
+  lat: 34.128,
+  lng: -118.2456, 
 };
 
 export default function Markers(props) {
@@ -67,7 +67,7 @@ export default function Markers(props) {
 
     <GoogleMap  
       mapContainerStyle={mapContainerStyle} 
-      zoom={9.3} 
+      zoom={9.2} 
       center={center}
     >
       <Heatmap></Heatmap>
