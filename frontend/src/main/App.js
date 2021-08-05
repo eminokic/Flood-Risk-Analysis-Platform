@@ -8,7 +8,7 @@ import '../css/App.css';
 
 import Markers from "../components/markers-component.js";
 import DataTable from "../components/data-table-component.js";
-import SalientHeader from '../components/header.js';
+import HomePage from '../components/header.js';
 
 export default function App() {
 
@@ -29,7 +29,11 @@ export default function App() {
   if(!isLoaded) {return "Rendering Map...";}
 
   return <div>
-    <SalientHeader></SalientHeader>
+    <head>
+      <title>Salient Insurance</title>
+      <link rel="shortcut icon" type="image/png" href= "./components/images/icon.png" />
+    </head>
+    <HomePage></HomePage>
     <Markers></Markers>
     <DataTable></DataTable>
     </div>
