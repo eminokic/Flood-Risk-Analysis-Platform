@@ -88,7 +88,7 @@ export default function Markers(props) {
       {/* conditonal for if restaurant is selected */}
       {selectedRest && (
         <InfoWindow
-        position = {{lat : (selectedRest.geometry.location.lat + .02), lng : selectedRest.geometry.location.lng}}  
+        position = {{lat : (selectedRest.Lat + .02), lng : selectedRest.Long}}  
         
         // ensure that selected restaurant is reset
         onCloseClick = {() => {
@@ -97,7 +97,7 @@ export default function Markers(props) {
         >
         
           <div>
-            IOB Location : {selectedRest.vicinity}
+            IOB Location : {selectedRest.Address}
             <br></br>
             Risk Rating : {(Math.random() * 100).toFixed(2)}%
           </div>
