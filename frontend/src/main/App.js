@@ -11,16 +11,12 @@ import '../css/App.css';
 
 import * as locationdata from "../data/LocationData.json"
 
+import Heatmap from "../components/heatmap-component.js"
 import Okic from "../components/okic-component.js"
 import Markers from "../components/markers-component.js"
 import Derek from "../components/derek-component.js"
 import {DataTable} from "../components/data-table-component";
 import logo from '../components/images/Salient-Insure.jpg';
-
-/** 
- * You can implement the places api key as follows to avoid redundant rerendering.
- * const libraries = ["places"];
- */ 
 
 /**
  * Map Container Variable
@@ -68,10 +64,7 @@ export default function App() {
    */
   if(!isLoaded) {return "Rendering Map...";}
 
-
-
   return <div>
-
     <div id = "head" class = "head group">
     <div id = "top" class = "top">
       <img src = {logo} class = "Logo"/>

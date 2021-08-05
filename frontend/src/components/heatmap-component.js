@@ -1,0 +1,31 @@
+import React from "react";
+import "@reach/combobox/styles.css";
+import { 
+  Polyline,
+} from "@react-google-maps/api";
+
+const hundredYearCoordinates = [
+  { lat: 34.07602375980253, lng: -118.3553268671356 },
+  { lat: 34.07587087771391, lng: -118.3555652499133 },
+  { lat: 34.07565108442323, lng: -118.3558227735598 },
+  { lat: 34.0711323832166, lng: -118.3581492701477 },
+  { lat: 34.06999513765904, lng: -118.3590442876357 },
+  { lat: 34.07091196254764, lng: -118.3591995232774 },
+  { lat: 34.07136872667443, lng: -118.3609326885369},
+  { lat: 34.06971768981387, lng: -118.3614782498069},
+  { lat: 4.0711686229825, lng: -118.3616721575232},
+  { lat: -118.3650204325944, lng: 34.06971180656128},
+  { lat: 34.07426337532324, lng: -118.362725077419},
+  { lat: 34.07823188842898, lng: -118.3542581792083},
+  { lat: 34.07788800103827, lng: -118.3536404521613},
+  { lat: 34.07571815139021, lng: -118.3580823593382},
+  { lat: 34.07571815139021, lng: -118.3573226545549},
+];
+
+export default class Heatmap extends React.Component {
+  render() {
+    return <div>
+    <Polyline path={hundredYearCoordinates}></Polyline>,
+    </div>
+}
+}
