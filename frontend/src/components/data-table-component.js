@@ -6,7 +6,13 @@ import mock_data from "./mock_data.json"
 import { COLUMNS } from "./columns"
 import "./table.css"
 
-export const DataTable = () => {
+export default function DataTable() {
+  return <div>
+    <DataTableMain></DataTableMain>
+    </div>
+}
+
+const DataTableMain= () => {
 
   const columns = useMemo(() => COLUMNS, []) //memoize so it doesnt have to 
   const data = useMemo(() => mock_data, []) //recalculate every time
