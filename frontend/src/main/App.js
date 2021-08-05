@@ -12,10 +12,11 @@ import '../css/App.css';
 import * as locationdata from "../data/LocationData.json"
 
 import Heatmap from "../components/heatmap-component.js"
-import Amar from "../components/amar-component.js"
-import Vinny from "../components/vinny-component.js"
+import Okic from "../components/okic-component.js"
+import Markers from "../components/markers-component.js"
 import Derek from "../components/derek-component.js"
-import Michael from "../components/michael-component.js"
+import {DataTable} from "../components/data-table-component";
+import logo from '../components/images/Salient-Insure.jpg';
 
 /**
  * Map Container Variable
@@ -64,55 +65,18 @@ export default function App() {
   if(!isLoaded) {return "Rendering Map...";}
 
   return <div>
-    <GoogleMap 
-    mapContainerStyle={mapContainerStyle} 
-    zoom={10.2} 
-    center={center}
-    >
-
-      <Heatmap></Heatmap>
-
-
-     {/* Maps restaurant location data from json to map markers */}
-    {locationdata.results.map(restaurant => (
-      <Marker 
-      key={restaurant.reference} 
-      position = {{lat : restaurant.geometry.location.lat, lng : restaurant.geometry.location.lng}}  
-       
-      onClick = {() => {
-        setSelectedRest(restaurant); 
-      }}
-      
-      />
-    ))}
-
-    {/* conditonal for if restaurant is selected */}
-    {selectedRest && (
-      <InfoWindow
-      position = {{lat : (selectedRest.geometry.location.lat + .02), lng : selectedRest.geometry.location.lng}}  
-      
-      // ensure that selected restaurant is reset
-      onCloseClick = {() => {
-        setSelectedRest(null);
-      }}
-      >
-      
-        <div>
-          IOB Location : {selectedRest.vicinity}
-          <br></br>
-          Risk Rating : {(Math.random() * 100).toFixed(2)}%
-        </div>
-
-      </InfoWindow>
-    )}
-
-    </GoogleMap>
-
-    <Heatmap></Heatmap>
+    <div id = "head" class = "head group">
+    <div id = "top" class = "top">
+      <img src = {logo} class = "Logo"/>
+    </div>
+    <div id= "title" class ="title">
+      <h1>Flood Risk Analysis</h1>
+    </div>
+    </div>
     
-    <Vinny></Vinny>
+    <Markers></Markers>
+    <DataTable></DataTable>
+    <Okic></Okic>
     <Derek></Derek>
-    <Amar></Amar>
-    <Michael></Michael>
     </div>
 }
