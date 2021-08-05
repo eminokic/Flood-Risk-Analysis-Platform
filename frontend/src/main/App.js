@@ -16,6 +16,8 @@ import Amar from "../components/amar-component.js"
 import Markers from "../components/markers-component.js"
 import Derek from "../components/derek-component.js"
 import Michael from "../components/michael-component.js"
+import {DataTable} from "../components/data-table-component";
+import logo from '../components/images/Salient-Insure.jpg';
 
 /** 
  * You can implement the places api key as follows to avoid redundant rerendering.
@@ -71,10 +73,21 @@ export default function App() {
 
 
   return <div>
+
     <Markers></Markers>
+    <div id = "head" class = "head group">
+    <div id = "top" class = "top">
+      <img src = {logo} class = "Logo"/>
+    </div>
+    <div id= "title" class ="title">
+      <h1>Flood Risk Analysis</h1>
+    </div>
+    </div>
+    
+    
+    <DataTable></DataTable>
     <Okic></Okic>
     <Derek></Derek>
-    <Amar></Amar>
     <Michael></Michael>
     </div>
 }
