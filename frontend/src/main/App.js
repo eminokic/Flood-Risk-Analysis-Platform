@@ -14,7 +14,6 @@ import * as locationdata from "../data/LocationData.json"
 import Okic from "../components/okic-component.js"
 import Markers from "../components/markers-component.js"
 import Derek from "../components/derek-component.js"
-import Michael from "../components/michael-component.js"
 import {DataTable} from "../components/data-table-component";
 import logo from '../components/images/Salient-Insure.jpg';
 
@@ -86,6 +85,5 @@ export default function App() {
     <DataTable></DataTable>
     <Okic></Okic>
     <Derek></Derek>
-    <Michael></Michael>
     </div>
 }
