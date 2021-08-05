@@ -7,7 +7,7 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 
-import * as locationdata from "../data/LocationData.json"
+import * as locationdata from "../data/newlocationdata.json"
 
 import Heatmap from "./heatmap-component.js";
 
@@ -36,7 +36,7 @@ import Heatmap from "./heatmap-component.js";
   zoomControl: true,
 };
 const center = {
-  lat: 34.002,
+  lat: 34.100,
   lng: -118.2436, 
 };
 
@@ -67,7 +67,7 @@ export default function Markers(props) {
 
     <GoogleMap  
       mapContainerStyle={mapContainerStyle} 
-      zoom={10.2} 
+      zoom={9.3} 
       center={center}
     >
       <Heatmap></Heatmap>
@@ -75,8 +75,8 @@ export default function Markers(props) {
       {/* Maps restaurant location data from json to map markers */}
       {locationdata.results.map(restaurant => (
         <Marker 
-        key={restaurant.reference} 
-        position = {{lat : restaurant.geometry.location.lat, lng : restaurant.geometry.location.lng}}  
+        key={restaurant.ID} 
+        position = {{lat : restaurant.Lat, lng : restaurant.Long}}  
         
         onClick = {() => {
           setSelectedRest(restaurant); 
