@@ -23,7 +23,13 @@ const hundredYearCoordinates = [
 export default class Heatmap extends React.Component {
   render() {
     return <div>
-    <Polygon paths={hundredYearCoordinates} fillColor={"#FF0000"}></Polygon>,
+    <Polygon paths={hundredYearCoordinates}
+             options={{
+               strokecolor:"#d34052",
+               fillcolor:"#d34052",
+               strokeopacity:"0.5",
+               strokeweight:'2'}}>
+                 </Polygon>,
     </div>
     }
 }
