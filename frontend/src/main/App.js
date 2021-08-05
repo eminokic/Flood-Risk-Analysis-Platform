@@ -9,6 +9,7 @@ import '../css/App.css';
 import Markers from "../components/markers-component.js";
 import DataTable from "../components/data-table-component.js";
 import HomePage from '../components/header.js';
+import SecondPage from '../components/map-section.js';
 
 export default function App() {
 
@@ -34,7 +35,7 @@ export default function App() {
       <link rel="shortcut icon" type="image/png" href= "./components/images/icon.png" />
     </head>
     <HomePage></HomePage>
-    
+    <SecondPage></SecondPage>
     <Markers></Markers>
     <DataTable></DataTable>
     </div>

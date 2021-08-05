@@ -13,8 +13,8 @@ export default function App() {
       </div>
       <ul class="togglemenu">
         <li><a href="#home" class="btn1">HOME</a></li>
-        <li><a href="#software" class="btn2">SOFTWARE</a></li>
-        <li><a href="#hardware" class="btn3">HARDWARE</a></li>
+        <li><a href="#map" class="btn2">MAP</a></li>
+        <li><a href="#analytics" class="btn3">ANALYTICS</a></li>
       </ul>
     </div>
 
