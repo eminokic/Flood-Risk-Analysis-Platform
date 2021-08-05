@@ -9,12 +9,8 @@ import {
 import "@reach/combobox/styles.css";
 import '../css/App.css';
 
-import * as locationdata from "../data/LocationData.json"
-
 import Heatmap from "../components/heatmap-component.js"
-import Okic from "../components/okic-component.js"
 import Markers from "../components/markers-component.js"
-import Derek from "../components/derek-component.js"
 import {DataTable} from "../components/data-table-component";
 import logo from '../components/images/Salient-Insure.jpg';
 
@@ -76,7 +72,6 @@ export default function App() {
     
     <Markers></Markers>
     <DataTable></DataTable>
-    <Okic></Okic>
-    <Derek></Derek>
+    <Heatmap></Heatmap>
     </div>
 }
