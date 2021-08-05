@@ -13,7 +13,7 @@ import * as locationdata from "../data/LocationData.json"
 
 import Okic from "../components/okic-component.js"
 import Amar from "../components/amar-component.js"
-import Vinny from "../components/vinny-component.js"
+import Markers from "../components/markers-component.js"
 import Derek from "../components/derek-component.js"
 import Michael from "../components/michael-component.js"
 
@@ -71,50 +71,8 @@ export default function App() {
 
 
   return <div>
-    <GoogleMap 
-    mapContainerStyle={mapContainerStyle} 
-    zoom={10.2} 
-    center={center}
-    >
-
-
-     {/* Maps restaurant location data from json to map markers */}
-    {locationdata.results.map(restaurant => (
-      <Marker 
-      key={restaurant.reference} 
-      position = {{lat : restaurant.geometry.location.lat, lng : restaurant.geometry.location.lng}}  
-       
-      onClick = {() => {
-        setSelectedRest(restaurant); 
-      }}
-      
-      />
-    ))}
-
-    {/* conditonal for if restaurant is selected */}
-    {selectedRest && (
-      <InfoWindow
-      position = {{lat : (selectedRest.geometry.location.lat + .02), lng : selectedRest.geometry.location.lng}}  
-      
-      // ensure that selected restaurant is reset
-      onCloseClick = {() => {
-        setSelectedRest(null);
-      }}
-      >
-      
-        <div>
-          IOB Location : {selectedRest.vicinity}
-          <br></br>
-          Risk Rating : {(Math.random() * 100).toFixed(2)}%
-        </div>
-
-      </InfoWindow>
-    )}
-
-    </GoogleMap>
-
+    <Markers></Markers>
     <Okic></Okic>
-    <Vinny></Vinny>
     <Derek></Derek>
     <Amar></Amar>
     <Michael></Michael>
