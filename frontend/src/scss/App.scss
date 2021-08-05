@@ -1,3 +1,14 @@
+$grayColor: #3b3b3b;
+$whiteColor: #f7f7f7;
+$redColor: #db5192;
+$yellowColor: #ffcc57;
+$grad1Height: 100vh;
+$displayHeight: 100vh;
+$backgroundHeight: 40vh;
+$softwareElements: 4;
+$hardwareElements: 1;
+$aboutmeHeight: 100vh;
+
 @font-face {
     font-family: myFont;
     src: url(../components/fonts/PROXIMANOVA-REGULAR.OTF);
@@ -47,29 +58,120 @@
     }
   }
   
-  .top {
-    background-color: #ececec;
-    font: myFont;
-    width: 25vh;
-    float: left;
+  *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    /*border: 3px solid black;*/
+    scroll-behavior: smooth;
   }
-  .head{
-    background-color: #ececec;
+  html, body{
+    height: 100%;
   }
-  .title{
-    font: myFont;
-    color: #262262;
+  @import 'mixins';
+
+
+  //menu section
+  .menu{
+    position:fixed;
+    left: 88%;
+    width: 12%;
+    height: 100vh;
+    background-color: $whiteColor;
     text-align: center;
+    ul {
+      margin-top: 25vh;
+      width: auto;
+      height: auto;
+      li{
+        list-style: none;
+        height: 15vh;
+        text-align: center;
+        a{
+          text-decoration: none;
+          border-radius: 15px ;
+          font-size: 150%;
+          color: $grayColor;
+          padding: 10px 30px;
+          transition-property: background-color;
+          transition-duration: .5s;
+        }
+        a:hover{
+          background-color: $grayColor;
+          color: $whiteColor;
+        }
+        .btn1{
+          opacity: 0;
+          animation: fadeIn 2s forwards;
+          animation-delay: .2s;
+        }
+        .btn2{
+          opacity: 0;
+          animation: fadeIn 2s forwards;
+          animation-delay: .4s;
+        }
+        .btn3{
+          opacity: 0;
+          animation: fadeIn 2s forwards;
+          animation-delay: .6s;
+        }
+      }
+    }
   }
-  .Logo {
-    width: 200px;
+  // toggle MENU
+  .menubtn{
+    margin-top:30px;
+    font-size: 120%;
   }
-  
+  .toggle-btn{
+    display:none;
+  }
+  //end of menu
 
 
+  //first section
+  .home{
+    height: $grad1Height;
+    .logo{
+      width: 43%;
+      float:left;
+      background-color: $whiteColor;
+      height: 100%;
+      text-align: center;
+      img{
+        max-width: 75%;
+        margin-top: 40vh;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+      }
+    }
+    .welcome{
+      width: 43%;
+      float: left;
+      background-color: $grayColor;
+      height: 100%;
+      color: $whiteColor;
+      p{
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        margin-left:5%;
+        margin-right: 5%;
+        font-size: 200%;
+      }
+      h1{
+        margin-top:38vh;
+        margin-left:5%;
+        margin-right: 5%;
+        font-size: 400%;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+      }
+    }
+  }
+  //end of first section
 
 
-  
   .group:before,
   .group:after {
     content: "";
