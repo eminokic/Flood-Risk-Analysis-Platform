@@ -78,8 +78,8 @@ export default function Markers(props) {
         key={restaurant.ID} 
         position = {{lat : restaurant.Lat, lng : restaurant.Long}}  
         icon={{
-          url: "./images/location-icon.jpg",
-          scaledSize: new window.google.maps.Size(30, 30),
+          url: "images/location-icon.png",
+          // scaledSize: new window.google.maps.Size(30, 30),
         }}
         onClick = {() => {
           setSelectedRest(restaurant); 
