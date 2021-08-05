@@ -78,7 +78,7 @@ export default function Markers(props) {
         key={restaurant.ID} 
         position = {{lat : restaurant.Lat, lng : restaurant.Long}}  
         icon={{
-          url: "images/location-icon.png",
+          url: "/icon.svg",
           // scaledSize: new window.google.maps.Size(30, 30),
         }}
         onClick = {() => {
