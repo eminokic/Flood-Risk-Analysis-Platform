@@ -10,7 +10,7 @@ import {
 import * as locationdata from "../data/newlocationdata.json"
 
 import Heatmap from "./heatmap-component.js";
-
+import icon from "./images/icon.png";
 
 /** 
  * You can implement the places api key as follows to avoid redundant rerendering.
@@ -77,7 +77,11 @@ export default function Markers(props) {
         <Marker 
         key={restaurant.ID} 
         position = {{lat : restaurant.Lat, lng : restaurant.Long}}  
-        
+        icon= {{
+          url: icon,
+          scaledSize: new window.google.maps.Size(30,40),
+          
+        }}
         onClick = {() => {
           setSelectedRest(restaurant); 
         }}
