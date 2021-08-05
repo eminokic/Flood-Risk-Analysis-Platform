@@ -9,6 +9,7 @@ import {
 
 import * as locationdata from "../data/LocationData.json"
 
+import Heatmap from "./heatmap-component.js";
 
 
 /** 
@@ -62,20 +63,14 @@ export default function Markers(props) {
    */
   if(!isLoaded) {return "Rendering Map...";}
 
-  return <div
-    // style={{
-    //     backgroundColor: 'red',
-    //     width: '25vw',
-    //     height: '25vh',
-    //     border: '1px solid rgba(1, 1, 1, 1)',
-    //   }}
-    >
+  return <div>
 
     <GoogleMap  
       mapContainerStyle={mapContainerStyle} 
       zoom={10.2} 
       center={center}
     >
+      <Heatmap></Heatmap>
 
       {/* Maps restaurant location data from json to map markers */}
       {locationdata.results.map(restaurant => (
