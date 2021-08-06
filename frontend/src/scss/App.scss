@@ -282,7 +282,7 @@ $aboutmeHeight: 100vh;
     width: 2%;
     height: $grad1Height;
     float: left;
-    background-image: repeating-linear-gradient(to bottom, $purple 0vh, $pink 25vh, $orange 50vh, $lightorange 75vh, $yellow 100vh, $lightorange 125vh, $orange 150vh, $pink 175vh, $purple 200vh);
+    background-image: repeating-linear-gradient(to bottom, $pink 0vh, $yellow 100vh, $pink 200vh);
   }
   .gradient2{
     width: 2%;
@@ -290,7 +290,7 @@ $aboutmeHeight: 100vh;
     left: 86%;
     top: $grad1Height + $backgroundHeight;
     height: $softwareElements* $displayHeight;
-    background-image: repeating-linear-gradient(to bottom, $purple 0vh, $pink 25vh, $orange 50vh, $lightorange 75vh, $yellow 100vh, $lightorange 125vh, $orange 150vh, $pink 175vh, $purple 200vh);
+    background-image: repeating-linear-gradient(to bottom, $pink 0vh, $yellow 100vh, $pink 200vh);
   }
   .gradient3{
     width: 2%;
@@ -298,7 +298,7 @@ $aboutmeHeight: 100vh;
     left: 86%;
     top: $grad1Height + $backgroundHeight + $softwareElements* $displayHeight + $backgroundHeight;
     height: $analyticsmultiplier * $displayHeight;
-    background-image: repeating-linear-gradient(to bottom, $purple 0vh, $pink 25vh, $orange 50vh, $lightorange 75vh, $yellow 100vh, $lightorange 125vh, $orange 150vh, $pink 175vh, $purple 200vh);
+    background-image: repeating-linear-gradient(to bottom, $pink 0vh, $yellow 100vh, $pink 200vh);
   }
 
   .background{
