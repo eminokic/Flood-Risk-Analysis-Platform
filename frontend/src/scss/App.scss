@@ -1,10 +1,17 @@
 $grayColor: #3b3b3b;
 $whiteColor: #f7f7f7;
-$redColor: #db5192;
-$yellowColor: #ffcc57;
+
+$yellow: #efcc3d;
+$lightorange: #eca014;
+$orange: #e6621a;
+$pink: #cd1d8b;
+$purple: #882d88;
+$darkpurple: #623074;
+$blue: #262262;
+
 $grad1Height: 100vh;
 $displayHeight: 100vh;
-$backgroundHeight: 40vh;
+$backgroundHeight: 100vh;
 $softwareElements: 1;
 $analyticsmultiplier: 4;
 $aboutmeHeight: 100vh;
@@ -216,7 +223,6 @@ $aboutmeHeight: 100vh;
         text-decoration: none;
         color: $grayColor;
         border-radius: 15px;
-        background-color: $yellowColor;
         padding: 10px 20px;
       }
     }
@@ -265,7 +271,6 @@ $aboutmeHeight: 100vh;
         text-decoration: none;
         color: $grayColor;
         border-radius: 15px;
-        background-color: $yellowColor;
         padding: 10px 20px;
       }
     }
@@ -277,7 +282,7 @@ $aboutmeHeight: 100vh;
     width: 2%;
     height: $grad1Height;
     float: left;
-    background-image: repeating-linear-gradient(to bottom, #DB5192 0vh, #FFCC57 100vh, #DB5192 200vh);
+    background-image: repeating-linear-gradient(to bottom, $purple 0vh, $pink 25vh, $orange 50vh, $lightorange 75vh, $yellow 100vh, $lightorange 125vh, $orange 150vh, $pink 175vh, $purple 200vh);
   }
   .gradient2{
     width: 2%;
@@ -285,7 +290,7 @@ $aboutmeHeight: 100vh;
     left: 86%;
     top: $grad1Height + $backgroundHeight;
     height: $softwareElements* $displayHeight;
-    background-image: repeating-linear-gradient(to bottom, #DB5192 0vh, #FFCC57 100vh, #DB5192 200vh);
+    background-image: repeating-linear-gradient(to bottom, $purple 0vh, $pink 25vh, $orange 50vh, $lightorange 75vh, $yellow 100vh, $lightorange 125vh, $orange 150vh, $pink 175vh, $purple 200vh);
   }
   .gradient3{
     width: 2%;
@@ -293,9 +298,18 @@ $aboutmeHeight: 100vh;
     left: 86%;
     top: $grad1Height + $backgroundHeight + $softwareElements* $displayHeight + $backgroundHeight;
     height: $analyticsmultiplier * $displayHeight;
-    background-image: repeating-linear-gradient(to bottom, #DB5192 0vh, #FFCC57 100vh, #DB5192 200vh);
+    background-image: repeating-linear-gradient(to bottom, $purple 0vh, $pink 25vh, $orange 50vh, $lightorange 75vh, $yellow 100vh, $lightorange 125vh, $orange 150vh, $pink 175vh, $purple 200vh);
   }
 
+  .background{
+    width:100%;
+    height: $backgroundHeight;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .background1{
+    background-image: url(../components/images/background.png);
+  }
 
 
   .group:before,

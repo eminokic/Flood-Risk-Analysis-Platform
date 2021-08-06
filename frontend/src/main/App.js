@@ -35,7 +35,9 @@ export default function App() {
       <link rel="shortcut icon" type="image/png" href= "./components/images/icon.png" />
     </head>
     <HomePage></HomePage>
+    <div class="background background1"></div>
     <SecondPage></SecondPage>
+    <div class="background background1"></div>
     <ThirdPage></ThirdPage>
     </div>
 }
