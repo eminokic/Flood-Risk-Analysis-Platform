@@ -14,7 +14,7 @@ export default function App(){
                         <Markers></Markers>
                     </div>
                     <div class="content">
-
+                        <h1>Placeholder content</h1>
                     </div>
                 </div>
       

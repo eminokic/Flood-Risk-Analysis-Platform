@@ -6,9 +6,10 @@ import {
 import "@reach/combobox/styles.css";
 import '../css/App.css';
 
-import DataTable from "../components/data-table-component.js";
+
 import HomePage from '../components/header.js';
 import SecondPage from '../components/map-section.js';
+import ThirdPage from '../components/analytic-section.js';
 
 export default function App() {
 
@@ -35,6 +36,6 @@ export default function App() {
     </head>
     <HomePage></HomePage>
     <SecondPage></SecondPage>
-    <DataTable></DataTable>
+    <ThirdPage></ThirdPage>
     </div>
 }

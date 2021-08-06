@@ -5,8 +5,8 @@ $yellowColor: #ffcc57;
 $grad1Height: 100vh;
 $displayHeight: 100vh;
 $backgroundHeight: 40vh;
-$softwareElements: 4;
-$hardwareElements: 1;
+$softwareElements: 1;
+$analyticsmultiplier: 4;
 $aboutmeHeight: 100vh;
 
 @font-face {
@@ -221,7 +221,82 @@ $aboutmeHeight: 100vh;
       }
     }
   }
+  .analytics{
+    width: 60%;
+    height: $displayHeight * $analyticsmultiplier;
+    background-color: $grayColor;
+    float:left;
+    text-align: center;
+    h1{
+      font-size: 300%;
+      text-decoration: underline;
+      color: $whiteColor;
+      margin-top: 30px;
+    }
+    h2{
+      font-size: 250%;
+      text-decoration: underline;
+      color: $whiteColor;
+      margin-top: 30px;
+    }
+  }
+  .analyticscontent{
+    width: 26%;
+    height: $displayHeight * $analyticsmultiplier;
+    background-color: $grayColor;
+    float:left;
+    text-align: center;
+    color: $whiteColor;
+    h1{
+      font-size: 200%;
+      margin-top: 30px;
+    }
+    .skills{
+      margin-top: 100px;
+    }
+    p{
+      font-size: 100%;
+      margin: 30px 10px 0px 10px;
+    }
+    h2{
+      font-size: 100%;
+      margin-top: 30px;
+      a{
+        text-decoration: none;
+        color: $grayColor;
+        border-radius: 15px;
+        background-color: $yellowColor;
+        padding: 10px 20px;
+      }
+    }
+  }
   // end of software and hardware
+
+  //gradients
+  .gradient{
+    width: 2%;
+    height: $grad1Height;
+    float: left;
+    background-image: repeating-linear-gradient(to bottom, #DB5192 0vh, #FFCC57 100vh, #DB5192 200vh);
+  }
+  .gradient2{
+    width: 2%;
+    position: absolute;
+    left: 86%;
+    top: $grad1Height + $backgroundHeight;
+    height: $softwareElements* $displayHeight;
+    background-image: repeating-linear-gradient(to bottom, #DB5192 0vh, #FFCC57 100vh, #DB5192 200vh);
+  }
+  .gradient3{
+    width: 2%;
+    position: absolute;
+    left: 86%;
+    top: $grad1Height + $backgroundHeight + $softwareElements* $displayHeight + $backgroundHeight;
+    height: $analyticsmultiplier * $displayHeight;
+    background-image: repeating-linear-gradient(to bottom, #DB5192 0vh, #FFCC57 100vh, #DB5192 200vh);
+  }
+
+
 
   .group:before,
   .group:after {

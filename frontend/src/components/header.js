@@ -14,7 +14,7 @@ export default function App() {
       <ul class="togglemenu">
         <li><a href="#home" class="btn1">HOME</a></li>
         <li><a href="#map" class="btn2">MAP</a></li>
-        <li><a href="#analytics" class="btn3">ANALYTICS</a></li>
+        <li><a href="#analytics" class="btn3">DATA</a></li>
       </ul>
     </div>
 
@@ -22,7 +22,7 @@ export default function App() {
       
       <div class="welcome">
         <h1>Welcome.</h1>
-        <p>My name is Amar Patel. Browse through some of my hardware and software projects.</p>
+        <p>This page is designed for assessing flood risk in order to determine insurance premiums.</p>
       </div>
 
       <div class="gradient">
