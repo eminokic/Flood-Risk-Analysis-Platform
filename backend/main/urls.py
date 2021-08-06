@@ -22,9 +22,5 @@ urlpatterns = [
     url(r'^$',views.index,name='index'),
     url(r'^restaurants/',include('restaurants.urls')),
     url(r'^admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls'))
 ]
-
-#urlpatterns = [
-#    path('admin/', admin.site.urls),
-#    path('restaurants/', include('restaurants.urls'))
-#]
