@@ -18,16 +18,23 @@ table {
     /* border: 1px solid #ddd; */
     padding: 8px;
   }
+  table tr:nth-child(odd){background-color: #3b3b3b;}
+  table tr:nth-child(even){background-color: #313131;}
   
-  table tr:nth-child(even){background-color: #9b1d9519;}
-  
-  table tr:hover {background-color: #ddd;}
+  table tr{
+    color: #ffffff;
+  }
+
+
+  table tr:hover {background-color: #ddd;
+  color: #000000;
+  }
   
   table th {
     font-weight: bold;
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #262262;
+    background-color: #623074;
     color: white;
   }

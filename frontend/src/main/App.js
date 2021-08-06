@@ -6,9 +6,10 @@ import {
 import "@reach/combobox/styles.css";
 import '../css/App.css';
 
-import Markers from "../components/markers-component.js";
-import DataTable from "../components/data-table-component.js";
-import SalientHeader from '../components/header.js';
+
+import HomePage from '../components/header.js';
+import SecondPage from '../components/map-section.js';
+import ThirdPage from '../components/analytic-section.js';
 
 export default function App() {
 
@@ -29,8 +30,14 @@ export default function App() {
   if(!isLoaded) {return "Rendering Map...";}
 
   return <div>
-    <SalientHeader></SalientHeader>
-    <Markers></Markers>
-    <DataTable></DataTable>
+    <head>
+      <title>Salient Insurance</title>
+      <link rel="shortcut icon" type="image/png" href= "./components/images/icon.png" />
+    </head>
+    <HomePage></HomePage>
+    <div class="background background1"></div>
+    <SecondPage></SecondPage>
+    <div class="background background1"></div>
+    <ThirdPage></ThirdPage>
     </div>
 }

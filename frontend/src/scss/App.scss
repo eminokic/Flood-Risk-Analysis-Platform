@@ -1,0 +1,325 @@
+$grayColor: #3b3b3b;
+$whiteColor: #f7f7f7;
+
+$yellow: #efcc3d;
+$lightorange: #eca014;
+$orange: #e6621a;
+$pink: #cd1d8b;
+$purple: #882d88;
+$darkpurple: #623074;
+$blue: #262262;
+
+$grad1Height: 100vh;
+$displayHeight: 100vh;
+$backgroundHeight: 100vh;
+$softwareElements: 1;
+$analyticsmultiplier: 4;
+$aboutmeHeight: 100vh;
+
+@font-face {
+    font-family: myFont;
+    src: url(../components/fonts/PROXIMANOVA-REGULAR.OTF);
+  }
+  @font-face {
+    font-family: myFont;
+    src: url(../components/fonts/PROXIMANOVA-EXTRABLD.OTF);
+    font-weight: bold;
+  }
+  
+  .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    /*border: 3px solid black;*/
+    scroll-behavior: smooth;
+  }
+  html, body{
+    height: 100%;
+  }
+  @import 'mixins';
+
+
+  //menu section
+  .menu{
+    position:fixed;
+    left: 88%;
+    width: 12%;
+    height: 100vh;
+    background-color: $whiteColor;
+    text-align: center;
+    ul {
+      margin-top: 35vh;
+      width: auto;
+      height: auto;
+      li{
+        list-style: none;
+        height: 15vh;
+        text-align: center;
+        a{
+          text-decoration: none;
+          border-radius: 15px ;
+          font-size: 150%;
+          color: $grayColor;
+          padding: 10px 30px;
+          transition-property: background-color;
+          transition-duration: .5s;
+        }
+        a:hover{
+          background-color: $grayColor;
+          color: $whiteColor;
+        }
+        .btn1{
+          opacity: 0;
+          animation: fadeIn 2s forwards;
+          animation-delay: .2s;
+        }
+        .btn2{
+          opacity: 0;
+          animation: fadeIn 2s forwards;
+          animation-delay: .4s;
+        }
+        .btn3{
+          opacity: 0;
+          animation: fadeIn 2s forwards;
+          animation-delay: .6s;
+        }
+      }
+    }
+  }
+  // toggle MENU
+  .menubtn{
+    margin-top:30px;
+    font-size: 120%;
+  }
+  .toggle-btn{
+    display:none;
+  }
+  //end of menu
+
+
+  //first section
+  .home{
+    height: $grad1Height;
+    .logo{
+      width: 43%;
+      float:left;
+      background-color: $whiteColor;
+      height: 100%;
+      text-align: center;
+      img{
+        max-width: 75%;
+        margin-top: 40vh;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+      }
+    }
+    .welcome{
+      width: 43%;
+      float: left;
+      background-color: $grayColor;
+      height: 100%;
+      color: $whiteColor;
+      p{
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        margin-left:5%;
+        margin-right: 5%;
+        font-size: 200%;
+      }
+      h1{
+        margin-top:38vh;
+        margin-left:5%;
+        margin-right: 5%;
+        font-size: 400%;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+      }
+    }
+  }
+  //end of first section
+
+  //map and analytics section
+  .display{
+    width: 60%;
+    height: $displayHeight;
+    background-color: $grayColor;
+    float:left;
+    text-align: center;
+    h1{
+      font-size: 300%;
+      text-decoration: underline;
+      color: $whiteColor;
+      margin-top: 30px;
+    }
+    h2{
+      font-size: 250%;
+      text-decoration: underline;
+      color: $whiteColor;
+      margin-top: 30px;
+    }
+  }
+  .content{
+    width: 26%;
+    height: $displayHeight;
+    background-color: $grayColor;
+    float:left;
+    text-align: center;
+    color: $whiteColor;
+    h1{
+      font-size: 200%;
+      margin-top: 30px;
+    }
+    .skills{
+      margin-top: 100px;
+    }
+    p{
+      font-size: 100%;
+      margin: 30px 10px 0px 10px;
+    }
+    h2{
+      font-size: 100%;
+      margin-top: 30px;
+      a{
+        text-decoration: none;
+        color: $grayColor;
+        border-radius: 15px;
+        padding: 10px 20px;
+      }
+    }
+  }
+  .analytics{
+    width: 60%;
+    height: $displayHeight * $analyticsmultiplier;
+    background-color: $grayColor;
+    float:left;
+    text-align: center;
+    h1{
+      font-size: 300%;
+      text-decoration: underline;
+      color: $whiteColor;
+      margin-top: 30px;
+    }
+    h2{
+      font-size: 250%;
+      text-decoration: underline;
+      color: $whiteColor;
+      margin-top: 30px;
+    }
+  }
+  .analyticscontent{
+    width: 26%;
+    height: $displayHeight * $analyticsmultiplier;
+    background-color: $grayColor;
+    float:left;
+    text-align: center;
+    color: $whiteColor;
+    h1{
+      font-size: 200%;
+      margin-top: 30px;
+    }
+    .skills{
+      margin-top: 100px;
+    }
+    p{
+      font-size: 100%;
+      margin: 30px 10px 0px 10px;
+    }
+    h2{
+      font-size: 100%;
+      margin-top: 30px;
+      a{
+        text-decoration: none;
+        color: $grayColor;
+        border-radius: 15px;
+        padding: 10px 20px;
+      }
+    }
+  }
+  // end of software and hardware
+
+  //gradients
+  .gradient{
+    width: 2%;
+    height: $grad1Height;
+    float: left;
+    background-image: repeating-linear-gradient(to bottom, $purple 0vh, $pink 25vh, $orange 50vh, $lightorange 75vh, $yellow 100vh, $lightorange 125vh, $orange 150vh, $pink 175vh, $purple 200vh);
+  }
+  .gradient2{
+    width: 2%;
+    position: absolute;
+    left: 86%;
+    top: $grad1Height + $backgroundHeight;
+    height: $softwareElements* $displayHeight;
+    background-image: repeating-linear-gradient(to bottom, $purple 0vh, $pink 25vh, $orange 50vh, $lightorange 75vh, $yellow 100vh, $lightorange 125vh, $orange 150vh, $pink 175vh, $purple 200vh);
+  }
+  .gradient3{
+    width: 2%;
+    position: absolute;
+    left: 86%;
+    top: $grad1Height + $backgroundHeight + $softwareElements* $displayHeight + $backgroundHeight;
+    height: $analyticsmultiplier * $displayHeight;
+    background-image: repeating-linear-gradient(to bottom, $purple 0vh, $pink 25vh, $orange 50vh, $lightorange 75vh, $yellow 100vh, $lightorange 125vh, $orange 150vh, $pink 175vh, $purple 200vh);
+  }
+
+  .background{
+    width:100%;
+    height: $backgroundHeight;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .background1{
+    background-image: url(../components/images/background.png);
+  }
+
+
+  .group:before,
+  .group:after {
+    content: "";
+    display: table;
+  }
+  .group:after{
+    clear: both;
+  }
+  .group{
+    zoom: 1;
+  }
