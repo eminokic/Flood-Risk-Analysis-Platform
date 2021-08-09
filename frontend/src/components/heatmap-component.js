@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import "@reach/combobox/styles.css";
 import {Polygon} from "@react-google-maps/api";
 
@@ -20,16 +20,27 @@ const hundredYearCoordinates = [
   { lat: 34.07602375980253, lng: -118.3553268671356 },
 ];
 
-export default class Heatmap extends React.Component {
+const options = {
+  fillColor: "orange",
+  fillOpacity: 0.5,
+  strokeColor: "black",
+  strokeOpacity: 1,
+  strokeWeight: 3,
+  clickable: true,
+  draggable: false,
+  editable: false,
+  geodesic: false,
+  zIndex: 2
+}
+
+const onLoad = polygon => {
+  console.log("polygon: ", polygon);
+}
+
+export default class Heatmap extends Component {
   render() {
     return <div>
-    <Polygon paths={hundredYearCoordinates}
-             options={{
-               strokecolor:"#d34052",
-               fillcolor:"#d34052",
-               strokeopacity:"0.5",
-               strokeweight:'2'}}>
-                 </Polygon>,
+    <Polygon paths={hundredYearCoordinates} options={options} onLoad={onLoad}></Polygon>,
     </div>
     }
 }
