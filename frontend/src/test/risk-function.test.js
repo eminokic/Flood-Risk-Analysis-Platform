@@ -1,6 +1,12 @@
-import { render } from '@testing-library/react';
 import RiskEquation from "../components/risk-equation.js"
 
-test('Tests risk function', () => {
-  render(<RiskEquation />);
-});
+test('Return Output', () => {
+  var riskTest=1;
+  var expectedOutput= RiskEquation(1);
+  if(riskTest == expectedOutput){
+    return true;
+  } else {
+    return false;
+  }
+})
+
