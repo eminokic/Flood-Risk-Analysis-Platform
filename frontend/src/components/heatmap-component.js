@@ -33,10 +33,14 @@ const options = {
   zIndex: 2
 }
 
+const onLoad = polygon => {
+  console.log("polygon: ", polygon);
+}
+
 export default class Heatmap extends Component {
   render() {
     return <div>
-    <Polygon paths={hundredYearCoordinates} options={options}></Polygon>,
+    <Polygon paths={hundredYearCoordinates} options={options} onLoad={onLoad}></Polygon>,
     </div>
     }
 }
