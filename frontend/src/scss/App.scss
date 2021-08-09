@@ -89,14 +89,14 @@ $aboutmeHeight: 100vh;
     height: 100vh;
     background-color: $whiteColor;
     text-align: center;
-    @include screenXL{
-      width: 14%;
-      left: 86%;
-    }
-    @include screenM{
-      width: 16%;
-      left: 84%;
-    }
+    // @include screenXL{
+    //   width: 14%;
+    //   left: 86%;
+    // }
+    // @include screenM{
+    //   width: 16%;
+    //   left: 84%;
+    // }
     ul {
       margin-top: 35vh;
       width: auto;
@@ -113,18 +113,18 @@ $aboutmeHeight: 100vh;
           padding: 10px 30px;
           transition-property: background-color;
           transition-duration: .5s;
-          @include screenL{
-            font-size: 130%;
-            padding: 10px 20px;
-          }
-          @include screenM{
-            font-size: 115%;
-            padding: 10px;
-          }
-          @include screenS{
-            font-size: 110%;
-            padding: 10px;
-          }
+          // @include screenL{
+          //   font-size: 130%;
+          //   padding: 10px 20px;
+          // }
+          // @include screenM{
+          //   font-size: 115%;
+          //   padding: 10px;
+          // }
+          // @include screenS{
+          //   font-size: 110%;
+          //   padding: 10px;
+          // }
         }
         a:hover{
           background-color: $grayColor;
@@ -156,17 +156,17 @@ $aboutmeHeight: 100vh;
   .toggle-btn{
     display:none;
   }
-  @include screenS{
-    .toggle-btn-visible{
-      display: contents;
-    }
-    .toggle-target-hidden{
-      display:none;
-    }
-    .toggle-target-expanded{
-      display:contents;
-    }
-  }
+  // @include screenS{
+  //   .toggle-btn-visible{
+  //     display: contents;
+  //   }
+  //   .toggle-target-hidden{
+  //     display:none;
+  //   }
+  //   .toggle-target-expanded{
+  //     display:contents;
+  //   }
+  // }
   //end of menu
 
 
@@ -179,12 +179,12 @@ $aboutmeHeight: 100vh;
       background-color: $whiteColor;
       height: 100%;
       text-align: center;
-      @include screenXL{
-        width: 42%;
-      }
-      @include screenM{
-        width: 41%;
-      }
+      // @include screenXL{
+      //   width: 42%;
+      // }
+      // @include screenM{
+      //   width: 41%;
+      // }
       img{
         max-width: 75%;
         margin-top: 40vh;
@@ -198,24 +198,24 @@ $aboutmeHeight: 100vh;
       background-color: $grayColor;
       height: 100%;
       color: $whiteColor;
-      @include screenXL{
-        width: 42%;
-      }
-      @include screenM{
-        width: 41%;
-      }
+      // @include screenXL{
+      //   width: 42%;
+      // }
+      // @include screenM{
+      //   width: 41%;
+      // }
       p{
         opacity: 0;
         animation: fadeIn 2s forwards;
         margin-left:5%;
         margin-right: 5%;
         font-size: 200%;
-        @include screenM{
-          font-size: 170%;
-        }
-        @include screenS{
-          font-size: 150%;
-        }
+        // @include screenM{
+        //   font-size: 170%;
+        // }
+        // @include screenS{
+        //   font-size: 150%;
+        // }
       }
       h1{
         margin-top:38vh;
@@ -224,12 +224,12 @@ $aboutmeHeight: 100vh;
         font-size: 400%;
         opacity: 0;
         animation: fadeIn 2s forwards;
-        @include screenM{
-          font-size: 350%;
-        }
-        @include screenS{
-          font-size: 300%;
-        }
+        // @include screenM{
+        //   font-size: 350%;
+        // }
+        // @include screenS{
+        //   font-size: 300%;
+        // }
       }
     }
   }
@@ -242,36 +242,36 @@ $aboutmeHeight: 100vh;
     background-color: $grayColor;
     float:left;
     text-align: center;
-    @include screenXL{
-      width: 59%;
-    }
-    @include screenM{
-      width: 58%;
-    }
-    @include screenS{
-      float: none;
-      width: 82%;
-      height: auto;
-    }
+    // @include screenXL{
+    //   width: 59%;
+    // }
+    // @include screenM{
+    //   width: 58%;
+    // }
+    // @include screenS{
+    //   float: none;
+    //   width: 82%;
+    //   height: auto;
+    // }
     h1{
       font-size: 300%;
       text-decoration: underline;
       color: $whiteColor;
       margin-top: 30px;
-      @include screenS{
-        margin-top: 0px;
-        padding-top: 30px;
-      }
+      // @include screenS{
+      //   margin-top: 0px;
+      //   padding-top: 30px;
+      // }
     }
     h2{
       font-size: 250%;
       text-decoration: underline;
       color: $whiteColor;
       margin-top: 30px;
-      @include screenS{
-        margin-top: 0px;
-        padding-top: 30px;
-      }
+      // @include screenS{
+      //   margin-top: 0px;
+      //   padding-top: 30px;
+      // }
     }
   }
   .content{
@@ -281,27 +281,27 @@ $aboutmeHeight: 100vh;
     float:left;
     text-align: center;
     color: $whiteColor;
-    @include screenXL{
-      width: 25%;
-    }
-    @include screenM{
-      width: 24%;
-    }
-    @include screenS{
-      width: 82%;
-      float: none;
-      height: auto;
-    }
+    // @include screenXL{
+    //   width: 25%;
+    // }
+    // @include screenM{
+    //   width: 24%;
+    // }
+    // @include screenS{
+    //   width: 82%;
+    //   float: none;
+    //   height: auto;
+    // }
     h1{
       font-size: 200%;
       margin-top: 30px;
     }
     .skills{
       margin-top: 100px;
-      @include screenS {
-        margin-top: 0px;
-        padding-top: 30px;
-      }
+      // @include screenS {
+      //   margin-top: 0px;
+      //   padding-top: 30px;
+      // }
     }
     p{
       font-size: 100%;
@@ -310,9 +310,9 @@ $aboutmeHeight: 100vh;
     h2{
       font-size: 100%;
       margin-top: 30px;
-      @include screenS{
-        padding-bottom: 30px;
-      }
+      // @include screenS{
+      //   padding-bottom: 30px;
+      // }
       a{
         text-decoration: none;
         color: $grayColor;
@@ -327,36 +327,36 @@ $aboutmeHeight: 100vh;
     background-color: $grayColor;
     float:left;
     text-align: center;
-    @include screenXL{
-      width: 59%;
-    }
-    @include screenM{
-      width: 58%;
-    }
-    @include screenS{
-      float: none;
-      width: 82%;
-      height: auto;
-    }
+    // @include screenXL{
+    //   width: 59%;
+    // }
+    // @include screenM{
+    //   width: 58%;
+    // }
+    // @include screenS{
+    //   float: none;
+    //   width: 82%;
+    //   height: auto;
+    // }
     h1{
       font-size: 300%;
       text-decoration: underline;
       color: $whiteColor;
       margin-top: 30px;
-      @include screenS{
-        margin-top: 0px;
-        padding-top: 30px;
-      }
+      // @include screenS{
+      //   margin-top: 0px;
+      //   padding-top: 30px;
+      // }
     }
     h2{
       font-size: 250%;
       text-decoration: underline;
       color: $whiteColor;
       margin-top: 30px;
-      @include screenS{
-        margin-top: 0px;
-        padding-top: 30px;
-      }
+      // @include screenS{
+      //   margin-top: 0px;
+      //   padding-top: 30px;
+      // }
     }
   }
   .analyticscontent{
@@ -366,27 +366,27 @@ $aboutmeHeight: 100vh;
     float:left;
     text-align: center;
     color: $whiteColor;
-    @include screenXL{
-      width: 25%;
-    }
-    @include screenM{
-      width: 24%;
-    }
-    @include screenS{
-      width: 82%;
-      float: none;
-      height: auto;
-    }
+    // @include screenXL{
+    //   width: 25%;
+    // }
+    // @include screenM{
+    //   width: 24%;
+    // }
+    // @include screenS{
+    //   width: 82%;
+    //   float: none;
+    //   height: auto;
+    // }
     h1{
       font-size: 200%;
       margin-top: 30px;
     }
     .skills{
       margin-top: 100px;
-      @include screenS {
-        margin-top: 0px;
-        padding-top: 30px;
-      }
+      // @include screenS {
+      //   margin-top: 0px;
+      //   padding-top: 30px;
+      // }
     }
     p{
       font-size: 100%;
@@ -395,9 +395,9 @@ $aboutmeHeight: 100vh;
     h2{
       font-size: 100%;
       margin-top: 30px;
-      @include screenS{
-        padding-bottom: 30px;
-      }
+      // @include screenS{
+      //   padding-bottom: 30px;
+      // }
       a{
         text-decoration: none;
         color: $grayColor;
@@ -422,15 +422,15 @@ $aboutmeHeight: 100vh;
     top: $grad1Height + $backgroundHeight;
     height: $softwareElements* $displayHeight;
     background-image: repeating-linear-gradient(to bottom, $pink 0vh, $yellow 100vh, $pink 200vh);
-    @include screenXL{
-      left: 84%;
-    }
-    @include screenM{
-      left: 82%;
-    }
-    @include screenS{
-      opacity: 0;
-    }
+    // @include screenXL{
+    //   left: 84%;
+    // }
+    // @include screenM{
+    //   left: 82%;
+    // }
+    // @include screenS{
+    //   opacity: 0;
+    // }
   }
   .gradient3{
     width: 2%;
@@ -439,15 +439,15 @@ $aboutmeHeight: 100vh;
     top: $grad1Height + $backgroundHeight + $softwareElements* $displayHeight + $backgroundHeight;
     height: $analyticsmultiplier * $displayHeight;
     background-image: repeating-linear-gradient(to bottom, $pink 0vh, $yellow 100vh, $pink 200vh);
-    @include screenXL{
-      left: 84%;
-    }
-    @include screenM{
-      left: 82%;
-    }
-    @include screenS{
-      opacity: 0;
-    }
+    // @include screenXL{
+    //   left: 84%;
+    // }
+    // @include screenM{
+    //   left: 82%;
+    // }
+    // @include screenS{
+    //   opacity: 0;
+    // }
   }
 
   .background{
