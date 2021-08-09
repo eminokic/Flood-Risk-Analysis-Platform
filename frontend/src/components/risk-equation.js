@@ -1,9 +1,7 @@
-import React, {Component} from "react";
+import React from "react";
 import "@reach/combobox/styles.css";
 
-export default class RiskEquation extends Component {
-  render() {
+export default function RiskEquation() {
       //TODO
-      return <div></div>
-    }
+      return <div></div>;
 }
