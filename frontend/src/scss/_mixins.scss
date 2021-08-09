@@ -1,3 +1,29 @@
+@mixin screenXS {
+	@media only screen and (max-width: 500px){
+		@content;
+	}
+}
+@mixin screenS {
+	@media only screen and (max-width: 800px){
+		@content;
+	}
+}
+@mixin screenM {
+	@media only screen and (max-width: 1200px){
+		@content;
+	}
+}
+@mixin screenL {
+	@media only screen and (max-width: 1500px){
+		@content;
+	}
+}
+@mixin screenXL {
+	@media only screen and (max-width: 1800px){
+		@content;
+	}
+}
+
 @keyframes fadeIn{
     0%{
         opacity: 0;
