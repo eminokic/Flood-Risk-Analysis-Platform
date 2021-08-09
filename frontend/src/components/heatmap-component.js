@@ -26,7 +26,7 @@ export default class Heatmap extends React.Component {
     <Polygon paths={hundredYearCoordinates}
              options={{
                strokecolor:"#d34052",
-               fillcolor:"#d34052",
+               fillcolor:"#FF0000",
                strokeopacity:"0.5",
                strokeweight:'2'}}>
                  </Polygon>,
