@@ -20,10 +20,23 @@ const hundredYearCoordinates = [
   { lat: 34.07602375980253, lng: -118.3553268671356 },
 ];
 
+const options = {
+  fillColor: "orange",
+  fillOpacity: 0.5,
+  strokeColor: "black",
+  strokeOpacity: 1,
+  strokeWeight: 3,
+  clickable: true,
+  draggable: false,
+  editable: false,
+  geodesic: false,
+  zIndex: 2
+}
+
 export default class Heatmap extends Component {
   render() {
     return <div>
-    <Polygon paths={hundredYearCoordinates}></Polygon>,
+    <Polygon paths={hundredYearCoordinates} options={options}></Polygon>,
     </div>
     }
 }
