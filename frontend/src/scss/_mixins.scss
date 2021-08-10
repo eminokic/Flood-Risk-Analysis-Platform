@@ -1,25 +1,21 @@
-@mixin screenXS {
-	@media only screen and (max-width: 500px){
-		@content;
-	}
-}
+
 @mixin screenS {
-	@media only screen and (max-width: 800px){
+	@media only screen and (max-width: 576px){
 		@content;
 	}
 }
 @mixin screenM {
-	@media only screen and (max-width: 1200px){
+	@media only screen and (max-width: 720px){
 		@content;
 	}
 }
 @mixin screenL {
-	@media only screen and (max-width: 1500px){
+	@media only screen and (max-width: 992px){
 		@content;
 	}
 }
 @mixin screenXL {
-	@media only screen and (max-width: 1800px){
+	@media only screen and (max-width: 1200px){
 		@content;
 	}
 }

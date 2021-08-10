@@ -5,6 +5,7 @@ import '../css/App.css';
 
 import logo from '../components/images/Salient-Insure.jpg';
 
+
 export default function App() {
   return <div>
     <div class="menu">

@@ -11,7 +11,7 @@ export default function App(){
             <div class="group">
                 <div class="analytics">
                 <h1><a>Analytics:</a></h1>
-                <DataTable></DataTable>
+                {/* <DataTable></DataTable> */}
                 </div>
             <div class="analyticscontent">
         <h1 class= "skills top">Placeholder content</h1>
