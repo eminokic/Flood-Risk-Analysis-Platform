@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from rest_framework.response import Response
 import pandas as pd
 
 # Create your views here.
@@ -7,7 +8,7 @@ df = pd.read_csv("https://raw.githubusercontent.com/MichaelMavenWave/Updated/mai
 
 def index(request):
     context = {'data': df}
-    return render(request, 'index.html', context)
+    return Response(context)
 
 #def index(request):
 #    return HttpResponse("Hello, world. You're at the restaurants index!")

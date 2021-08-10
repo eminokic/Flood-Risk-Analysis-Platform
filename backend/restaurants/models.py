@@ -9,9 +9,8 @@ from django.db import models
 #    risk_value = models.IntegerField(default=0)
 
     # Setting Up Representation of Restaurant Object ...
-    def __str__(self):
-        return self.building_id
-=======
+#    def __str__(self):
+#        return self.building_id
     # Setting Up Representation of Restaurant Object
 #    def __str__(self):
 #        return self.building_id

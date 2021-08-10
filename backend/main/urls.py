@@ -20,7 +20,7 @@ from restaurants import views
 
 urlpatterns = [
     url(r'^$',views.index,name='index'),
-    url(r'^restaurants/',include('restaurants.urls')),
+    url(r'^restaurants/', views.index),
     url(r'^admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls'))
 ]
