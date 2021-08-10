@@ -15,12 +15,8 @@ $blue: #262262;
 $grad1Height: 100vh;
 $displayHeight: 100vh;
 $backgroundHeight: 50vh;
-@include screenM{
-  $backgroundHeight: 40vh;
-}
-@include screenS{
-  $backgroundHeight: 20vh;
-}
+$backgroundHeightSmall: 20vh;
+
 $softwareElements: 1;
 $analyticsmultiplier: 4;
 $aboutmeHeight: 100vh;
@@ -252,7 +248,7 @@ $aboutmeHeight: 100vh;
   }
   //end of first section
 
-  //map and analytics section
+  //map section
   .display{
     width: 60vw;
     height: $displayHeight;
@@ -267,8 +263,14 @@ $aboutmeHeight: 100vh;
     }
     @include screenS{
       float: none;
-      width: 82vw;
+      width: 84vw;
       height: auto;
+    }
+    .mapdisplay{
+      padding: 20px;
+      // height: 80vh;
+      //  border: 3px solid black;
+
     }
     h1{
       font-size: 300%;
@@ -294,10 +296,12 @@ $aboutmeHeight: 100vh;
   .content{
     width: 26vw;
     height: $displayHeight;
-    background-color: $grayColor;
+    background-color: $whiteColor;
     float:left;
     text-align: center;
-    color: $whiteColor;
+    color: $grayColor;
+    // border: 3px solid black;
+
     @include screenXL{
       width: 25vw;
     }
@@ -305,7 +309,7 @@ $aboutmeHeight: 100vh;
       width: 24vw;
     }
     @include screenS{
-      width: 82vw;
+      width: 84vw;
       float: none;
       height: auto;
     }
@@ -338,6 +342,8 @@ $aboutmeHeight: 100vh;
       }
     }
   }
+
+  //analytics section
   .analytics{
     width: 60vw;
     height: $displayHeight * $analyticsmultiplier;
@@ -352,7 +358,7 @@ $aboutmeHeight: 100vh;
     }
     @include screenS{
       float: none;
-      width: 82vw;
+      width: 84vw;
       height: auto;
     }
     h1{
@@ -379,10 +385,10 @@ $aboutmeHeight: 100vh;
   .analyticscontent{
     width: 26vw;
     height: $displayHeight * $analyticsmultiplier;
-    background-color: $grayColor;
+    background-color: $whiteColor;
     float:left;
     text-align: center;
-    color: $whiteColor;
+    color: $grayColor;
     @include screenXL{
       width: 25vw;
     }
@@ -390,7 +396,7 @@ $aboutmeHeight: 100vh;
       width: 24vw;
     }
     @include screenS{
-      width: 82vw;
+      width: 84vw;
       float: none;
       height: auto;
     }
@@ -434,9 +440,8 @@ $aboutmeHeight: 100vh;
   }
   .gradient2{
     width: 2vw;
-    position: absolute;
-    left: 86vw;
-    top: $grad1Height + $backgroundHeight;
+    float:left;
+    // top: $grad1Height + $backgroundHeight;
     height: $softwareElements* $displayHeight;
     background-image: repeating-linear-gradient(to bottom, $pink 0vh, $yellow 100vh, $pink 200vh);
     @include screenXL{
@@ -446,14 +451,16 @@ $aboutmeHeight: 100vh;
       left: 82vw;
     }
     @include screenS{
-      opacity: 0;
+      // opacity: 0;
+      width: 100vw;
+      height: 2vh;
+      background-image: repeating-linear-gradient(to right, $pink 0vw, $yellow 100vw);
     }
   }
   .gradient3{
     width: 2vw;
-    position: absolute;
-    left: 86vw;
-    top: $grad1Height + $backgroundHeight + $softwareElements* $displayHeight + $backgroundHeight;
+    float:left;
+    // top: $grad1Height + $backgroundHeight + $softwareElements* $displayHeight + $backgroundHeight;
     height: $analyticsmultiplier * $displayHeight;
     background-image: repeating-linear-gradient(to bottom, $pink 0vh, $yellow 100vh, $pink 200vh);
     @include screenXL{
@@ -463,13 +470,19 @@ $aboutmeHeight: 100vh;
       left: 82vw;
     }
     @include screenS{
-      opacity: 0;
+      // opacity: 0;
+      width: 100vw;
+      height: 2vh;
+      background-image: repeating-linear-gradient(to right, $pink 0vw, $yellow 100vw);
     }
   }
 
   .background{
     width:100vw;
     height: $backgroundHeight;
+    @include screenS{
+      height: $backgroundHeightSmall;
+    }
     background-size: cover;
     background-attachment: fixed;
   }
