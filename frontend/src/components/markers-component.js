@@ -11,6 +11,7 @@ import * as locationdata from "../data/newlocationdata.json"
 
 import Heatmap from "./heatmap-component.js";
 import icon from "./images/icon.png";
+import IOBlogo from "./images/InNOut2.png";
 
 /** 
  * You can implement the places api key as follows to avoid redundant rerendering.
@@ -99,8 +100,11 @@ export default function Markers(props) {
           props.onCloseClick(null)
         }}
         >
-        
+
           <div>
+            <div class="IOBlogo">
+              <img src={IOBlogo} alt="Salient_Logo" />
+            </div>
             IOB Location : {props.rest.Address}
             <br></br>
             Risk Rating : {(Math.random() * 100).toFixed(2)}%
