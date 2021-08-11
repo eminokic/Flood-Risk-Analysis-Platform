@@ -23,6 +23,12 @@ export default class AxiosMain extends Component {
           onSuccess={(response)=>{}} /* called on success of axios request - optional */
           onLoading={()=>{}} /* called on start of axios request - optional */
           />,
+          <AxiosProvider instance={axiosInstance}>
+              <Get url="test">
+                  {(error, response, isLoading, makeRequest, axios) => {}}
+                </Get>             
+            </AxiosProvider>;
+          
       </div>
       }
   }
