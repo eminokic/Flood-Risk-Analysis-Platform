@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import axios from 'axios';
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
 
 const axiosInstance = axios.create({
     baseURL: '/api/',
@@ -32,3 +33,20 @@ export default class AxiosMain extends Component {
       </div>
       }
   }
+
+  const SampleAxiosComponent = withAxios({
+      url: '/api/restaurant',
+      params: {id: "1"}
+    })(class SampleAxiosComponentRaw extends React.Component {
+        render() {
+            const {error, response, isLoading, makeRequest, axios} = this.props
+            if(error) {
+                return (<div>Something bad happened: {error.message}</div>)
+            } else if(isLoading) {
+                return (<div className="loader"></div>)
+            } else if(response !== null) {
+                return (<div>{response.data.message}</div>)
+            }
+            return null;
+        }
+    })
