@@ -8,6 +8,13 @@ const axiosInstance = axios.create({
     headers: { 'X-Custom-Header': 'foobar' }
   });
 
+<Get/>;
+<Delete/>;
+<Head/>;
+<Post/>;
+<Put/>;
+<Patch/>;
+
 export default class AxiosMain extends Component {
     render() {
       return <div>
