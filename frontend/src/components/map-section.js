@@ -20,11 +20,20 @@ export default function App(){
                         />
                     </div>
                     <div class="content">
-                        <h1>{
-                            selectedRest && (
+                        <div>
+                            {/* {selectedRest && (
                                 <div>{selectedRest.Address}</div>
-                            )}
-                        </h1>
+                            )} */}
+                            { selectedRest
+                                ? <div>
+                                    <h1>{selectedRest.Address}</h1>
+                                    <h2>Does this work?</h2> 
+                                  </div>
+                                : <div>
+                                    <h1>Welcome to the Map Tool!</h1>
+                                  </div>
+                            }
+                        </div>
                     </div>
                 </div>
       
