@@ -18,7 +18,7 @@ $backgroundHeight: 50vh;
 $backgroundHeightSmall: 20vh;
 
 $softwareElements: 1;
-$analyticsmultiplier: 2;
+$analyticsmultiplier: 1.5;
 $aboutmeHeight: 100vh;
 
 @font-face {
@@ -366,21 +366,23 @@ $aboutmeHeight: 100vh;
     @include screenXL{
       width: 59vw;
     }
-    @include screenM{
-      width: 58vw;
-    }
-    @include screenS{
+    @include screenL{
       float: none;
-      width: 84vw;
+      width: 86vw;
       height: auto;
     }
+    // @include screenS{
+    //   float: none;
+    //   width: 84vw;
+    //   height: auto;
+    // }
     .searchbar{
       color: $whiteColor;
     }
     table{
       width: 60vw;
-      @include screenM{
-        width: 58vw;
+      @include screenL{
+        width: 86vw;
       }
       @include screenS{
         width: 84vw;
@@ -442,21 +444,26 @@ $aboutmeHeight: 100vh;
     background-color: $whiteColor;
     float:left;
     text-align: center;
+    align-items: center;
     color: $grayColor;
     @include screenXL{
       width: 25vw;
     }
-    @include screenM{
-      width: 24vw;
-    }
-    @include screenS{
-      width: 84vw;
+    @include screenL{
       float: none;
+      width: 86vw;
       height: auto;
     }
+    // @include screenS{
+    //   width: 84vw;
+    //   float: none;
+    //   height: auto;
+    // }
+
     h1{
       font-size: 200%;
       margin-top: 30px;
+
     }
     .skills{
       margin-top: 100px;
@@ -520,11 +527,9 @@ $aboutmeHeight: 100vh;
     @include screenXL{
       left: 84vw;
     }
-    @include screenM{
-      left: 82vw;
-    }
-    @include screenS{
+    @include screenL{
       // opacity: 0;
+ 
       width: 100vw;
       height: 2vh;
       background-image: repeating-linear-gradient(to right, $pink 0vw, $yellow 100vw);
