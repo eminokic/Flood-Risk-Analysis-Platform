@@ -25,6 +25,7 @@ import icon from "./images/icon.png";
  const mapContainerStyle = {
   width: "100%",
   height: "80vh",
+  
 };
 
 /**
