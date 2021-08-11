@@ -15,6 +15,7 @@ export default function App(){
                     <div class="display">
                         <h1>In-N-Out Burger Map:</h1>
                         <Markers onClick = {restaurant => setSelectedRest(restaurant) } 
+                                 onCloseClick = {restaurant => setSelectedRest(null)}
                                  rest = {selectedRest}
                         />
                     </div>

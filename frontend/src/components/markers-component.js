@@ -90,24 +90,24 @@ export default function Markers(props) {
       ))}
 
       {/* conditonal for if restaurant is selected */}
-      {/* {selectedRest && (
+      {props.rest && (
         <InfoWindow
-        position = {{lat : (selectedRest.Lat + .02), lng : selectedRest.Long}}  
+        position = {{lat : (props.rest.Lat + .02), lng : props.rest.Long}}  
         
         // ensure that selected restaurant is reset
-        onCloseClick = {() => {
-          setSelectedRest(null);
+        onCloseClick = {(event) => {
+          props.onCloseClick(null)
         }}
         >
         
           <div>
-            IOB Location : {selectedRest.Address}
+            IOB Location : {props.rest.Address}
             <br></br>
             Risk Rating : {(Math.random() * 100).toFixed(2)}%
           </div>
 
         </InfoWindow>
-      )} */}
+      )}
 
     </GoogleMap>    
   </div>
