@@ -361,6 +361,44 @@ $aboutmeHeight: 100vh;
       width: 84vw;
       height: auto;
     }
+    table{
+      width: 60vw;
+      @include screenM{
+        width: 58vw;
+      }
+      @include screenS{
+        width: 84vw;
+      }
+      .Google{
+        @include screenL{
+          display:none;
+        }
+        @include screenM{
+          display:none;
+        }
+      }
+      .City{
+        @include screenM{
+          display:none;
+        }
+      }
+      .Land{
+        @include screenM{
+          display:none;
+        }
+      }
+      .Square{
+        @include screenM{
+          display:none;
+        }
+      }
+      .Elevation{
+        @include screenM{
+          display:none;
+        }
+      }
+
+    }
     h1{
       font-size: 300%;
       text-decoration: underline;

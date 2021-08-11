@@ -33,14 +33,14 @@ const DataTableMain= () => {
   } = tableInstance
 
   return (
-    <table {...getTableProps()}>
+    <table {...getTableProps()} >
       <thead>
         {
           headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {
                 headerGroup.headers.map(column => (
-                  <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                  <th class={column.id}{...column.getHeaderProps()}>{column.render('Header')}</th>
                 ))
               }
             </tr>
@@ -55,7 +55,7 @@ const DataTableMain= () => {
               <tr {...row.getRowProps()}>
                 {
                   row.cells.map((cell) => {
-                    return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                    return <td class={cell.column.id}{...cell.getCellProps()}>{cell.render('Cell')}</td>
                   })
                 }
               </tr>
