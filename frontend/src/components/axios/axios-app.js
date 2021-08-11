@@ -1,5 +1,11 @@
 import React, {Component} from "react";
-import "@reach/combobox/styles.css";
+import axios from 'axios';
+
+const axiosInstance = axios.create({
+    baseURL: '/api/',
+    timeout: 2000,
+    headers: { 'X-Custom-Header': 'foobar' }
+  });
 
 export default class AxiosMain extends Component {
     render() {
@@ -16,7 +22,6 @@ export default class AxiosMain extends Component {
           isReady={true} /* can make the axios request - optional */ 
           onSuccess={(response)=>{}} /* called on success of axios request - optional */
           onLoading={()=>{}} /* called on start of axios request - optional */
-          onError=(error)=>{} /* called on error of axios request - optional */
           />,
       </div>
       }
