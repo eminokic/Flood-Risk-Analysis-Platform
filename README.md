@@ -1,4 +1,4 @@
-# Ignite Sci Project
+# Ignite SCI Project
 This is the repository for Ignite logistics project regarding the business case. 
 
 ## Setting Up Repository (Example)
