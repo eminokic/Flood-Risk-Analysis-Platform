@@ -18,7 +18,7 @@ $backgroundHeight: 50vh;
 $backgroundHeightSmall: 20vh;
 
 $softwareElements: 1;
-$analyticsmultiplier: 4;
+$analyticsmultiplier: 2;
 $aboutmeHeight: 100vh;
 
 @font-face {
@@ -131,10 +131,10 @@ $aboutmeHeight: 100vh;
             font-size: 100%;
             padding: 10px;
           }
-          @include screenS{
-            font-size: 90%;
-            padding: 10px;
-          }
+          // @include screenS{
+          //   font-size: 90%;
+          //   padding: 10px;
+          // }
         }
         a:hover{
           background-color: $grayColor;
@@ -162,24 +162,37 @@ $aboutmeHeight: 100vh;
     }
   }
   // toggle MENU
-  .menubtn{
-    margin-top:30px;
-    font-size: 120%;
-  }
-  .toggle-btn{
-    display:none;
-  }
-  @include screenS{
-    .toggle-btn-visible{
-      display: block;
-    }
-    .toggle-target-hidden{
-      display:none;
-    }
-    .toggle-target-expanded{
-      display:block;
-    }
-  }
+  
+.toggle-btn {
+	display: none;
+}
+
+	
+	.toggle-btn-visible {
+		display: block;
+	}
+
+	.toggle-target-hidden {
+		display: none;
+	}
+
+	.toggle-target-expanded {
+		display: block;
+	}
+
+.main-area .toggle-btn-visible {
+	display: block;
+}
+
+// .main-area .toggle-target-hidden {
+// 	display: none;
+// }
+
+// .main-area .toggle-target-expanded {
+// 	display: block;
+// }
+
+
   //end of menu
 
 
@@ -360,6 +373,9 @@ $aboutmeHeight: 100vh;
       float: none;
       width: 84vw;
       height: auto;
+    }
+    .searchbar{
+      color: $whiteColor;
     }
     table{
       width: 60vw;
