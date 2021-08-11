@@ -4,7 +4,9 @@ import "@reach/combobox/styles.css";
 import { useTable } from "react-table";
 import mock_data from "./mock_data.json"
 import { COLUMNS } from "./columns"
+// import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import "./table.css"
+// import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 
 export default function DataTable() {
   return <div>
