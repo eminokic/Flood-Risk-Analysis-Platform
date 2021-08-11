@@ -42,7 +42,7 @@ const center = {
 
 export default function Markers(props) {
 
-  const [selectedRest, setSelectedRest] = useState(null);
+  // const [selectedRest, setSelectedRest] = useState(null);
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -82,15 +82,15 @@ export default function Markers(props) {
           scaledSize: new window.google.maps.Size(30,40),
           
         }}
-        onClick = {() => {
-          setSelectedRest(restaurant); 
+        onClick = {(event) => {
+          props.onClick(restaurant)
         }}
         
         />
       ))}
 
       {/* conditonal for if restaurant is selected */}
-      {selectedRest && (
+      {/* {selectedRest && (
         <InfoWindow
         position = {{lat : (selectedRest.Lat + .02), lng : selectedRest.Long}}  
         
@@ -107,7 +107,7 @@ export default function Markers(props) {
           </div>
 
         </InfoWindow>
-      )}
+      )} */}
 
     </GoogleMap>    
   </div>
