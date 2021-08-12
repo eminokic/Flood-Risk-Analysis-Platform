@@ -7,7 +7,7 @@ import { COLUMNS } from "./columns"
 // import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import "./table.css"
 import { GlobalFilter } from "./GlobalFilter";
-import { api } from '../api/base';
+import { api } from '../api';
 // import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 
 export default function DataTable() {
