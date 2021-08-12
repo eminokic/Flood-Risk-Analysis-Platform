@@ -1,4 +1,4 @@
-//Amar table UI
+//Amar table UI 
 import React, { useMemo } from "react";
 import "@reach/combobox/styles.css";
 import { useTable, useGlobalFilter, usePagination, useSortBy} from "react-table";
