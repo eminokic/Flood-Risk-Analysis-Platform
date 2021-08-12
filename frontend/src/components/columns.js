@@ -1,38 +1,49 @@
+
+
 export const COLUMNS = [
     {
         Header: 'ID',
-        accessor: 'ID'
+        accessor: 'ID',
+        
     },
     {
         Header: 'Address',
-        accessor: 'Address'
+        accessor: 'Address',
+        
     },
     {
         Header: 'City',
-        accessor: 'City'
+        accessor: 'City',
+        
     },
     {
         Header: 'Rating',
-        accessor: 'Google Maps Rating'
+        accessor: 'Google Maps Rating',
+        
     },
     {
         Header: 'Land Value',
-        accessor: 'Land Value'
+        accessor: 'Land Value',
+        
     },
     {
         Header: 'Sqr. ft',
-        accessor: 'Square Footage'
+        accessor: 'Square Footage',
+        
     },
     {
         Header: 'Year Built',
-        accessor: 'Year Built'
+        accessor: 'Year Built',
+        
     },
     {
         Header: 'Elevation',
-        accessor: 'Elevation (ft)'
+        accessor: 'Elevation (ft)',
+        
     },
     {
         Header: 'Shore Dist.',
-        accessor: 'Shore Distance'
+        accessor: 'Shore Distance',
+        
     }
 ]

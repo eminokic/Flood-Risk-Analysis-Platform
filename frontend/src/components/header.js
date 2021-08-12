@@ -5,11 +5,12 @@ import '../css/App.css';
 
 import logo from '../components/images/Salient-Insure.jpg';
 
+
 export default function App() {
   return <div>
     <div class="menu">
       <div class="menubtn">
-        <span data-toggle-target="togglemenu" class="toggle-btn">MENU</span>
+        <span data-toggle-target=".togglemenu" class="toggle-btn">MENU</span>
       </div>
       <ul class="togglemenu">
         <li><a href="#home" class="btn1">HOME</a></li>

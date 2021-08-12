@@ -14,11 +14,16 @@ export default function App(){
                 <div class="group">
                     <div class="display">
                         <h1>In-N-Out Burger Map:</h1>
-                        <Markers onClick = {restaurant => setSelectedRest(restaurant) } 
-                                 onCloseClick = {restaurant => setSelectedRest(null)}
-                                 rest = {selectedRest}
-                        />
+                        <div class= "mapdisplay">
+                            <Markers onClick = {restaurant => setSelectedRest(restaurant) } 
+                                    onCloseClick = {restaurant => setSelectedRest(null)}
+                                    rest = {selectedRest}
+                            />
+                        </div>
                     </div>
+
+                    <div class="gradient2"></div>
+
                     <div class="content">
                         <div>
                             {/* {selectedRest && (
@@ -38,7 +43,7 @@ export default function App(){
                 </div>
       
             </div>
-            <div class="gradient2"></div>
+        
         </div>
 
     </div>

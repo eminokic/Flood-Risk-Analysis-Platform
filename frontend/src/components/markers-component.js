@@ -26,6 +26,7 @@ import IOBlogo from "./images/InNOut2.png";
  const mapContainerStyle = {
   width: "100%",
   height: "80vh",
+  
 };
 
 /**
