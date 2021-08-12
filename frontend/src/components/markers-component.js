@@ -25,7 +25,7 @@ import IOBlogo from "./images/InNOut2.png";
  */
  const mapContainerStyle = {
   width: "100%",
-  height: "80vh",
+  height: "100vh",
   
 };
 
@@ -39,7 +39,7 @@ import IOBlogo from "./images/InNOut2.png";
 };
 const center = {
   lat: 34.128,
-  lng: -118.2456, 
+  lng: -118.3456, 
 };
 
 export default function Markers(props) {
@@ -69,7 +69,7 @@ export default function Markers(props) {
 
     <GoogleMap  
       mapContainerStyle={mapContainerStyle} 
-      zoom={9.2} 
+      zoom={9.6} 
       center={center}
     >
       <Heatmap></Heatmap>

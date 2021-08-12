@@ -13,7 +13,7 @@ export default function App(){
             <div class="everything">
                 <div class="group">
                     <div class="display">
-                        <h1>In-N-Out Burger Map:</h1>
+                        {/* <h1>In-N-Out Burger Map:</h1> */}
                         <div class= "mapdisplay">
                             <Markers onClick = {restaurant => setSelectedRest(restaurant) } 
                                     onCloseClick = {restaurant => setSelectedRest(null)}
@@ -26,13 +26,10 @@ export default function App(){
 
                     <div class="content">
                         <div>
-                            {/* {selectedRest && (
-                                <div>{selectedRest.Address}</div>
-                            )} */}
                             { selectedRest
                                 ? <div>
                                     <h1>{selectedRest.Address}</h1>
-                                    <h2>Does this work?</h2> 
+                                    <p>Placeholder location data</p> 
                                   </div>
                                 : <div>
                                     <h1>Welcome to the Map Tool!</h1>
