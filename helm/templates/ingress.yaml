@@ -1,11 +1,10 @@
 # apiVersion: networking.k8s.io/v1beta1
 # kind: Ingress
 # metadata:
-#   name: {{ .Values.k8s.namespace }}-ingress
-#   namespace: {{ .Values.k8s.namespace }}
+#   name: ingress-plain
 #   annotations:
 #     kubernetes.io/ingress.global-static-ip-name: "{{ .Values.k8s.namespace }}-ip"
 # spec:
 #   backend:
-#     serviceName: {{ .Values.k8s.namespace }}-nginx-svc
+#     serviceName: nginx-svc
 #     servicePort: 80
