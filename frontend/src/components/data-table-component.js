@@ -22,7 +22,7 @@ const DataTableMain= () => {
     }, [])
 
   const columns = useMemo(() => COLUMNS, []) //memoize so it doesnt have to 
-  const data = useMemo(() => mock_data, []) //recalculate every time
+  const data = useMemo(() => api().get('data'), []) //recalculate every time
 
   const {
     getTableProps, 
