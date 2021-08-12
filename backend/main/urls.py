@@ -20,15 +20,15 @@ from restaurants import views
 from django.views.generic import TemplateView
 from rest_framework import routers
 
-router = routers.DefaultRouter()
-router.register(r'restaurants', views.RestaurantsView, 'restaurant')
+# router = routers.DefaultRouter()
+# router.register(r'restaurants', views.RestaurantsView, 'restaurant')
 
 urlpatterns = [
-    url(r'^restaurants/',include('restaurants.urls')),
+    url(r'^api/',include('restaurants.urls')),
     url(r'^admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     url(r'^$',views.index,name='index'),
-    path('api/', include(router.urls)),
+    # path('api/', include(router.urls)),
 ]
 
 # urlpatterns = [
