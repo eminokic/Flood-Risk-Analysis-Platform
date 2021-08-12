@@ -1,0 +1,40 @@
+@font-face {
+    font-family: myFont;
+    src: url(fonts/PROXIMANOVA-REGULAR.OTF);
+}
+@font-face {
+    font-family: myFont;
+    src: url(fonts/PROXIMANOVA-EXTRABLD.OTF);
+    font-weight: bold;
+}
+
+table {
+    font-family: myFont;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table td, table th {
+    /* border: 1px solid #ddd; */
+    padding: 8px;
+  }
+  table tr:nth-child(odd){background-color: #3b3b3b;}
+  table tr:nth-child(even){background-color: #313131;}
+  
+  table tr{
+    color: #ffffff;
+  }
+
+
+  table tr:hover {background-color: #ddd;
+  color: #000000;
+  }
+  
+  table th {
+    font-weight: bold;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #623074;
+    color: white;
+  }

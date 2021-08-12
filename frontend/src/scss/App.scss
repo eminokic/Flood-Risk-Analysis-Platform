@@ -1,0 +1,563 @@
+//responsive webpage yur
+@import 'mixins';
+
+$grayColor: #3b3b3b;
+$whiteColor: #f7f7f7;
+
+$yellow: #efcc3d;
+$lightorange: #eca014;
+$orange: #e6621a;
+$pink: #cd1d8b;
+$purple: #882d88;
+$darkpurple: #623074;
+$blue: #262262;
+
+$grad1Height: 100vh;
+$displayHeight: 100vh;
+$backgroundHeight: 50vh;
+$backgroundHeightSmall: 20vh;
+
+$softwareElements: 1;
+$analyticsmultiplier: 1.5;
+$aboutmeHeight: 100vh;
+
+@font-face {
+    font-family: myFont;
+    src: url(../components/fonts/PROXIMANOVA-REGULAR.OTF);
+  }
+  @font-face {
+    font-family: myFont;
+    src: url(../components/fonts/PROXIMANOVA-EXTRABLD.OTF);
+    font-weight: bold;
+  }
+  
+  .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    // border: 3px solid black;
+    scroll-behavior: smooth;
+  }
+  html, body{
+    height: 100vh;
+  }
+
+
+  //menu section
+  .menu{
+    position:fixed ;
+    left: 88vw;
+    // float:left;
+    width: 12vw;
+    height: 100vh;
+    background-color: $whiteColor;
+    text-align: center;
+    @include screenXL{
+      width: 14vw;
+      left: 86vw;
+    }
+    @include screenM{
+      width: 16vw;
+      left: 84vw;
+    }
+    ul {
+      margin-top: 35vh;
+      width: 12vw;
+      height: 50vh;
+      // float:left;
+      align-items: center;
+      padding: 0px;
+      li{
+        list-style: none;
+        height: 15vh;
+        width: 12vw;
+        text-align: center;
+        padding: 0px;
+        
+        a{
+          text-decoration: none;
+          border-radius: 15px ;
+          font-size: 150%;
+          color: $grayColor;
+          padding: 10px 30px;
+          transition-property: background-color;
+          transition-duration: .5s;
+          // float:left;
+          @include screenL{
+            font-size: 130%;
+            padding: 10px 20px;
+          }
+          @include screenM{
+            font-size: 100%;
+            padding: 10px;
+          }
+          // @include screenS{
+          //   font-size: 90%;
+          //   padding: 10px;
+          // }
+        }
+        a:hover{
+          background-color: $grayColor;
+          color: $whiteColor;
+        }
+        .btn1{
+          opacity: 0;
+          animation: fadeIn 2s forwards;
+          animation-delay: .2s;
+          // float:left;
+        }
+        .btn2{
+          opacity: 0;
+          animation: fadeIn 2s forwards;
+          animation-delay: .4s;
+          // float:left;
+        }
+        .btn3{
+          opacity: 0;
+          animation: fadeIn 2s forwards;
+          animation-delay: .6s;
+          // float:left;
+        }
+      }
+    }
+  }
+  // toggle MENU
+  
+.toggle-btn {
+	display: none;
+}
+
+	
+	.toggle-btn-visible {
+		display: block;
+	}
+
+	.toggle-target-hidden {
+		display: none;
+	}
+
+	.toggle-target-expanded {
+		display: block;
+	}
+
+.main-area .toggle-btn-visible {
+	display: block;
+}
+
+// .main-area .toggle-target-hidden {
+// 	display: none;
+// }
+
+// .main-area .toggle-target-expanded {
+// 	display: block;
+// }
+
+
+  //end of menu
+
+
+  //first section
+  .home{
+    height: $grad1Height;
+    .logo{
+      width: 43vw;
+      float:left;
+      background-color: $whiteColor;
+      height: 100vh;
+      text-align: center;
+      @include screenXL{
+        width: 42vw;
+      }
+      @include screenM{
+        width: 41vw;
+      }
+      img{
+        max-width: 35vw;
+        margin-top: 40vh;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+      }
+    }
+    .welcome{
+      width: 43vw;
+      float: left;
+      background-color: $grayColor;
+      height: 100vh;
+      color: $whiteColor;
+      @include screenXL{
+        width: 42vw;
+      }
+      @include screenM{
+        width: 41vw;
+      }
+      p{
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        margin-left:5vw;
+        margin-right: 5vw;
+        font-size: 200%;
+        @include screenM{
+          font-size: 110%;
+        }
+        @include screenS{
+          font-size: 80%;
+        }
+      }
+      h1{
+        margin-top:38vh;
+        margin-left:5vw;
+        margin-right: 5vw;
+        font-size: 400%;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        @include screenM{
+          font-size: 300%;
+        }
+        @include screenS{
+          font-size: 200%;
+        }
+      }
+    }
+  }
+  //end of first section
+
+  //map section
+  .display{
+    width: 60vw;
+    height: $displayHeight;
+    background-color: $grayColor;
+    float:left;
+    text-align: center;
+    @include screenXL{
+      width: 59vw;
+    }
+    @include screenM{
+      width: 58vw;
+    }
+    @include screenS{
+      float: none;
+      width: 84vw;
+      height: auto;
+    }
+    .mapdisplay{
+      padding: 20px;
+      // height: 80vh;
+      //  border: 3px solid black;
+
+    }
+    h1{
+      font-size: 300%;
+      text-decoration: underline;
+      color: $whiteColor;
+      margin-top: 30px;
+      @include screenS{
+        margin-top: 0px;
+        padding-top: 30px;
+      }
+    }
+    h2{
+      font-size: 250%;
+      text-decoration: underline;
+      color: $whiteColor;
+      margin-top: 30px;
+      @include screenS{
+        margin-top: 0px;
+        padding-top: 30px;
+      }
+    }
+  }
+  .content{
+    width: 26vw;
+    height: $displayHeight;
+    background-color: $whiteColor;
+    float:left;
+    text-align: center;
+    color: $grayColor;
+    // border: 3px solid black;
+
+    @include screenXL{
+      width: 25vw;
+    }
+    @include screenM{
+      width: 24vw;
+    }
+    @include screenS{
+      width: 84vw;
+      float: none;
+      height: auto;
+    }
+    h1{
+      font-size: 200%;
+      margin-top: 30px;
+    }
+    .skills{
+      margin-top: 100px;
+      @include screenS {
+        margin-top: 0px;
+        padding-top: 30px;
+      }
+    }
+    p{
+      font-size: 100%;
+      margin: 30px 10px 0px 10px;
+    }
+    h2{
+      font-size: 100%;
+      margin-top: 30px;
+      @include screenS{
+        padding-bottom: 30px;
+      }
+      a{
+        text-decoration: none;
+        color: $grayColor;
+        border-radius: 15px;
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  //analytics section
+  .analytics{
+    width: 60vw;
+    height: $displayHeight * $analyticsmultiplier;
+    background-color: $grayColor;
+    float:left;
+    text-align: center;
+    @include screenXL{
+      width: 59vw;
+    }
+    @include screenL{
+      float: none;
+      width: 86vw;
+      height: auto;
+    }
+    // @include screenS{
+    //   float: none;
+    //   width: 84vw;
+    //   height: auto;
+    // }
+    .searchbar{
+      color: $whiteColor;
+    }
+    table{
+      width: 60vw;
+      @include screenL{
+        width: 86vw;
+      }
+      @include screenS{
+        width: 84vw;
+      }
+      .Google{
+        @include screenL{
+          display:none;
+        }
+        @include screenM{
+          display:none;
+        }
+      }
+      .City{
+        @include screenM{
+          display:none;
+        }
+      }
+      .Land{
+        @include screenM{
+          display:none;
+        }
+      }
+      .Square{
+        @include screenM{
+          display:none;
+        }
+      }
+      .Elevation{
+        @include screenM{
+          display:none;
+        }
+      }
+
+    }
+    h1{
+      font-size: 300%;
+      text-decoration: underline;
+      color: $whiteColor;
+      margin-top: 30px;
+      @include screenS{
+        margin-top: 0px;
+        padding-top: 30px;
+      }
+    }
+    h2{
+      font-size: 250%;
+      text-decoration: underline;
+      color: $whiteColor;
+      margin-top: 30px;
+      @include screenS{
+        margin-top: 0px;
+        padding-top: 30px;
+      }
+    }
+  }
+  .analyticscontent{
+    width: 26vw;
+    height: $displayHeight * $analyticsmultiplier;
+    background-color: $whiteColor;
+    float:left;
+    text-align: center;
+    align-items: center;
+    color: $grayColor;
+    @include screenXL{
+      width: 25vw;
+    }
+    @include screenL{
+      float: none;
+      width: 86vw;
+      height: auto;
+    }
+    // @include screenS{
+    //   width: 84vw;
+    //   float: none;
+    //   height: auto;
+    // }
+
+    h1{
+      font-size: 200%;
+      margin-top: 30px;
+
+    }
+    .skills{
+      margin-top: 100px;
+      @include screenS {
+        margin-top: 0px;
+        padding-top: 30px;
+      }
+    }
+    p{
+      font-size: 100%;
+      margin: 30px 10px 0px 10px;
+    }
+    h2{
+      font-size: 100%;
+      margin-top: 30px;
+      @include screenS{
+        padding-bottom: 30px;
+      }
+      a{
+        text-decoration: none;
+        color: $grayColor;
+        border-radius: 15px;
+        padding: 10px 20px;
+      }
+    }
+  }
+  // end of software and hardware
+
+  //gradients
+  .gradient{
+    width: 2vw;
+    height: $grad1Height;
+    float: left;
+    background-image: repeating-linear-gradient(to bottom, $pink 0vh, $yellow 100vh, $pink 200vh);
+  }
+  .gradient2{
+    width: 2vw;
+    float:left;
+    // top: $grad1Height + $backgroundHeight;
+    height: $softwareElements* $displayHeight;
+    background-image: repeating-linear-gradient(to bottom, $pink 0vh, $yellow 100vh, $pink 200vh);
+    @include screenXL{
+      left: 84vw;
+    }
+    @include screenM{
+      left: 82vw;
+    }
+    @include screenS{
+      // opacity: 0;
+      width: 100vw;
+      height: 2vh;
+      background-image: repeating-linear-gradient(to right, $pink 0vw, $yellow 100vw);
+    }
+  }
+  .gradient3{
+    width: 2vw;
+    float:left;
+    // top: $grad1Height + $backgroundHeight + $softwareElements* $displayHeight + $backgroundHeight;
+    height: $analyticsmultiplier * $displayHeight;
+    background-image: repeating-linear-gradient(to bottom, $pink 0vh, $yellow 100vh, $pink 200vh);
+    @include screenXL{
+      left: 84vw;
+    }
+    @include screenL{
+      // opacity: 0;
+ 
+      width: 100vw;
+      height: 2vh;
+      background-image: repeating-linear-gradient(to right, $pink 0vw, $yellow 100vw);
+    }
+  }
+
+  .background{
+    width:100vw;
+    height: $backgroundHeight;
+    @include screenS{
+      height: $backgroundHeightSmall;
+    }
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .background1{
+    background-image: url(../components/images/background.png);
+  }
+
+
+  .group:before,
+  .group:after {
+    content: "";
+    display: table;
+  }
+  .group:after{
+    clear: both;
+  }
+  .group{
+    zoom: 1;
+  }
