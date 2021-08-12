@@ -12,7 +12,7 @@ git remote add upstream https://github.com/ignite-sci-project/ignite-sci-project
 
 git checkout -b given-branch-name                                        
 
-## Setting Up Project (Frontend)
+## Setting Up Project
 
 Download the Node.js package manager (lts version 14.17.3).
 
