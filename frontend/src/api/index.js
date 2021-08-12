@@ -10,19 +10,4 @@ export const api = () => {
   return axios.create({ baseURL: `${API_URL}api/`, timeout: 20000 });
 };
 
-#export const getData = (url: string): Promise<any> => {
-#  return api()
-#    .get(url)
-#    .then((response) => {
-#      if (response?.status === 200) {
-#        return response?.data;
-#      }
-#
-#      return response.data
-#    })
-#    .catch(({ response }) => {
-#      return response;
-#    });
-#};
-#
 export default api();
