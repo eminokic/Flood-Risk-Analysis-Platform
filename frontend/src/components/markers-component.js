@@ -11,6 +11,7 @@ import * as locationdata from "../data/newlocationdata.json"
 
 import Heatmap from "./heatmap-component.js";
 import icon from "./images/icon.png";
+import IOBlogo from "./images/InNOut2.png";
 
 /** 
  * You can implement the places api key as follows to avoid redundant rerendering.
@@ -24,7 +25,7 @@ import icon from "./images/icon.png";
  */
  const mapContainerStyle = {
   width: "100%",
-  height: "80vh",
+  height: "100vh",
   
 };
 
@@ -38,12 +39,12 @@ import icon from "./images/icon.png";
 };
 const center = {
   lat: 34.128,
-  lng: -118.2456, 
+  lng: -118.3456, 
 };
 
 export default function Markers(props) {
 
-  const [selectedRest, setSelectedRest] = useState(null);
+  // const [selectedRest, setSelectedRest] = useState(null);
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -68,7 +69,7 @@ export default function Markers(props) {
 
     <GoogleMap  
       mapContainerStyle={mapContainerStyle} 
-      zoom={9.2} 
+      zoom={9.6} 
       center={center}
     >
       <Heatmap></Heatmap>
@@ -83,26 +84,29 @@ export default function Markers(props) {
           scaledSize: new window.google.maps.Size(30,40),
           
         }}
-        onClick = {() => {
-          setSelectedRest(restaurant); 
+        onClick = {(event) => {
+          props.onClick(restaurant)
         }}
         
         />
       ))}
 
       {/* conditonal for if restaurant is selected */}
-      {selectedRest && (
+      {props.rest && (
         <InfoWindow
-        position = {{lat : (selectedRest.Lat + .02), lng : selectedRest.Long}}  
+        position = {{lat : (props.rest.Lat + .02), lng : props.rest.Long}}  
         
         // ensure that selected restaurant is reset
-        onCloseClick = {() => {
-          setSelectedRest(null);
+        onCloseClick = {(event) => {
+          props.onCloseClick(null)
         }}
         >
-        
+
           <div>
-            IOB Location : {selectedRest.Address}
+            <div class="IOBlogo">
+              <img src={IOBlogo} alt="Salient_Logo" />
+            </div>
+            IOB Location : {props.rest.Address}
             <br></br>
             Risk Rating : {(Math.random() * 100).toFixed(2)}%
           </div>
