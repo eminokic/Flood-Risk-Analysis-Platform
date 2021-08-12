@@ -7,6 +7,7 @@ import { COLUMNS } from "./columns"
 // import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import "./table.css"
 import { GlobalFilter } from "./GlobalFilter";
+import { api } from '../api/base';
 // import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 
 export default function DataTable() {
@@ -16,6 +17,9 @@ export default function DataTable() {
 }
 
 const DataTableMain= () => {
+    React.useEffect(() => {
+      api().get('data');
+    }, [])
 
   const columns = useMemo(() => COLUMNS, []) //memoize so it doesnt have to 
   const data = useMemo(() => mock_data, []) //recalculate every time
