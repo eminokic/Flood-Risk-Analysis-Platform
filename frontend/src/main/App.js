@@ -9,7 +9,7 @@ import '../css/App.css';
 
 import HomePage from '../components/header.js';
 import SecondPage from '../components/map-section.js';
-import ThirdPage from '../components/analytic-section.js';
+import ThirdPage from '../components/data-table/analytic-section.js';
 
 export default function App() {
 

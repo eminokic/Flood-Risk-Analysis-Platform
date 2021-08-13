@@ -5,9 +5,9 @@ import { useTable, useGlobalFilter, usePagination, useSortBy } from "react-table
 import mock_data from "./mock_data.json"
 import { COLUMNS } from "./columns"
 // import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
-import "./table.css"
-import { GlobalFilter } from "./GlobalFilter";
-import { api } from '../api';
+import "../table.css"
+import { GlobalFilter } from "../GlobalFilter";
+import { api } from '../../api';
 // import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 
 export default function DataTable() {
