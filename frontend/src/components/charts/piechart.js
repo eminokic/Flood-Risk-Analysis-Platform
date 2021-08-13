@@ -5,7 +5,6 @@ import {
   PieChart,
   Pie,
   Tooltip,
-  Sector,
   Cell,
   ResponsiveContainer,
   BarChart,

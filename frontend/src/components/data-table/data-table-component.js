@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import "@reach/combobox/styles.css";
 import { useTable, useGlobalFilter, usePagination, useSortBy } from "react-table";
-import mock_data from "./mock_data.json"
 import { COLUMNS } from "./columns"
 import "./table.css"
 import { GlobalFilter } from "./GlobalFilter";
