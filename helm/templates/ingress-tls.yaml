@@ -1,7 +1,7 @@
 apiVersion: networking.gke.io/v1beta2
 kind: ManagedCertificate
 metadata:
-  name: {{ .Values.k8s.namespace }}-cert
+  name: google-cert
 spec:
   domains:
     - {{ .Values.google.domain }}
@@ -11,14 +11,12 @@ spec:
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: {{ .Values.k8s.namespace }}-ingress-tls
-  namespace: {{ .Values.k8s.namespace }}
+  name: ingress-tls
   annotations:
     kubernetes.io/ingress.global-static-ip-name: "{{ .Values.k8s.namespace }}-ip"
-    networking.gke.io/managed-certificates: {{ .Values.k8s.namespace }}-cert
-    # kubernetes.io/ingress.allow-http: "false"
-    networking.gke.io/v1beta1.FrontendConfig: {{ .Values.k8s.namespace }}-frontendconfig
+    networking.gke.io/managed-certificates: google-cert
+    networking.gke.io/v1beta1.FrontendConfig: gke-frontendconfig
 spec:
   backend:
-    serviceName: {{ .Values.k8s.namespace }}-nginx-svc
+    serviceName: nginx-svc
     servicePort: 80

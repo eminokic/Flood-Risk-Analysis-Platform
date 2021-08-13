@@ -6,9 +6,9 @@ db:
   name: stage-db
   user: stage-user
 
-  project: ignite-logistics-db-prod
-  instance: ignite-logistics-instance-prod
+  project: ignite-logistics-db-dev
+  instance: ignite-logistics-instance-dev
 
 google:
-  domain: stage.ignite-logistics.com
-  static_bucket: ignite-logistics-static-prod
+  domain: stage.logistics.igniteme.dev
+  static_bucket: ignite-logistics-static-dev

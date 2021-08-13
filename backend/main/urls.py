@@ -15,12 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.conf.urls import url
+from restaurants import views
+from django.views.generic import TemplateView
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'restaurants', views.RestaurantsView, 'restaurant')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^restaurants/',include('restaurants.urls')),
+    url(r'^admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
+    url(r'^$',views.index,name='index'),
+    path('api/', include(router.urls)),
 ]
 
-urlpatterns = [
-    path('restaurants/', include('restaurants.urls')),
-    path('admin/', admin.site.urls),
-]
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('api/', include(router.urls)),
+# ]

@@ -2,16 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: {{ .Values.k8s.namespace }}-nginx-dep
-  name: {{ .Values.k8s.namespace }}-nginx-dep
-  namespace: {{ .Values.k8s.namespace }}
+    app: nginx-dep
+  name: nginx-dep
 
 spec:
   replicas: {{ .Values.k8s.nginx.replicas }}
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: {{ .Values.k8s.namespace }}-nginx-dep
+      app: nginx-dep
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -20,7 +19,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Values.k8s.namespace }}-nginx-dep
+        app: nginx-dep
     spec:
       containers:
       - image: gcr.io/{{ .Values.google.project }}/{{ .Values.k8s.namespace }}-nginx:{{ .Values.nginx.tag }}

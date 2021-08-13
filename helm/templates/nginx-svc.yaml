@@ -1,10 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.k8s.namespace }}-nginx-svc
-  namespace: {{ .Values.k8s.namespace }}
+  name: nginx-svc
   labels:
-    app: {{ .Values.k8s.namespace }}-nginx-svc
+    app: nginx-svc
   annotations:
     cloud.google.com/load-balancer-type: "Internal"
     cloud.google.com/app-protocols: '{"http":"HTTP"}'
@@ -12,7 +11,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: {{ .Values.k8s.namespace }}-nginx-dep
+    app: nginx-dep
     
   ports:
   - name: http

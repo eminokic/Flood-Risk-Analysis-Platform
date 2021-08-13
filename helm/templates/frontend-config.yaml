@@ -1,8 +1,7 @@
 apiVersion: networking.gke.io/v1beta1
 kind: FrontendConfig
 metadata:
-  name: {{ .Values.k8s.namespace }}-frontendconfig
-  namespace: {{ .Values.k8s.namespace }}
+  name: gke-frontendconfig
 spec:
   redirectToHttps:
     enabled: true
