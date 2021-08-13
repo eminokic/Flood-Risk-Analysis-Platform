@@ -45,7 +45,7 @@ spec:
 #          periodSeconds: 10
 #
         env:
-        - name: SA_DIR
+        - name: GOOGLE_APPLICATION_CREDENTIALS
           value: /config/service-account.json
 
         - name: DJANGO_KEY
