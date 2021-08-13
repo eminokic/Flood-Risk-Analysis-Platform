@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-)ig%bvcz($)qf@dr6z6d1m*8tfp^6%#l9_c@8x=#!nqzow%@39
 DEBUG = True
 
 CORS_ORIGIN_ALLOW_ALL = True
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['dev.logistics.igniteme.dev']
 
 
 # Application definition
