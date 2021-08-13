@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import Amar from "../components/amar-component.js"
+import HelloDjango from "../components/axios-tools/HelloDjango.js"
 
-test('renders learn react link', () => {
-  render(<Amar />);
+test('renders the hello django component.', () => {
+  render(<HelloDjango />);
   //const linkElement = screen.getByText(/learn react/i);
   //expect(linkElement).toBeInTheDocument();
 });
