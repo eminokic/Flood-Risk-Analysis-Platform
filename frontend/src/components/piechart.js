@@ -8,12 +8,6 @@ import {
   Sector,
   Cell,
   ResponsiveContainer,
-  BarChart,
-  XAxis,
-  YAxis,
-  Legend,
-  CartesianGrid,
-  Bar,
 } from "recharts";
 
 
@@ -61,30 +55,6 @@ export default function App(){
           </Pie>
           <Tooltip />
         </PieChart>
-        </ResponsiveContainer>
-        <ResponsiveContainer width={350} height={300}>
-        <BarChart
-
-          data={data}
-          margin={{
-            top: 5,
-            right: 0,
-            left: 0,
-            bottom: 5,
-          }}
-          barSize={20}
-        >
-          <XAxis
-            dataKey="name"
-            scale="point"
-            padding={{ left: 10, right: 10 }}
-          />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <CartesianGrid strokeDasharray="3 3" />
-          <Bar dataKey="value" fill="#623074" background={{ fill: "#eee" }} />
-        </BarChart>
         </ResponsiveContainer>
         </div>
       </div>
