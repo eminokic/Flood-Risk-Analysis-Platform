@@ -7,11 +7,11 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 
-import * as locationdata from "../data/newlocationdata.json"
+import * as locationdata from "../../data/newlocationdata.json"
 
-import Heatmap from "./heatmap-component.js";
-import icon from "./images/icon.png";
-import IOBlogo from "./images/InNOut2.png";
+import Heatmap from "../heatmap/heatmap-component.js";
+import icon from "../images/icon.png";
+import IOBlogo from "../images/InNOut2.png";
 
 /** 
  * You can implement the places api key as follows to avoid redundant rerendering.
