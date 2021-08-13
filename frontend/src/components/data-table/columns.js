@@ -1,5 +1,3 @@
-
-
 export const COLUMNS = [
     {
         Header: 'ID',

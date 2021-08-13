@@ -4,7 +4,7 @@ import "@reach/combobox/styles.css";
 import '../../css/App.css';
 
 import DataTable from "./data-table-component.js";
-import Pie from "../piechart.js"
+import Pie from "../charts/piechart.js"
 
 export default function App(){
     return <div>
