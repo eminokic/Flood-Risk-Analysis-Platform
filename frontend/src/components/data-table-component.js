@@ -29,8 +29,8 @@ export default function DataTable() {
 const DataTableMain = (props) => {
 
 
-  const columns = useMemo(() => COLUMNS, []) //memoize so it doesnt have to 
-  const data = useMemo(() => props.data, []) //recalculate every time
+  const columns = COLUMNS //memoize so it doesnt have to 
+  const data = props.data //recalculate every time
 
   const {
     getTableProps,
