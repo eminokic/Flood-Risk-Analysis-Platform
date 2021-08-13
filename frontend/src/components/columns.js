@@ -18,32 +18,32 @@ export const COLUMNS = [
     },
     {
         Header: 'Rating',
-        accessor: 'Google Maps Rating',
+        accessor: 'Rating',
         
     },
     {
         Header: 'Land Value',
-        accessor: 'Land Value',
+        accessor: 'Land_Value',
         
     },
     {
         Header: 'Sqr. ft',
-        accessor: 'Square Footage',
+        accessor: 'Square_Footage',
         
     },
     {
         Header: 'Year Built',
-        accessor: 'Year Built',
+        accessor: 'Year_Built',
         
     },
     {
         Header: 'Elevation',
-        accessor: 'Elevation (ft)',
+        accessor: 'Elevation_ft',
         
     },
     {
         Header: 'Shore Dist.',
-        accessor: 'Shore Distance',
+        accessor: 'Shore_Distance',
         
     }
 ]
