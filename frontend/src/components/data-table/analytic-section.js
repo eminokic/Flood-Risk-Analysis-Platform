@@ -1,10 +1,10 @@
 import React from "react";
 
 import "@reach/combobox/styles.css";
-import '../css/App.css';
+import '../../css/App.css';
 
-import DataTable from "../components/data-table-component.js";
-import Pie from "../components/piechart.js"
+import DataTable from "./data-table-component.js";
+import Pie from "../charts/piechart.js"
 
 export default function App(){
     return <div>

@@ -23,7 +23,8 @@ steps:
     args:
       - "-c"
       - |
-        gcloud container clusters get-credentials cluster-1 --zone=us-central1-a
+        gcloud container clusters get-credentials cluster-1 --zone=us-central1-a &&
+        gcloud secrets versions access "latest" --secret service-account --format='get(payload.data)' | tr '_-' '/+' | base64 -d > service-account.txt
 
   - name: "gcr.io/$PROJECT_ID/helm"
     id: Helm-Upgrade
@@ -31,7 +32,7 @@ steps:
     args:
       - "-c"
       - |
-        helm upgrade ignite-logistics-${_APP_ENV} ./helm -f ./helm/values/${_APP_ENV}.yaml --namespace ${_APP_ENV} --set django.tag=${COMMIT_SHA} --set nginx.tag=${COMMIT_SHA} --set google.project=$PROJECT_ID
+        helm upgrade ignite-logistics-${_APP_ENV} ./helm -f ./helm/values/${_APP_ENV}.yaml --namespace ${_APP_ENV} --set django.tag=${COMMIT_SHA} --set nginx.tag=${COMMIT_SHA} --set google.project=$PROJECT_ID --set-file google.sa=service-account.txt
     env:
       - "CLOUDSDK_COMPUTE_ZONE=us-central1-a"
       - "CLOUDSDK_CONTAINER_CLUSTER=cluster-1"

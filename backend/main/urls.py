@@ -17,10 +17,21 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls import url
 from restaurants import views
+from django.views.generic import TemplateView
+from rest_framework import routers
+
+# router = routers.DefaultRouter()
+# router.register(r'restaurants', views.RestaurantsView, 'restaurant')
 
 urlpatterns = [
-    url(r'^$',views.index,name='index'),
-    url(r'^restaurants/', views.index),
+    url(r'^api/',include('restaurants.urls')),
     url(r'^admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls'))
+    path('api-auth/', include('rest_framework.urls')),
+    url(r'^$',views.index,name='index'),
+    # path('api/', include(router.urls)),
 ]
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('api/', include(router.urls)),
+# ]

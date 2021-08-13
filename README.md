@@ -1,4 +1,4 @@
-# Ignite Sci Project
+# Ignite SCI Project
 This is the repository for Ignite logistics project regarding the business case. 
 
 ## Setting Up Repository (Example)
@@ -22,9 +22,13 @@ npm install packages if the npm package manager does not appear, and run npm sta
 
 ## Setting Up Project (backend)
 
-Download the Django framework.
+virtualenv venv -p python3
+source venv/bin/activate
 
-python manage.py migrate 
+pip install Django
+pip3 install djangorestframework
+pip install --upgrade google-cloud-bigquery
+
 python manage.py runserver
 
 ## Docker

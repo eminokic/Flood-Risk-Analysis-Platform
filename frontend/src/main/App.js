@@ -7,9 +7,9 @@ import "@reach/combobox/styles.css";
 import '../css/App.css';
 
 
-import HomePage from '../components/header.js';
-import SecondPage from '../components/map-section.js';
-import ThirdPage from '../components/analytic-section.js';
+import HomePage from '../components/header-component/header.js';
+import SecondPage from '../components/map-component/map-section.js';
+import ThirdPage from '../components/data-table/analytic-section.js';
 
 export default function App() {
 

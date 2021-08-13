@@ -1,14 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from rest_framework.response import Response
-import pandas as pd
+from rest_framework import viewsets
+from .serializers import RestaurantSerializer
+from .models import Restaurants
 
-# Create your views here.
-df = pd.read_csv("https://raw.githubusercontent.com/MichaelMavenWave/Updated/main/New%20Data%203.csv")
+class RestaurantsView(viewsets.ModelViewSet):
+    serializer_class = RestaurantSerializer
+    queryset = Restaurants.objects.all()
 
 def index(request):
-    context = {'data': df}
-    return Response(context)
+   return render(request, 'index.html')
 
-#def index(request):
-#    return HttpResponse("Hello, world. You're at the restaurants index!")
+# def index(request):
+#     return HttpResponse("Hello, world. You're at the restaurants index!")
