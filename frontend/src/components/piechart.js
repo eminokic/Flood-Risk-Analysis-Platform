@@ -77,9 +77,9 @@ import { Group } from "@visx/group";
 import { Text } from "@visx/text";
 
 const coins = [
-  { symbol: "ADA", amount: 200, color: "#882d88", inUSD: 1.48 },
-  { symbol: "SOL", amount: 5, color: "#cd1d8b", inUSD: 37.6 },
-  { symbol: "BTC", amount: 0.005, color: "#e6621a", inUSD: 37363 },
+  { symbol: "Low Risk", amount: 9, color: "#882d88", inUSD: 1 },
+  { symbol: "Medium Risk", amount: 30, color: "#cd1d8b", inUSD: 1 },
+  { symbol: "High Risk", amount: 20, color: "#e6621a", inUSD: 1 },
 ];
 
 export default function Home() {
@@ -119,7 +119,7 @@ export default function Home() {
           {active ? (
             <>
               <Text textAnchor="middle" fill="#3b3b3b" fontSize={40} dy={-10}>
-                {`$${Math.floor(active.amount * active.inUSD)}`}
+                {`${Math.floor(active.amount * active.inUSD)}`}
               </Text>
 
               <Text
@@ -128,19 +128,19 @@ export default function Home() {
                 fontSize={20}
                 dy={20}
               >
-                {`${active.amount} ${active.symbol}`}
+                {`${active.symbol}`}
               </Text>
             </>
           ) : (
             <>
               <Text textAnchor="middle" fill="#3b3b3b" fontSize={40} dy={-10}>
-                {`$${Math.floor(
+                {`${Math.floor(
                   coins.reduce((acc, coin) => acc + coin.amount * coin.inUSD, 0)
                 )}`}
               </Text>
 
               <Text textAnchor="middle" fill="#3b3b3b" fontSize={20} dy={25}>
-                {`${coins.length} Assets`}
+                {`Locations`}
               </Text>
             </>
           )}
