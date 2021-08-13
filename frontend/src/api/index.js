@@ -28,7 +28,7 @@ export default api();
 //         var response = _a.response;
 //         return response;
 //     });
-// };
+// };  
 
 
 // export const getData = (url: string): Promise<any> => {
