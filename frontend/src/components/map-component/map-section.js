@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 
 import "@reach/combobox/styles.css";
-import '../css/App.css';
-import Markers from "../components/markers-component.js";
+import '../../css/App.css';
+import Markers from "../markers/markers-component.js";
 
 export default function App(){
 

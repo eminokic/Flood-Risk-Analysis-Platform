@@ -1,14 +1,10 @@
-//Amar table UI
 import React, { useMemo } from "react";
 import "@reach/combobox/styles.css";
 import { useTable, useGlobalFilter, usePagination, useSortBy } from "react-table";
-import mock_data from "./mock_data.json"
 import { COLUMNS } from "./columns"
-// import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import "./table.css"
 import { GlobalFilter } from "./GlobalFilter";
-import { api } from '../api';
-// import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
+import { api } from '../../api';
 
 export default function DataTable() {
 
