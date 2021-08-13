@@ -17,7 +17,12 @@ export default function App(){
                 <div class="gradient3"></div>
             <div class="analyticscontent">
         <h1 class= "skills top">Placeholder content</h1>
+        <div class="piecontainer">
         <Pie></Pie>
+        </div>
+        <div class="piecontainer">
+        <Pie></Pie>
+        </div>
       </div>
     </div>
   </div>

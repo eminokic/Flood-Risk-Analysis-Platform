@@ -314,7 +314,10 @@ $aboutmeHeight: 100vh;
     text-align: center;
     color: $grayColor;
     // border: 3px solid black;
-
+    .bargraphcontainer{
+      padding-top:20px;
+      padding-bottom: 20px;
+    }
     @include screenXL{
       width: 25vw;
     }
@@ -459,7 +462,10 @@ $aboutmeHeight: 100vh;
     //   float: none;
     //   height: auto;
     // }
-
+    .piecontainer{
+      padding-top:20px;
+      padding-bottom: 20px;
+    }
     h1{
       font-size: 200%;
       margin-top: 30px;
