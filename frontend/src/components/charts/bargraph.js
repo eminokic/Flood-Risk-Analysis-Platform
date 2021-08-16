@@ -84,7 +84,7 @@ export default function BarGraph(){
         <ResponsiveContainer width={350} height={300}>
         <BarChart
 
-          data={mock_data}
+          data={all_data}
           margin={{
             top: 5,
             right: 0,
@@ -115,3 +115,4 @@ export default function BarGraph(){
         </div>
       </div>
 } 
+
