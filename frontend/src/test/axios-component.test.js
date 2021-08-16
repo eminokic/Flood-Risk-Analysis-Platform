@@ -2,10 +2,10 @@ import { render } from '@testing-library/react';
 import axios from 'axios';
 import { fetchDevData, fetchStageData, devAPI, stageAPI } from '../components/axios-tools/axios-fetching.js';
 
-import HelloDjango from "../components/axios-tools/HelloDjango.js"
+import Restaurant from "../components/axios-tools/axios-query.js"
 
 test('renders the hello django component.', () => {
-  render(<HelloDjango />);
+  render(<Restaurant />);
 });
 
 // Jest Library to mock the axios calls required.
