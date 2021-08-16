@@ -1,5 +1,6 @@
 import React from "react";
 import '../../css/App.css';
+import { api } from '../../api';
 
 import {
   Tooltip,
@@ -12,6 +13,15 @@ import {
   Bar,
 } from "recharts";
 
+const [data, setData] = React.useState([]);
+
+  React.useEffect(() => {
+    api().get('data2')
+      .then((response) => {
+        console.log('Are we getting a response?', response)
+        setData(response.data);
+      });
+  }, [])
 
 const data = [
     { name: "Facebook", value: 2000 },
