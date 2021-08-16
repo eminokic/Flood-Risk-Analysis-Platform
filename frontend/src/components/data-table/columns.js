@@ -15,8 +15,8 @@ export const COLUMNS = [
         
     },
     {
-        Header: 'Rating',
-        accessor: 'Rating',
+        Header: 'Risk',
+        accessor: 'normalized_score',
         
     },
     {

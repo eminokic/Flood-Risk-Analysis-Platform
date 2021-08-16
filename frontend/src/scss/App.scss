@@ -390,30 +390,22 @@ $aboutmeHeight: 100vh;
       @include screenS{
         width: 84vw;
       }
-      .Google{
-        @include screenL{
-          display:none;
-        }
+      // .City{
+      //   @include screenM{
+      //     display:none;
+      //   }
+      // }
+      .Land_Value{
         @include screenM{
           display:none;
         }
       }
-      .City{
+      .Square_Footage{
         @include screenM{
           display:none;
         }
       }
-      .Land{
-        @include screenM{
-          display:none;
-        }
-      }
-      .Square{
-        @include screenM{
-          display:none;
-        }
-      }
-      .Elevation{
+      .Elevation_ft{
         @include screenM{
           display:none;
         }

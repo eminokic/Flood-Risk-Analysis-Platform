@@ -13,7 +13,16 @@ import {
   Bar,
 } from "recharts";
 
-const [data, setData] = React.useState([]);
+
+const mock_data = [
+    { name: "land_normalized", value: .53 },
+    { name: "normalized_100", value: 8.6 },
+    { name: "normalized_elevation", value: 4.2 },
+    { name: "risk_score", value: 1.87 }
+  ];
+
+export default function BarGraph(){
+  const [normdata, setData] = React.useState([]);
 
   React.useEffect(() => {
     api().get('data2')
@@ -23,20 +32,16 @@ const [data, setData] = React.useState([]);
       });
   }, [])
 
-const data = [
-    { name: "Facebook", value: 2000 },
-    { name: "Instagram", value: 1500 },
-    { name: "Twiter", value: 1000 },
-    { name: "Telegram", value: 5000 },
-  ];
+  console.log('This is normdata',[normdata[0]])
 
-export default function App(){
+  // const data= normdata.data;
+
     return <div>
         <div style={{ textAlign: "center" }}>
         <ResponsiveContainer width={350} height={300}>
         <BarChart
 
-          data={data}
+          data={mock_data}
           margin={{
             top: 5,
             right: 0,
@@ -50,7 +55,9 @@ export default function App(){
             scale="point"
             padding={{ left: 10, right: 10 }}
           />
-          <YAxis />
+          <YAxis 
+
+          />
           <Tooltip />
           <Legend />
           <CartesianGrid strokeDasharray="3 3" />

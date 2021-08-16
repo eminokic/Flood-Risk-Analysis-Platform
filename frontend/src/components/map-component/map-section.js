@@ -31,15 +31,16 @@ export default function App(){
                                 ? <div>
                                     <h1>{selectedRest.Address}</h1>
                                     <p>Placeholder location data</p> 
+                                    <div class="bargraphcontainer">
+                                        <BarGraph></BarGraph>
+                                    </div>
                                   </div>
                                 : <div>
                                     <h1>Welcome to the Map Tool!</h1>
                                   </div>
                             }
                         </div>
-                        <div class="bargraphcontainer">
-                            <BarGraph></BarGraph>
-                        </div>
+                    
                     </div>
                 </div>
       
