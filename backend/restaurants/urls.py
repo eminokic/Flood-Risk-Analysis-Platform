@@ -39,5 +39,5 @@ def redirect_view2(request):
 urlpatterns = [
     path("", views.index,name='index'),
     path("data", redirect_view, name='data'),
-    path("normal", redirect_view2, name='normal'),
+    path("data2", redirect_view2, name='data2'),
 ]
