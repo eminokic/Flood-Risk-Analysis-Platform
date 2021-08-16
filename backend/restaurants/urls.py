@@ -12,6 +12,7 @@ def redirect_view(request):
     query = """
         SELECT * 
         FROM `composite-shard-319803.bigdata.main data`
+        ORDER BY ID
         LIMIT 1000
     """
     query_job = client.query(query) 
@@ -26,6 +27,7 @@ def redirect_view2(request):
     query = """
         SELECT * 
         FROM `composite-shard-319803.bigdata.Updated Normalized Data`
+        ORDER BY ID
         LIMIT 1000
     """
     query_job = client.query(query) 
