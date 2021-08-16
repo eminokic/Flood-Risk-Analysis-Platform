@@ -25,7 +25,7 @@ def redirect_view2(request):
     client = bigquery.Client()
     query = """
         SELECT * 
-        FROM `composite-shard-319803.bigdata.normalize`
+        FROM `composite-shard-319803.bigdata.Updated Normalized Data`
         LIMIT 1000
     """
     query_job = client.query(query) 
