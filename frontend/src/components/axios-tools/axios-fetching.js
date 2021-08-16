@@ -18,7 +18,7 @@ export const stageAPI = 'https://prod.logistics.igniteme.dev/api/data';
  * @param {*} query 
  * @returns getData 
  */
-export const fetchStageData = async query => {
+export const fetchDevData = async query => {
 
   const url = `${devAPI}/search?query=${query}`;
 
