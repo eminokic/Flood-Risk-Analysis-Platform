@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import "@reach/combobox/styles.css";
 import '../../css/App.css';
 import Markers from "../markers/markers-component.js";
-import BarGraph from "../components/charts/bargraph.js"
+import BarGraph from "../../components/charts/bargraph.js"
 
 export default function App(){
 
