@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "@reach/combobox/styles.css";
-import {Polygon} from "@react-google-maps/api";
+import {Polygon, KmlLayer} from "@react-google-maps/api";
 
 const hundredYearCoordinates = [
   { lat: 34.07602375980253, lng: -118.3553268671356 },
@@ -40,7 +40,10 @@ const onLoad = polygon => {
 export default class Heatmap extends Component {
   render() {
     return <div>
-    <Polygon paths={hundredYearCoordinates} options={options} onLoad={onLoad}></Polygon>,
+    <Polygon paths={hundredYearCoordinates} options={options} onLoad={onLoad}></Polygon>
+    <KmlLayer
+        url= {this.props.url}
+      />
     </div>
     }
 }

@@ -51,7 +51,7 @@ export default function Markers(props) {
       zoom={9.6} 
       center={center}
     >
-      <Heatmap></Heatmap>
+      <Heatmap url = {props.url}></Heatmap>
 
       {/* Maps restaurant location data from json to map markers */}
       {locationdata.results.map(restaurant => (
