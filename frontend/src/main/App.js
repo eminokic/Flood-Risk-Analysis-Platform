@@ -13,6 +13,13 @@ import ThirdPage from '../components/data-table/analytic-section.js';
 
 export default function App() {
 
+  /**
+   * This load script calls the google maps api key locally. 
+   * To do this on your own, create a .env.local file in the top level and copy the following template.
+   * 
+   * REACT_APP_GOOGLE_MAPS_API_KEY="YOUR_API_KEY"
+   * 
+   */
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
