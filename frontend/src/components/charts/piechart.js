@@ -15,7 +15,7 @@ import {
   Bar,
 } from "recharts";
 
-
+ 
 const data = [
     { name: "Facebook", value: 2000 },
     { name: "Instagram", value: 1500 },
