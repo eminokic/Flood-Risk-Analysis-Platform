@@ -44,27 +44,6 @@ const center = {
 
 export default function Markers(props) {
 
-  // const [selectedRest, setSelectedRest] = useState(null);
-
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-  });
-
-
-  const mapRef = React.useRef();
-
-  /**
-   * The loadError function is a flag for the case that the map does not render properly. 
-   */
-  if(loadError) {
-    return "Error in rendering map. Try Again!";
-  }
-
-  /**
-   * The isLoaded function checks to see if the map has been rendered each time and properly flags the case if not.
-   */
-  if(!isLoaded) {return "Rendering Map...";}
-
   return <div>
 
     <GoogleMap  

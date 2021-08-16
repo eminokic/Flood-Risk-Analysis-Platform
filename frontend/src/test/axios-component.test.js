@@ -1,27 +1,44 @@
 import { render } from '@testing-library/react';
 import axios from 'axios';
-import { fetchData, API } from '../components/axios-tools/axios-fetching.js';
+import { fetchDevData, fetchStageData, devAPI, stageAPI } from '../components/axios-tools/axios-fetching.js';
 
-import HelloDjango from "../components/axios-tools/HelloDjango.js"
+import Restaurant from "../components/axios-tools/axios-query.js"
 
 test('renders the hello django component.', () => {
-  render(<HelloDjango />);
+  render(<Restaurant />);
 });
 
-test('tests api connection.', () => {
-  
-})
+// Jest Library to mock the axios calls required.
 jest.mock('axios');
  
-describe('fetchData', () => {
+/**
+ * Fetch data from the development environment.
+ */
+describe('fetchDevData', () => {
   it('fetches successfully data from an API', async () => {
     const data = {};
  
     axios.get.mockImplementationOnce(() => Promise.resolve(data));
-    await expect(fetchData('react')).resolves.toEqual(data);
+    await expect(fetchDevData('react')).resolves.toEqual(data);
  
     expect(axios.get).toHaveBeenCalledWith(
-      `${API}/search?query=react`,
+      `${devAPI}/search?query=react`,
+    );
+  });
+});
+
+/**
+ * Fetch data from the stage environment.
+ */
+describe('fetchStageData', () => {
+  it('fetches successfully data from an API', async () => {
+    const data = {};
+ 
+    axios.get.mockImplementationOnce(() => Promise.resolve(data));
+    await expect(fetchStageData('react')).resolves.toEqual(data);
+ 
+    expect(axios.get).toHaveBeenCalledWith(
+      `${stageAPI}/search?query=react`,
     );
   });
 });
