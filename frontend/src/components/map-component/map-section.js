@@ -3,11 +3,8 @@ import React, {useState} from "react";
 import "@reach/combobox/styles.css";
 import '../../css/App.css';
 import Markers from "../markers/markers-component.js";
-<<<<<<< Updated upstream
 import BarGraph from "../../components/charts/bargraph.js"
-=======
-import BarGraph from "../components/charts/bargraph.js"
->>>>>>> Stashed changes
+
 
 export default function App(){
 
@@ -44,13 +41,6 @@ export default function App(){
                                   </div>
                             }
                         </div>
-<<<<<<< Updated upstream
-                    
-=======
-                        <div class="bargraphcontainer">
-                            <BarGraph></BarGraph>
-                        </div>
->>>>>>> Stashed changes
                     </div>
                 </div>
       

@@ -1,6 +1,6 @@
 
 import React from "react";
-import './charts.css';
+// import '../charts.css';
 
 import { useState } from "react";
 import { Pie } from "@visx/shape";
