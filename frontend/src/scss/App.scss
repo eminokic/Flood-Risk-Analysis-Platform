@@ -314,7 +314,10 @@ $aboutmeHeight: 100vh;
     text-align: center;
     color: $grayColor;
     // border: 3px solid black;
-
+    .bargraphcontainer{
+      padding-top:20px;
+      padding-bottom: 20px;
+    }
     @include screenXL{
       width: 25vw;
     }
@@ -387,30 +390,22 @@ $aboutmeHeight: 100vh;
       @include screenS{
         width: 84vw;
       }
-      .Google{
-        @include screenL{
-          display:none;
-        }
+      // .City{
+      //   @include screenM{
+      //     display:none;
+      //   }
+      // }
+      .Land_Value{
         @include screenM{
           display:none;
         }
       }
-      .City{
+      .Square_Footage{
         @include screenM{
           display:none;
         }
       }
-      .Land{
-        @include screenM{
-          display:none;
-        }
-      }
-      .Square{
-        @include screenM{
-          display:none;
-        }
-      }
-      .Elevation{
+      .Elevation_ft{
         @include screenM{
           display:none;
         }
@@ -453,6 +448,10 @@ $aboutmeHeight: 100vh;
       float: none;
       width: 86vw;
       height: auto;
+    }
+    .piecontainer{
+      padding-top:20px;
+      padding-bottom: 20px;
     }
     // @include screenS{
     //   width: 84vw;
@@ -546,7 +545,7 @@ $aboutmeHeight: 100vh;
     background-attachment: fixed;
   }
   .background1{
-    background-image: url(../components/images/background.png);
+    background-image: url(../images/background.png);
   }
 
 
