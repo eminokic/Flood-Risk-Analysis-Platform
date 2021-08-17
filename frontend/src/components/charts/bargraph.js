@@ -2,6 +2,7 @@ import React from "react";
 import '../../css/App.css';
 import { api } from '../../api';
 
+
 import {
   Tooltip,
   ResponsiveContainer,
@@ -30,7 +31,6 @@ export default function BarGraph(){
 }
 // var mock_data = all_data.find(x => x.ID === 30)
 // console.log("This is the mock_data", mock_data)
-
   // console.log('This is normdata',[normdata[0]])
   // const data= normdata.data;
 const BarGraphMain = (props) => {
@@ -39,7 +39,6 @@ const BarGraphMain = (props) => {
         <div style={{ textAlign: "center" }}>
         <ResponsiveContainer width={350} height={300}>
         <BarChart
-
           data={data}
           margin={{
             top: 5,
@@ -54,9 +53,7 @@ const BarGraphMain = (props) => {
             // scale="point"
             // padding={{ left: 10, right: 10 }}
           />
-          <YAxis 
-
-          />
+          <YAxis />
           <Tooltip />
           <Legend />
           <CartesianGrid strokeDasharray="3 3" />

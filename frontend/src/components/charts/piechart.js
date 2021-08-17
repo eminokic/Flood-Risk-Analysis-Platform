@@ -1,7 +1,12 @@
+
+import React from "react";
+import './charts.css';
+
 import { useState } from "react";
 import { Pie } from "@visx/shape";
 import { Group } from "@visx/group";
 import { Text } from "@visx/text";
+
 
 const coins = [
   { symbol: "Low Risk", amount: 9, color: "#882d88", inUSD: 1 },
