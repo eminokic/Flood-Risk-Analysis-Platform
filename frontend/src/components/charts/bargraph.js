@@ -69,12 +69,12 @@ export default function BarGraph(){
     api().get('data2')
       .then((response) => {
         console.log('Are we getting a response?', response)
-        setData(response.data);
+        setData(response.data.find(x => x.ID === 26));
       });
   } ,[])
   console.log('normdata',normdata)
   return <div>
-    <BarGraphMain data={normdata}></BarGraphMain>
+    <BarGraphMain data={[normdata]}></BarGraphMain>
   </div>
 }
 // var mock_data = all_data.find(x => x.ID === 30)
