@@ -1,7 +1,7 @@
 import React from "react";
 
 import "@reach/combobox/styles.css";
-import '../../css/App.css';
+import './header.css';
 
 import logo from '../../components/images/Salient-Insure.jpg';
 
