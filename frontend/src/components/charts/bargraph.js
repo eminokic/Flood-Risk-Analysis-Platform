@@ -13,55 +13,6 @@ import {
   Bar,
 } from "recharts";
 
-
-const all_data = [ {
-  ID: 30,
-  num_rating: "Number of Ratings",
-  num_rating_normalized: 1.445812808,
-  land_value: "Land Value",
-  land_normalized: 0.04199336377,
-  square_footage: "Square Footage",
-  footage_normalized: 0.5312032738,
-  year_built: "Year Built",
-  year_normalized: 0,
-  elevation: "Elevation",
-  normalized_elevation: 4.211503796,
-  shore_distance: "Shore Distance",
-  shore_normalized: 8.699373004,
-  _100_year: "100 Year Flood",
-  normalized_100: 8.629605688,
-  _500_year: "500 Year Flood",
-  normalized_500: 4.698412698,
-  risk_score: "Risk Score",
-  risk_score_18: -25.36137374,
-  normalized_score: "Normalized Score",
-  normalized_score_20: 1.870533085
-},
-{
-  ID: 14,
-  num_rating: "Number of Ratings",
-  num_rating_normalized: 2.640394089,
-  land_value: "Land Value",
-  land_normalized: 0.3229210179,
-  square_footage: "Square Footage",
-  footage_normalized: 2.809475092,
-  year_built: "Year Built",
-  year_normalized: 10,
-  elevation: "Elevation",
-  normalized_elevation: 5.519746545,
-  shore_distance: "Shore Distance",
-  shore_normalized: 5.597744776,
-  _100_year: "100 Year Flood",
-  normalized_100: 2.378797673,
-  _500_year: "500 Year Flood",
-  normalized_500: 3.542857143,
-  risk_score: "Risk Score",
-  risk_score_18: -22.31991414,
-  normalized_score: "Normalized Score",
-  normalized_score_20: 2.823682176
-},
-];
-
 export default function BarGraph(){
   const [normdata, setData] = React.useState([]);
 
