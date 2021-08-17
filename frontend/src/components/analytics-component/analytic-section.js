@@ -1,9 +1,9 @@
 import React from "react";
 
 import "@reach/combobox/styles.css";
-import '../../css/App.css';
+import './analytics.css';
 
-import DataTable from "./data-table-component.js";
+import DataTable from "../data-table/data-table-component.js";
 import Pie from "../charts/piechart.js"
 
 export default function App(){

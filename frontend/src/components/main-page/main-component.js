@@ -6,7 +6,7 @@ import '../../css/App.css';
 
 import HomePage from '../header-component/header.js';
 import SecondPage from '../map-component/map-section.js';
-import ThirdPage from '../data-table/analytic-section.js';
+import ThirdPage from '../analytics-component/analytic-section.js';
 
 export default function MainComponent() {
 
