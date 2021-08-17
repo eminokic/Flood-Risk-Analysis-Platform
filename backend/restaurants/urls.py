@@ -26,7 +26,7 @@ def redirect_view2(request):
     client = bigquery.Client()
     query = """
         SELECT * 
-        FROM `composite-shard-319803.bigdata.Updated Normalized Data`
+        FROM `composite-shard-319803.bigdata.Updated Normalized Data 2`
         ORDER BY ID
         LIMIT 1000
     """
