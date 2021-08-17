@@ -2,7 +2,6 @@ import React from "react";
 import "@reach/combobox/styles.css";
 import { 
   GoogleMap,
-  useLoadScript,
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
@@ -10,8 +9,8 @@ import {
 import * as locationdata from "../../data/newlocationdata.json"
 
 import Heatmap from "../heatmap/heatmap-component.js";
-import icon from "../images/icon.png";
-import IOBlogo from "../images/InNOut2.png";
+import icon from "../../images/icon.png";
+import IOBlogo from "../../images/InNOut2.png";
 
 /** 
  * You can implement the places api key as follows to avoid redundant rerendering.
