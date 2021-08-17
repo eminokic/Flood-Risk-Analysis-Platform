@@ -3,6 +3,8 @@ import React, {useState} from "react";
 import "@reach/combobox/styles.css";
 import '../../css/App.css';
 import Markers from "../markers/markers-component.js";
+import BarGraph from "../../components/charts/bargraph.js"
+
 
 export default function App(){
 
@@ -30,6 +32,9 @@ export default function App(){
                                 ? <div>
                                     <h1>{selectedRest.Address}</h1>
                                     <p>Placeholder location data</p> 
+                                    <div class="bargraphcontainer">
+                                        <BarGraph></BarGraph>
+                                    </div>
                                   </div>
                                 : <div>
                                     <h1>Welcome to the Map Tool!</h1>
