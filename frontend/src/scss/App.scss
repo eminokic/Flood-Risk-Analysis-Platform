@@ -307,19 +307,22 @@ $aboutmeHeight: 100vh;
     }
   }
   .content{
-    width: 26vw;
+    width: 27vw;
     height: $displayHeight;
     background-color: $whiteColor;
     float:left;
     text-align: center;
     color: $grayColor;
     // border: 3px solid black;
-
+    .bargraphcontainer{
+      padding-top:20px;
+      padding-bottom: 20px;
+    }
     @include screenXL{
-      width: 25vw;
+      width: 26vw;
     }
     @include screenM{
-      width: 24vw;
+      width: 25vw;
     }
     @include screenS{
       width: 84vw;
@@ -387,30 +390,22 @@ $aboutmeHeight: 100vh;
       @include screenS{
         width: 84vw;
       }
-      .Google{
-        @include screenL{
-          display:none;
-        }
+      // .City{
+      //   @include screenM{
+      //     display:none;
+      //   }
+      // }
+      .Land_Value{
         @include screenM{
           display:none;
         }
       }
-      .City{
+      .Square_Footage{
         @include screenM{
           display:none;
         }
       }
-      .Land{
-        @include screenM{
-          display:none;
-        }
-      }
-      .Square{
-        @include screenM{
-          display:none;
-        }
-      }
-      .Elevation{
+      .Elevation_ft{
         @include screenM{
           display:none;
         }
@@ -439,7 +434,7 @@ $aboutmeHeight: 100vh;
     }
   }
   .analyticscontent{
-    width: 26vw;
+    width: 27vw;
     height: $displayHeight * $analyticsmultiplier;
     background-color: $whiteColor;
     float:left;
@@ -447,12 +442,16 @@ $aboutmeHeight: 100vh;
     align-items: center;
     color: $grayColor;
     @include screenXL{
-      width: 25vw;
+      width: 26vw;
     }
     @include screenL{
       float: none;
       width: 86vw;
       height: auto;
+    }
+    .piecontainer{
+      padding-top:20px;
+      padding-bottom: 20px;
     }
     // @include screenS{
     //   width: 84vw;
@@ -500,7 +499,7 @@ $aboutmeHeight: 100vh;
     background-image: repeating-linear-gradient(to bottom, $pink 0vh, $yellow 100vh, $pink 200vh);
   }
   .gradient2{
-    width: 2vw;
+    width: 1vw;
     float:left;
     // top: $grad1Height + $backgroundHeight;
     height: $softwareElements* $displayHeight;
@@ -514,12 +513,12 @@ $aboutmeHeight: 100vh;
     @include screenS{
       // opacity: 0;
       width: 100vw;
-      height: 2vh;
+      height: 1vh;
       background-image: repeating-linear-gradient(to right, $pink 0vw, $yellow 100vw);
     }
   }
   .gradient3{
-    width: 2vw;
+    width: 1vw;
     float:left;
     // top: $grad1Height + $backgroundHeight + $softwareElements* $displayHeight + $backgroundHeight;
     height: $analyticsmultiplier * $displayHeight;
@@ -531,7 +530,7 @@ $aboutmeHeight: 100vh;
       // opacity: 0;
  
       width: 100vw;
-      height: 2vh;
+      height: 1vh;
       background-image: repeating-linear-gradient(to right, $pink 0vw, $yellow 100vw);
     }
   }
@@ -546,7 +545,7 @@ $aboutmeHeight: 100vh;
     background-attachment: fixed;
   }
   .background1{
-    background-image: url(../components/images/background.png);
+    background-image: url(../images/background.png);
   }
 
 

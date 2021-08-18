@@ -3,7 +3,7 @@ import React from "react";
 import "@reach/combobox/styles.css";
 import '../../css/App.css';
 
-import DataTable from "./data-table-component.js";
+import DataTable from "../data-table/data-table-component.js";
 import Pie from "../charts/piechart.js"
 
 export default function App(){
@@ -16,8 +16,13 @@ export default function App(){
                 </div>
                 <div class="gradient3"></div>
             <div class="analyticscontent">
-        <h1 class= "skills top">Placeholder content</h1>
+        <h1 class= "skills top">Risk</h1>
+        <div class= "piecontainer">
         <Pie></Pie>
+        </div>
+        <div class= "piecontainer">
+        <Pie></Pie>
+        </div>
       </div>
     </div>
   </div>
