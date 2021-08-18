@@ -40,7 +40,7 @@ const onLoad = polygon => {
 export default class Heatmap extends Component {
   render() {
     return <div>
-    <Polygon paths={hundredYearCoordinates} options={options} onLoad={onLoad}></Polygon>
+    {/* <Polygon paths={hundredYearCoordinates} options={options} onLoad={onLoad}></Polygon> */}
     <KmlLayer
         url= {this.props.url[0]}
       />
