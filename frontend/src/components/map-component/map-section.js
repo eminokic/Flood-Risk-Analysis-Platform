@@ -13,7 +13,7 @@ export default function App(){
     const [selectedID, setSelectedID] = useState(null);
 
     const [counter, setCounter] = useState(0);
-
+    
     return <div>
         <div id="map" class="software group">
             <div class="everything">
