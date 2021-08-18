@@ -47,6 +47,9 @@ export default class Heatmap extends Component {
     <KmlLayer
       url= {this.props.url[1]}
     />
+    <KmlLayer
+      url= {this.props.url[2]}
+    />
     </div>
     }
 }
