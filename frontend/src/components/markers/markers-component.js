@@ -84,9 +84,17 @@ export default function Markers(props) {
             <div class="IOBlogo">
               <img src={IOBlogo} alt="Salient_Logo" />
             </div>
-            IOB Location : {props.rest.Address}
+            Address : {props.rest.Address}
             <br></br>
-            Risk Assessment : {props.rest.normalized_score}%
+            Year Property was Built : {props.rest.Year_Built}
+            <br></br>
+            Value of Property : ${Number((props.rest.Land_Value).toFixed(2))}
+            <br></br>
+            Size of Property : {props.rest.Square_Footage} sq ft
+            <br></br>
+            Distance from Shore : {Number((props.rest.Shore_Distance).toFixed(2))} miles
+            <br></br>
+            <b>Risk Assessment : {Number((props.rest.normalized_score).toFixed(2))}/10</b>
           </div>
 
         </InfoWindow>
