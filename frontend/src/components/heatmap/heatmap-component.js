@@ -42,8 +42,11 @@ export default class Heatmap extends Component {
     return <div>
     <Polygon paths={hundredYearCoordinates} options={options} onLoad={onLoad}></Polygon>
     <KmlLayer
-        url= {this.props.url}
+        url= {this.props.url[0]}
       />
+    <KmlLayer
+      url= {this.props.url[1]}
+    />
     </div>
     }
 }

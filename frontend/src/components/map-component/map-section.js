@@ -9,7 +9,7 @@ import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 export default function App(){
 
     const [selectedRest, setSelectedRest] = useState(null);
-    const [selectedLayer, setSelectedLayer] = useState(null);
+    const [selectedLayer, setSelectedLayer] = useState(() => []);
 
     const handleChange = (event, nextLayer) => {
         setSelectedLayer(nextLayer);
@@ -38,11 +38,11 @@ export default function App(){
                                 ?  
                                     <div>
                                         <h1>Welcome to the Map Tool!</h1>
-                                        <ToggleButtonGroup orientation="vertical" value={selectedLayer} exclusive onChange={handleChange}>
-                                            <ToggleButton value="https://raw.githubusercontent.com/derekz3/flood-kml/main/100yr_simple_dissolved.kml" aria-label="list">
+                                        <ToggleButtonGroup orientation="vertical" value={selectedLayer} onChange={handleChange}>
+                                            <ToggleButton value="https://raw.githubusercontent.com/derekz3/flood-kml/main/100.kml" aria-label="list">
                                                 100-Yr Flood Map
                                             </ToggleButton>
-                                            <ToggleButton value="https://raw.githubusercontent.com/derekz3/flood-kml/main/500yr_simple_subset.kml" aria-label="module">
+                                            <ToggleButton value="https://raw.githubusercontent.com/derekz3/flood-kml/main/500.kml" aria-label="module">
                                                 500-Yr Flood Map
                                             </ToggleButton>
                                            
