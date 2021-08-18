@@ -9,9 +9,9 @@ import { Text } from "@visx/text";
 
 
 const coins = [
-  { symbol: "Low Risk", amount: 9, color: "#882d88", inUSD: 1 },
-  { symbol: "Medium Risk", amount: 30, color: "#cd1d8b", inUSD: 1 },
-  { symbol: "High Risk", amount: 20, color: "#e6621a", inUSD: 1 },
+  { symbol: "Low Risk", amount: 9, color: '#ffa400', inUSD: 1 },
+  { symbol: "Medium Risk", amount: 30, color: '#ff5100', inUSD: 1 },
+  { symbol: "High Risk", amount: 20, color: '#e50695', inUSD: 1 },
 ];
 
 export default function Home() {

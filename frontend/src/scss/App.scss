@@ -330,7 +330,7 @@ $aboutmeHeight: 100vh;
       height: auto;
     }
     h1{
-      font-size: 200%;
+      font-size: 170%;
       margin-top: 30px;
     }
     .skills{
@@ -341,7 +341,7 @@ $aboutmeHeight: 100vh;
       }
     }
     p{
-      font-size: 100%;
+      font-size: 120%;
       margin: 30px 10px 0px 10px;
     }
     h2{
@@ -451,7 +451,7 @@ $aboutmeHeight: 100vh;
     }
     .piecontainer{
       padding-top:20px;
-      padding-bottom: 20px;
+      padding-bottom: 0px;
     }
     // @include screenS{
     //   width: 84vw;
@@ -460,12 +460,12 @@ $aboutmeHeight: 100vh;
     // }
 
     h1{
-      font-size: 200%;
-      margin-top: 30px;
+      font-size: 170%;
+  
 
     }
     .skills{
-      margin-top: 100px;
+      margin-top: 25px;
       @include screenS {
         margin-top: 0px;
         padding-top: 30px;

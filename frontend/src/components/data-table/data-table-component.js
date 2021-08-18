@@ -95,7 +95,7 @@ const DataTableMain = (props) => {
           }
         </tbody>
       </table>
-      <div>
+      <div class="bottombar">
         <span>
           Page{' '}
           <strong>

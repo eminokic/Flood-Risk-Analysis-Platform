@@ -115,6 +115,8 @@ export default function App(){
                                         <p style={{color:'#ffa400'}}>0-4 indicates a low value</p>
                                         <p style={{color:'#ff5100'}}>4-8 indicates a medium value</p>
                                         <p style={{color:'#e50695'}}>8-10 indicates a high value</p>
+                                        <p>____________________</p>
+                                        <p><strong>Toggle 100 and 500 year flood data: </strong></p>
 
                                         <ToggleButtonGroup orientation="vertical" value={selectedLayer} onChange={handleChange}>
                                             <ToggleButton value="https://raw.githubusercontent.com/derekz3/flood-kml/main/100.kml" aria-label="list">

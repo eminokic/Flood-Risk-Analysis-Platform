@@ -15,18 +15,11 @@ import {
 } from "recharts";
 
 export default function BarGraph(){
-  const [normdata, setData] = React.useState([]);
-    var numID = 2;
-  React.useEffect(() => {
-    api().get('data2')
-      .then((response) => {
-        console.log('Are we getting a response?', response)
-        setData(response.data.find(x => x.ID === numID));
-      });
-  } ,[])
-  console.log('normdata',normdata)
+  const normdata = [{"ID": "Average Values", 'Land Value (million)': 1.771756678, 'Square Footage (thousand)':3.034135593, 'Elevation (hundred)':4.299610169, 
+  'Shore Distance (miles)':13.46314146, '100y Flood Distance (miles)': 3.176161176, '500y Flood Distance (miles)':3.01448598894593},
+                    ];
   return <div>
-    <BarGraphMain data={[normdata]}></BarGraphMain>
+    <BarGraphMain data={normdata}></BarGraphMain>
   </div>
 }
 // var mock_data = all_data.find(x => x.ID === 30)
@@ -46,7 +39,7 @@ const BarGraphMain = (props) => {
             left: 0,
             bottom: 5,
           }}
-          barSize={30}
+          barSize={35}
         >
           <XAxis
             dataKey="ID"
@@ -57,13 +50,12 @@ const BarGraphMain = (props) => {
           <Tooltip />
           <Legend />
           <CartesianGrid strokeDasharray="3 3" />
-          <Bar dataKey="Land_Value" fill="#262262" />
-          <Bar dataKey="Square_Footage" fill="#623074" />
-          <Bar dataKey="Elevation" fill="#9b1d94"/>
-          <Bar dataKey="Shore_Distance" fill="#e50695"/>
-          <Bar dataKey="_100_Year_Flood" fill="#ff5100"/>
-          <Bar dataKey="_500_Year_Flood" fill="#ffa400"/>
-          <Bar dataKey="Final_Risk" fill="#fad533" />
+          <Bar dataKey="Land Value (million)" fill="#262262" />
+          <Bar dataKey="Square Footage (thousand)" fill="#623074" />
+          <Bar dataKey="Elevation (hundred)" fill="#9b1d94"/>
+          <Bar dataKey="Shore Distance (miles)" fill="#e50695"/>
+          <Bar dataKey="100y Flood Distance (miles)" fill="#ff5100"/>
+          <Bar dataKey="500y Flood Distance (miles)" fill="#ffa400"/>
         </BarChart>
         </ResponsiveContainer>
         </div>
