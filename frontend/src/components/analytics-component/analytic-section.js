@@ -1,7 +1,7 @@
 import React from "react";
 
 import "@reach/combobox/styles.css";
-import './analytics.css';
+import '../../css/App.css';
 
 import DataTable from "../data-table/data-table-component.js";
 import Pie from "../charts/piechart.js"

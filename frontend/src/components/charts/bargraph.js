@@ -57,13 +57,13 @@ const BarGraphMain = (props) => {
           <Tooltip />
           <Legend />
           <CartesianGrid strokeDasharray="3 3" />
-          <Bar dataKey="land_normalized" fill="#262262" />
-          <Bar dataKey="footage_normalized" fill="#623074" />
-          <Bar dataKey="normalized_elevation" fill="#9b1d94"/>
-          <Bar dataKey="shore_normalized" fill="#e50695"/>
-          <Bar dataKey="normalized_100" fill="#ff5100"/>
-          <Bar dataKey="normalized_500" fill="#ffa400"/>
-          <Bar dataKey="normalized_score_20" fill="#fad533" />
+          <Bar dataKey="Land_Value" fill="#262262" />
+          <Bar dataKey="Square_Footage" fill="#623074" />
+          <Bar dataKey="Elevation" fill="#9b1d94"/>
+          <Bar dataKey="Shore_Distance" fill="#e50695"/>
+          <Bar dataKey="_100_Year_Flood" fill="#ff5100"/>
+          <Bar dataKey="_500_Year_Flood" fill="#ffa400"/>
+          <Bar dataKey="Final_Risk" fill="#fad533" />
         </BarChart>
         </ResponsiveContainer>
         </div>
