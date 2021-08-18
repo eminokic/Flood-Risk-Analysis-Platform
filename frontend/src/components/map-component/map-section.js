@@ -3,6 +3,8 @@ import React, {useState} from "react";
 import "@reach/combobox/styles.css";
 import '../../css/App.css';
 import Markers from "../markers/markers-component.js";
+import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import BarGraph1 from "../charts/bargraph1.js"
 import BarGraph2 from "../charts/bargraph2.js"
 
@@ -10,6 +12,11 @@ import BarGraph2 from "../charts/bargraph2.js"
 export default function App(){
 
     const [selectedRest, setSelectedRest] = useState(null);
+    const [selectedLayer, setSelectedLayer] = useState(() => []);
+
+    const handleChange = (event, nextLayer) => {
+        setSelectedLayer(nextLayer);
+      };
     const [selectedID, setSelectedID] = useState(null);
 
     const [counter, setCounter] = useState(0);
@@ -49,6 +56,7 @@ export default function App(){
                             <Markers onClick = {restaurant => {setSelectedRest(restaurant); setSelectedID(restaurant); setCounter(counter + 1);} } 
                                     onCloseClick = {restaurant => setSelectedRest(null)}
                                     rest = {selectedRest}
+                                    url = {selectedLayer}
                             />
                         </div>
                     </div>
@@ -101,11 +109,26 @@ export default function App(){
                                 :
                                     <div>
                                         <h1>Welcome to the Map Tool!</h1>
+        
                                         <p>Start by selecting an In-N-Out Burger location</p>
                                         <p>Normalized data will appear for each location</p>
                                         <p style={{color:'#ffa400'}}>0-4 indicates a low value</p>
                                         <p style={{color:'#ff5100'}}>4-8 indicates a medium value</p>
                                         <p style={{color:'#e50695'}}>8-10 indicates a high value</p>
+
+                                        <ToggleButtonGroup orientation="vertical" value={selectedLayer} onChange={handleChange}>
+                                            <ToggleButton value="https://raw.githubusercontent.com/derekz3/flood-kml/main/100.kml" aria-label="list">
+                                                100-Yr Flood Map
+                                            </ToggleButton>
+                                            <ToggleButton value="https://raw.githubusercontent.com/derekz3/flood-kml/main/500.kml" aria-label="module">
+                                                500-Yr Flood Map
+                                            </ToggleButton>
+                                            <ToggleButton value="https://raw.githubusercontent.com/derekz3/flood-kml/main/mss.kml" aria-label="module">
+                                                Sewage Map
+                                            </ToggleButton>
+                                           
+                                        </ToggleButtonGroup>
+
                                     </div>
                             }
 
