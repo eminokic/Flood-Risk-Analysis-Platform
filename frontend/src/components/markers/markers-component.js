@@ -86,7 +86,7 @@ export default function Markers(props) {
             </div>
             IOB Location : {props.rest.Address}
             <br></br>
-            Risk Rating : {(Math.random() * 100).toFixed(2)}%
+            Risk Assessment : {props.rest.normalized_score}%
           </div>
 
         </InfoWindow>
