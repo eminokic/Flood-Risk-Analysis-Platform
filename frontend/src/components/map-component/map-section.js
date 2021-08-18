@@ -13,6 +13,31 @@ export default function App(){
     const [selectedID, setSelectedID] = useState(null);
 
     const [counter, setCounter] = useState(0);
+    var riskrating = "";
+    var riskcolor = "";
+
+    function UpdateRiskRating(){
+        if(0<=selectedRest.normalized_score && selectedRest.normalized_score<4){
+            riskrating = 'Low'
+        }
+        else if (4<=selectedRest.normalized_score && selectedRest.normalized_score<8){
+            riskrating = 'Medium'
+        } else{
+            riskrating = 'High'
+        }
+    }
+    function UpdateColor(){
+        if(0<=selectedRest.normalized_score && selectedRest.normalized_score<4){
+            riskcolor = '#ffa400'
+        }
+        else if (4<=selectedRest.normalized_score && selectedRest.normalized_score<8){
+            riskcolor = '#ff5100'
+        } else{
+            riskcolor = '#e50695'
+        }
+    }
+
+
     
     return <div>
         <div id="map" class="software group">
@@ -21,7 +46,7 @@ export default function App(){
                     <div class="display">
                         {/* <h1>In-N-Out Burger Map:</h1> */}
                         <div class= "mapdisplay">
-                            <Markers onClick = {restaurant => {setSelectedRest(restaurant); setSelectedID(restaurant); setCounter(counter + 1);  console.log("counter ", counter)} } 
+                            <Markers onClick = {restaurant => {setSelectedRest(restaurant); setSelectedID(restaurant); setCounter(counter + 1);} } 
                                     onCloseClick = {restaurant => setSelectedRest(null)}
                                     rest = {selectedRest}
                             />
@@ -51,21 +76,25 @@ export default function App(){
                                         {counter % 2 === 0
                                             ?
                                                 <div>
-                                                    {console.log("even")}
+                                                    {UpdateRiskRating()}
+                                                    {UpdateColor()}
                                                     <h1>{selectedRest.Address}</h1>
-                                                    <p>Placeholder location data</p> 
                                                     <div class="bargraphcontainer">
                                                         <BarGraph1 newID = {selectedRest.ID}></BarGraph1>
                                                     </div>
+                                                    <h1>Your final risk is: {selectedRest.normalized_score}</h1>
+                                                    <h1 style={{color:riskcolor}}>This is a {riskrating} value</h1>
                                                 </div>
                                             : 
                                                 <div>
-                                                    {console.log("odd")}
+                                                    {UpdateRiskRating()}
+                                                    {UpdateColor()}
                                                     <h1>{selectedRest.Address}</h1>
-                                                    <p>Placeholder location data</p> 
                                                     <div class="bargraphcontainer">
                                                         <BarGraph2 newID = {selectedRest.ID}></BarGraph2>
                                                     </div>
+                                                    <h1>Your final risk is: {selectedRest.normalized_score}</h1>
+                                                    <h1 style={{color:riskcolor}}>This is a {riskrating} value</h1>
                                                 </div>
                                         }
                                     </div>
