@@ -101,6 +101,11 @@ export default function App(){
                                 :
                                     <div>
                                         <h1>Welcome to the Map Tool!</h1>
+                                        <p>Start by selecting an In-N-Out Burger location</p>
+                                        <p>Normalized data will appear for each location</p>
+                                        <p style={{color:'#ffa400'}}>0-4 indicates a low value</p>
+                                        <p style={{color:'#ff5100'}}>4-8 indicates a medium value</p>
+                                        <p style={{color:'#e50695'}}>8-10 indicates a high value</p>
                                     </div>
                             }
 
