@@ -14,7 +14,7 @@ import { api } from '../../api';
 export default function DataTable() {
 
   const [data, setData] = React.useState([]);
-
+  //API call
   React.useEffect(() => {
     api().get('data')
       .then((response) => {
