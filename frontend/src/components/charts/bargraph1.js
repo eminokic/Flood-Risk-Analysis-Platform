@@ -1,3 +1,4 @@
+//Bargraph1 and Bargraph2 switches off rendering 
 import React from "react";
 import '../../css/App.css';
 import { api } from '../../api';
@@ -14,8 +15,9 @@ import {
   Bar,
 } from "recharts";
 
-export default function BarGraph(props){
+export default function BarGraph(props){ 
   const [normdata, setData] = React.useState([]);
+  //axios gets the data from the api key
     var numID = props.newID;
   React.useEffect(() => {
     api().get('data2')
@@ -29,10 +31,6 @@ export default function BarGraph(props){
     <BarGraphMain data={[normdata]}></BarGraphMain>
   </div>
 }
-// var mock_data = all_data.find(x => x.ID === 30)
-// console.log("This is the mock_data", mock_data)
-  // console.log('This is normdata',[normdata[0]])
-  // const data= normdata.data;
 const BarGraphMain = (props) => {
   const data = props.data
     return <div>
@@ -50,8 +48,6 @@ const BarGraphMain = (props) => {
         >
           <XAxis
             dataKey="ID"
-            // scale="point"
-            // padding={{ left: 10, right: 10 }}
           />
           <YAxis />
           <Tooltip />
