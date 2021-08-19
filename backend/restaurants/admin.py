@@ -5,5 +5,4 @@ class RestaurantsAdmin(admin.ModelAdmin):
     list_display = ('name', 'address', 'city')
 
 # Register your models here.
-
 admin.site.register(Restaurants, RestaurantsAdmin)

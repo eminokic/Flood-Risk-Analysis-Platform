@@ -1,17 +1,16 @@
-import React,{useState} from "react";
+import React from "react";
 import "@reach/combobox/styles.css";
 import { 
   GoogleMap,
-  useLoadScript,
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
 
-import * as locationdata from "../data/newlocationdata.json"
+import * as locationdata from "../../data/newlocationdata.json"
 
-import Heatmap from "./heatmap-component.js";
-import icon from "./images/icon.png";
-import IOBlogo from "./images/InNOut2.png";
+import Heatmap from "../heatmap/heatmap-component.js";
+import icon from "../../images/icon.png";
+import IOBlogo from "../../images/InNOut2.png";
 
 /** 
  * You can implement the places api key as follows to avoid redundant rerendering.
@@ -44,27 +43,6 @@ const center = {
 
 export default function Markers(props) {
 
-  // const [selectedRest, setSelectedRest] = useState(null);
-
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-  });
-
-
-  const mapRef = React.useRef();
-
-  /**
-   * The loadError function is a flag for the case that the map does not render properly. 
-   */
-  if(loadError) {
-    return "Error in rendering map. Try Again!";
-  }
-
-  /**
-   * The isLoaded function checks to see if the map has been rendered each time and properly flags the case if not.
-   */
-  if(!isLoaded) {return "Rendering Map...";}
-
   return <div>
 
     <GoogleMap  
@@ -72,7 +50,7 @@ export default function Markers(props) {
       zoom={9.6} 
       center={center}
     >
-      <Heatmap></Heatmap>
+      <Heatmap url = {props.url}></Heatmap>
 
       {/* Maps restaurant location data from json to map markers */}
       {locationdata.results.map(restaurant => (
@@ -106,9 +84,17 @@ export default function Markers(props) {
             <div class="IOBlogo">
               <img src={IOBlogo} alt="Salient_Logo" />
             </div>
-            IOB Location : {props.rest.Address}
+            Address : {props.rest.Address}
             <br></br>
-            Risk Rating : {(Math.random() * 100).toFixed(2)}%
+            Year Property was Built : {props.rest.Year_Built}
+            <br></br>
+            Value of Property : ${Number((props.rest.Land_Value).toFixed(2))}
+            <br></br>
+            Size of Property : {props.rest.Square_Footage} sq ft
+            <br></br>
+            Distance from Shore : {Number((props.rest.Shore_Distance).toFixed(2))} miles
+            <br></br>
+            <b>Risk Assessment : {Number((props.rest.normalized_score).toFixed(2))}/10</b>
           </div>
 
         </InfoWindow>

@@ -1,12 +1,16 @@
 import React from "react";
 
 import "@reach/combobox/styles.css";
-import '../css/App.css';
+import '../../css/App.css';
 
-import logo from '../components/images/Salient-Insure.jpg';
+import logo from '../../images/Salient-Insure.jpg';
 
-
-export default function App() {
+/**
+ * Header Component 
+ * 
+ * @returns Header UI
+ */
+export default function HeaderComponent() {
   return <div>
     <div class="menu">
       <div class="menubtn">
