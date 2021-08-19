@@ -7,6 +7,11 @@ import BarGraph from "../charts/bargraph.js"
 import DataTable from "../data-table/data-table-component.js";
 import Pie from "../charts/piechart.js"
 
+/**
+ * Analytics Component UI
+ * 
+ * @returns Analytics Page
+ */
 export default function AnalyticsComponent(){
     return <div>
         <div id="analytics" class="hardware group">
