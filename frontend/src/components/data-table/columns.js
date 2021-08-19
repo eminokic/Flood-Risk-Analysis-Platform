@@ -1,7 +1,4 @@
-/**
- * Columns Component 
- * For accessing the data.
- */
+//Column names/ IDs that it gets from the API call
 export const COLUMNS = [
     {
         Header: 'ID',
