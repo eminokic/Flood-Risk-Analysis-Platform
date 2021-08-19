@@ -47,10 +47,8 @@ spec:
         env:
         - name: GOOGLE_APPLICATION_CREDENTIALS
           value: /config/service-account.json
-
         - name: DJANGO_KEY
           value: "{{ .Values.django.key }}"
-
         - name: GKE_PROJECT
           value: {{ .Values.google.project }}
         - name: DOMAIN
@@ -59,6 +57,10 @@ spec:
           value: {{ .Values.google.static_bucket }}
         - name: LIFECYCLE
           value: {{ .Values.k8s.namespace }}
+        - name: OAUTH_SECRET
+          value: {{ .Values.google.oauth_secret }}
+        - name: GOOGLE_MAPS_API_KEY
+          value: {{ .Values.google.maps_key }}
 
         ports:
         - containerPort: 8000

@@ -25,7 +25,8 @@ steps:
       - |
         gcloud container clusters get-credentials cluster-1 --zone=us-central1-a &&
         gcloud secrets versions access "latest" --secret service-account --format='get(payload.data)' | tr '_-' '/+' | base64 -d > service-account.txt &&
-        gcloud secrets versions access "latest" --secret google-maps-api-key --format='get(payload.data)' | tr '_-' '/+' | base64 -d > google_maps_key.txt
+        gcloud secrets versions access "latest" --secret google-maps-api-key --format='get(payload.data)' | tr '_-' '/+' | base64 -d > google_maps_key.txt &&
+        gcloud secrets versions access "latest" --secret oauth-secret --format='get(payload.data)' | tr '_-' '/+' | base64 -d > oauth-secret.txt
 
   - name: "gcr.io/$PROJECT_ID/helm"
     id: Helm-Upgrade
@@ -33,7 +34,7 @@ steps:
     args:
       - "-c"
       - |
-        helm upgrade ignite-logistics-${_APP_ENV} ./helm -f ./helm/values/${_APP_ENV}.yaml --namespace ${_APP_ENV} --set django.tag=${COMMIT_SHA} --set nginx.tag=${COMMIT_SHA} --set google.project=$PROJECT_ID --set-file google.sa=service-account.txt --set-file google.maps_key=google_maps_key.txt
+        helm upgrade ignite-logistics-${_APP_ENV} ./helm -f ./helm/values/${_APP_ENV}.yaml --namespace ${_APP_ENV} --set django.tag=${COMMIT_SHA} --set nginx.tag=${COMMIT_SHA} --set google.project=$PROJECT_ID --set-file google.sa=service-account.txt --set-file google.maps_key=google_maps_key.txt --set-file google.oauth_secret=oauth-secret.txt
     env:
       - "CLOUDSDK_COMPUTE_ZONE=us-central1-a"
       - "CLOUDSDK_CONTAINER_CLUSTER=cluster-1"
