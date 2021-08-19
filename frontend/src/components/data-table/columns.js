@@ -1,3 +1,7 @@
+/**
+ * Columns Component 
+ * For accessing the data.
+ */
 export const COLUMNS = [
     {
         Header: 'ID',
