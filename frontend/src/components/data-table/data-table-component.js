@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import "@reach/combobox/styles.css";
 import { useTable, useGlobalFilter, usePagination, useSortBy } from "react-table";
 import { COLUMNS } from "./columns"
@@ -6,10 +6,15 @@ import "./table.css"
 import { GlobalFilter } from "./GlobalFilter";
 import { api } from '../../api';
 
+/**
+ * Data Table Component 
+ * 
+ * @returns Data Table UI
+ */
 export default function DataTable() {
 
   const [data, setData] = React.useState([]);
-
+  //API call
   React.useEffect(() => {
     api().get('data')
       .then((response) => {
@@ -95,7 +100,7 @@ const DataTableMain = (props) => {
           }
         </tbody>
       </table>
-      <div>
+      <div class="bottombar">
         <span>
           Page{' '}
           <strong>

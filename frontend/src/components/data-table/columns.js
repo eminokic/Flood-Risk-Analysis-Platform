@@ -1,3 +1,4 @@
+//Column names/ IDs that it gets from the API call
 export const COLUMNS = [
     {
         Header: 'ID',
@@ -15,8 +16,8 @@ export const COLUMNS = [
         
     },
     {
-        Header: 'Rating',
-        accessor: 'Rating',
+        Header: 'Risk Score',
+        accessor: 'normalized_score',
         
     },
     {

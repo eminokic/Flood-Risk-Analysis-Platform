@@ -1,3 +1,4 @@
+/* generic css for the table */
 @font-face {
     font-family: myFont;
     src: url(../fonts/PROXIMANOVA-REGULAR.OTF);
@@ -37,4 +38,8 @@ table {
     text-align: left;
     background-color: #623074;
     color: white;
+  }
+
+  .bottombar{
+    color: #ffffff;
   }
