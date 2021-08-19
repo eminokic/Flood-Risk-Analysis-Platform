@@ -1,4 +1,4 @@
-//responsive webpage yur
+//responsive webpage
 @import 'mixins';
 
 $grayColor: #3b3b3b;
@@ -75,7 +75,6 @@ $aboutmeHeight: 100vh;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    // border: 3px solid black;
     scroll-behavior: smooth;
   }
   html, body{
@@ -87,7 +86,6 @@ $aboutmeHeight: 100vh;
   .menu{
     position:fixed ;
     left: 88vw;
-    // float:left;
     width: 12vw;
     height: 100vh;
     background-color: $whiteColor;
@@ -104,7 +102,6 @@ $aboutmeHeight: 100vh;
       margin-top: 35vh;
       width: 12vw;
       height: 50vh;
-      // float:left;
       align-items: center;
       padding: 0px;
       li{
@@ -122,7 +119,6 @@ $aboutmeHeight: 100vh;
           padding: 10px 30px;
           transition-property: background-color;
           transition-duration: .5s;
-          // float:left;
           @include screenL{
             font-size: 130%;
             padding: 10px 20px;
@@ -131,10 +127,6 @@ $aboutmeHeight: 100vh;
             font-size: 100%;
             padding: 10px;
           }
-          // @include screenS{
-          //   font-size: 90%;
-          //   padding: 10px;
-          // }
         }
         a:hover{
           background-color: $grayColor;
@@ -144,19 +136,16 @@ $aboutmeHeight: 100vh;
           opacity: 0;
           animation: fadeIn 2s forwards;
           animation-delay: .2s;
-          // float:left;
         }
         .btn2{
           opacity: 0;
           animation: fadeIn 2s forwards;
           animation-delay: .4s;
-          // float:left;
         }
         .btn3{
           opacity: 0;
           animation: fadeIn 2s forwards;
           animation-delay: .6s;
-          // float:left;
         }
       }
     }
@@ -183,15 +172,6 @@ $aboutmeHeight: 100vh;
 .main-area .toggle-btn-visible {
 	display: block;
 }
-
-// .main-area .toggle-target-hidden {
-// 	display: none;
-// }
-
-// .main-area .toggle-target-expanded {
-// 	display: block;
-// }
-
 
   //end of menu
 
@@ -281,9 +261,6 @@ $aboutmeHeight: 100vh;
     }
     .mapdisplay{
       padding: 0px;
-      // height: 80vh;
-      //  border: 3px solid black;
-
     }
     h1{
       font-size: 300%;
@@ -307,19 +284,21 @@ $aboutmeHeight: 100vh;
     }
   }
   .content{
-    width: 26vw;
+    width: 27vw;
     height: $displayHeight;
     background-color: $whiteColor;
     float:left;
     text-align: center;
     color: $grayColor;
-    // border: 3px solid black;
-
+    .bargraphcontainer{
+      padding-top:20px;
+      padding-bottom: 20px;
+    }
     @include screenXL{
-      width: 25vw;
+      width: 26vw;
     }
     @include screenM{
-      width: 24vw;
+      width: 25vw;
     }
     @include screenS{
       width: 84vw;
@@ -327,7 +306,7 @@ $aboutmeHeight: 100vh;
       height: auto;
     }
     h1{
-      font-size: 200%;
+      font-size: 170%;
       margin-top: 30px;
     }
     .skills{
@@ -338,7 +317,7 @@ $aboutmeHeight: 100vh;
       }
     }
     p{
-      font-size: 100%;
+      font-size: 120%;
       margin: 30px 10px 0px 10px;
     }
     h2{
@@ -371,11 +350,6 @@ $aboutmeHeight: 100vh;
       width: 86vw;
       height: auto;
     }
-    // @include screenS{
-    //   float: none;
-    //   width: 84vw;
-    //   height: auto;
-    // }
     .searchbar{
       color: $whiteColor;
     }
@@ -387,30 +361,17 @@ $aboutmeHeight: 100vh;
       @include screenS{
         width: 84vw;
       }
-      .Google{
-        @include screenL{
-          display:none;
-        }
+      .Land_Value{
         @include screenM{
           display:none;
         }
       }
-      .City{
+      .Square_Footage{
         @include screenM{
           display:none;
         }
       }
-      .Land{
-        @include screenM{
-          display:none;
-        }
-      }
-      .Square{
-        @include screenM{
-          display:none;
-        }
-      }
-      .Elevation{
+      .Elevation_ft{
         @include screenM{
           display:none;
         }
@@ -439,7 +400,7 @@ $aboutmeHeight: 100vh;
     }
   }
   .analyticscontent{
-    width: 26vw;
+    width: 27vw;
     height: $displayHeight * $analyticsmultiplier;
     background-color: $whiteColor;
     float:left;
@@ -447,33 +408,31 @@ $aboutmeHeight: 100vh;
     align-items: center;
     color: $grayColor;
     @include screenXL{
-      width: 25vw;
+      width: 26vw;
     }
     @include screenL{
       float: none;
       width: 86vw;
       height: auto;
     }
-    // @include screenS{
-    //   width: 84vw;
-    //   float: none;
-    //   height: auto;
-    // }
-
+    .piecontainer{
+      padding-top:20px;
+      padding-bottom: 0px;
+    }
     h1{
-      font-size: 200%;
-      margin-top: 30px;
+      font-size: 170%;
+  
 
     }
     .skills{
-      margin-top: 100px;
+      margin-top: 25px;
       @include screenS {
         margin-top: 0px;
         padding-top: 30px;
       }
     }
     p{
-      font-size: 100%;
+      font-size: 130%;
       margin: 30px 10px 0px 10px;
     }
     h2{
@@ -500,9 +459,8 @@ $aboutmeHeight: 100vh;
     background-image: repeating-linear-gradient(to bottom, $pink 0vh, $yellow 100vh, $pink 200vh);
   }
   .gradient2{
-    width: 2vw;
+    width: 1vw;
     float:left;
-    // top: $grad1Height + $backgroundHeight;
     height: $softwareElements* $displayHeight;
     background-image: repeating-linear-gradient(to bottom, $pink 0vh, $yellow 100vh, $pink 200vh);
     @include screenXL{
@@ -512,26 +470,23 @@ $aboutmeHeight: 100vh;
       left: 82vw;
     }
     @include screenS{
-      // opacity: 0;
       width: 100vw;
-      height: 2vh;
+      height: 1vh;
       background-image: repeating-linear-gradient(to right, $pink 0vw, $yellow 100vw);
     }
   }
   .gradient3{
-    width: 2vw;
+    width: 1vw;
     float:left;
-    // top: $grad1Height + $backgroundHeight + $softwareElements* $displayHeight + $backgroundHeight;
     height: $analyticsmultiplier * $displayHeight;
     background-image: repeating-linear-gradient(to bottom, $pink 0vh, $yellow 100vh, $pink 200vh);
     @include screenXL{
       left: 84vw;
     }
     @include screenL{
-      // opacity: 0;
  
       width: 100vw;
-      height: 2vh;
+      height: 1vh;
       background-image: repeating-linear-gradient(to right, $pink 0vw, $yellow 100vw);
     }
   }
@@ -546,7 +501,7 @@ $aboutmeHeight: 100vh;
     background-attachment: fixed;
   }
   .background1{
-    background-image: url(../components/images/background.png);
+    background-image: url(../images/background.png);
   }
 
 

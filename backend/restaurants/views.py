@@ -10,6 +10,3 @@ class RestaurantsView(viewsets.ModelViewSet):
 
 def index(request):
    return render(request, 'index.html')
-
-# def index(request):
-#     return HttpResponse("Hello, world. You're at the restaurants index!")
