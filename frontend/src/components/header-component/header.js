@@ -5,8 +5,12 @@ import '../../css/App.css';
 
 import logo from '../../images/Salient-Insure.jpg';
 
-
-export default function App() {
+/**
+ * Header Component 
+ * 
+ * @returns Header UI
+ */
+export default function HeaderComponent() {
   return <div>
     <div class="menu">
       <div class="menubtn">

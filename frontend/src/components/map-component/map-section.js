@@ -8,18 +8,26 @@ import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import BarGraph1 from "../charts/bargraph1.js"
 import BarGraph2 from "../charts/bargraph2.js"
 
+/**
+ * Map Component
+ * 
+ * @returns Map Component UI
+ */
+export default function MapComponent(){
 
-export default function App(){
-
+    // restaurant and layer states for marker and layer selection
     const [selectedRest, setSelectedRest] = useState(null);
     const [selectedLayer, setSelectedLayer] = useState(() => []);
+    const [selectedID, setSelectedID] = useState(null);
+    const [counter, setCounter] = useState(0);
 
     const handleChange = (event, nextLayer) => {
         setSelectedLayer(nextLayer);
       };
-    const [selectedID, setSelectedID] = useState(null);
+    
 
-    const [counter, setCounter] = useState(0);
+
+    // functions to display risk conclusion with appropriate colors
     var riskrating = "";
     var riskcolor = "";
 
@@ -65,21 +73,15 @@ export default function App(){
 
                     <div class="content">
                         <div>
-                            {/* { selectedRest.ID === selectedID
-                                ? <div>
-                                    <h1>{selectedRest.Address}</h1>
-                                    <p>Placeholder location data</p> 
-                                    <div class="bargraphcontainer">
-                                        <BarGraph newID = {selectedRest.ID}></BarGraph>
-                                    </div>
-                                  </div>
-                                : <div>
-                                    <h1>Welcome to the Map Tool!</h1>
-                                  </div>
-                            } */}
 
                             {selectedRest
+                                
                                 ? 
+                                    /**
+                                     * display restaurant-specific data if restaurant marker is selected
+                                     * counter logic ensures restaurant-specific data refreshes and rerenders
+                                     * 
+                                     */
                                     <div>
                                         {counter % 2 === 0
                                             ?
@@ -107,6 +109,9 @@ export default function App(){
                                         }
                                     </div>
                                 :
+                                    /**
+                                     * display welcome screen if no restaurant is selected, including instructions, layer toggles
+                                     */
                                     <div>
                                         <h1>Welcome to the Map Tool!</h1>
         

@@ -1,4 +1,4 @@
-
+//This renders the pie chart in the data section
 import React from "react";
 import '../../css/App.css';
 
@@ -7,7 +7,7 @@ import { Pie } from "@visx/shape";
 import { Group } from "@visx/group";
 import { Text } from "@visx/text";
 
-
+//"coins" is the data for the pie chart
 const coins = [
   { symbol: "Low Risk", amount: 9, color: '#ffa400', inUSD: 1 },
   { symbol: "Medium Risk", amount: 30, color: '#ff5100', inUSD: 1 },
