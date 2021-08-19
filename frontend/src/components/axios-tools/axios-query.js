@@ -1,6 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 
+/**
+ * Axios Query Component 
+ * 
+ * The goal of this component is query data using axios. 
+ * 
+ */
 export default class Restaurant extends React.Component {
   
   state = {
