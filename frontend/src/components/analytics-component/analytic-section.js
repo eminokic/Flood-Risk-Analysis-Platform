@@ -7,7 +7,7 @@ import BarGraph from "../charts/bargraph.js"
 import DataTable from "../data-table/data-table-component.js";
 import Pie from "../charts/piechart.js"
 
-export default function App(){
+export default function AnalyticsComponent(){
     return <div>
         <div id="analytics" class="hardware group">
             <div class="group">
