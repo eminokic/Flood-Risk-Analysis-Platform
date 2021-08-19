@@ -8,6 +8,7 @@ import '../css/App.css';
 
 import MainComponent from "../components/main-page/main-component";
 
+import SplashScreenComponent from "../components/splash-screen/splash-component.js"
 export default function App() {
 
   /**
@@ -34,6 +35,8 @@ export default function App() {
   if(!isLoaded) {return "Rendering Map...";}
 
   return <div>
+    <SplashScreenComponent>
     <MainComponent></MainComponent>
+    </SplashScreenComponent>
     </div>
 }
