@@ -8,8 +8,12 @@ import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import BarGraph1 from "../charts/bargraph1.js"
 import BarGraph2 from "../charts/bargraph2.js"
 
-
-export default function App(){
+/**
+ * Map Component
+ * 
+ * @returns Map Component UI
+ */
+export default function MapComponent(){
 
     // restaurant and layer states for marker and layer selection
     const [selectedRest, setSelectedRest] = useState(null);
