@@ -32,13 +32,23 @@ export default function MapComponent(){
     var riskcolor = "";
 
     function UpdateRiskRating(){
-        if(0<=selectedRest.normalized_score && selectedRest.normalized_score<4){
+        if(0<=selectedRest.normalized_score && selectedRest.normalized_score<2){
+            riskrating = 'Very Low'
+        }
+        else if (2<=selectedRest.normalized_score && selectedRest.normalized_score<4){
             riskrating = 'Low'
         }
-        else if (4<=selectedRest.normalized_score && selectedRest.normalized_score<8){
+        else if (4<=selectedRest.normalized_score && selectedRest.normalized_score<6){
             riskrating = 'Medium'
-        } else{
+        } 
+        else if (6<=selectedRest.normalized_score && selectedRest.normalized_score<8){
+            riskrating = 'Medium-High'
+        }
+        else if (8<=selectedRest.normalized_score && selectedRest.normalized_score<9){
             riskrating = 'High'
+        }
+        else{
+            riskrating = 'Very High'
         }
     }
     function UpdateColor(){
