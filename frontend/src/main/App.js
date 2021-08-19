@@ -35,8 +35,6 @@ export default function App() {
   if(!isLoaded) {return "Rendering Map...";}
 
   return <div>
-    <SplashScreenComponent>
-    <MainComponent></MainComponent>
-    </SplashScreenComponent>
+    <SplashScreenComponent></SplashScreenComponent>
     </div>
 }

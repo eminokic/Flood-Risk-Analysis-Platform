@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./splash-screen.css";
 
+import MainComponent from "../main-page/main-component.js";
+
+import logo from '../../images/Salient-Insure.jpg';
+
 function SplashScreenComponent() {
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(undefined);
@@ -8,7 +12,7 @@ function SplashScreenComponent() {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch("https://dev.logistics.igniteme.dev/api/data")
+      fetch("https://logistics.igniteme.dev/api/data")
         .then((response) => response.json())
         .then((json) => {
           console.log(json);
@@ -28,7 +32,11 @@ function SplashScreenComponent() {
         <>
           {!loading ? (
             <div className="spinner">
-              <span>Loading...</span>
+              <span>
+                <div class="logo">
+                <img src={logo} alt="Salient_Logo" />
+                </div>
+                </span>
               <div className="half-spinner"></div>
             </div>
           ) : (
@@ -37,7 +45,7 @@ function SplashScreenComponent() {
         </>
       ) : (
         <>
-          <h1>Your Data</h1>
+          <MainComponent></MainComponent>
         </>
       )}
     </>
